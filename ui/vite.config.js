@@ -5,7 +5,7 @@ export default defineConfig({
   plugins: [react()],
   server: {
     proxy: {
-      '/interview': 'http://localhost:8000',
+      '/interview': 'http://localhost:8001',
     },
   },
 })
