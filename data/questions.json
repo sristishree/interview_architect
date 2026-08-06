@@ -1,0 +1,1777 @@
+[
+  {
+    "id": 1,
+    "topic": "Python",
+    "difficulty": "Easy",
+    "category": "Python",
+    "tags": [
+      "list comprehension",
+      "iteration",
+      "syntax"
+    ],
+    "question": "What are list comprehensions and when would you prefer them over a for loop?",
+    "follow_up": "How would you add a filter condition to a list comprehension?",
+    "question_type": "implementation"
+  },
+  {
+    "id": 2,
+    "topic": "Python",
+    "difficulty": "Easy",
+    "category": "Python",
+    "tags": [
+      "generators",
+      "iteration",
+      "memory"
+    ],
+    "question": "What is the difference between a generator and a list in Python? When would you choose one over the other?",
+    "follow_up": "What does the yield keyword do, and how does lazy evaluation work?",
+    "question_type": "theory"
+  },
+  {
+    "id": 3,
+    "topic": "Python",
+    "difficulty": "Medium",
+    "category": "Python",
+    "tags": [
+      "GIL",
+      "concurrency",
+      "threading"
+    ],
+    "question": "What is the Global Interpreter Lock (GIL) and how does it affect multithreading in Python?",
+    "follow_up": "How would you work around the GIL for CPU-bound tasks?",
+    "question_type": "theory"
+  },
+  {
+    "id": 4,
+    "topic": "Python",
+    "difficulty": "Medium",
+    "category": "Python",
+    "tags": [
+      "decorators",
+      "higher-order functions",
+      "metaprogramming"
+    ],
+    "question": "Explain Python decorators. How would you implement one that logs a function's execution time?",
+    "follow_up": "How do you write a decorator that itself accepts arguments?",
+    "question_type": "implementation"
+  },
+  {
+    "id": 5,
+    "topic": "Python",
+    "difficulty": "Medium",
+    "category": "Python",
+    "tags": [
+      "context managers",
+      "with statement",
+      "resource management"
+    ],
+    "question": "What are context managers in Python and how do you implement one using both a class and @contextmanager?",
+    "follow_up": "When would a context manager be better than try/finally?",
+    "question_type": "implementation"
+  },
+  {
+    "id": 6,
+    "topic": "Python",
+    "difficulty": "Easy",
+    "category": "Python",
+    "tags": [
+      "args",
+      "kwargs",
+      "function signatures"
+    ],
+    "question": "Explain *args and **kwargs in Python. Give a practical example where both are useful in the same function.",
+    "follow_up": null,
+    "question_type": "implementation"
+  },
+  {
+    "id": 7,
+    "topic": "Python",
+    "difficulty": "Hard",
+    "category": "Python",
+    "tags": [
+      "memory management",
+      "garbage collection",
+      "reference counting"
+    ],
+    "question": "How does Python's memory management work? Explain reference counting and the cyclic garbage collector.",
+    "follow_up": "What are weak references and when would you use them?",
+    "question_type": "theory"
+  },
+  {
+    "id": 8,
+    "topic": "Python",
+    "difficulty": "Hard",
+    "category": "Python",
+    "tags": [
+      "metaclasses",
+      "type system",
+      "OOP"
+    ],
+    "question": "What are metaclasses in Python? Give a real use case where you would actually need one.",
+    "follow_up": "What is the difference between a metaclass and a class decorator?",
+    "question_type": "theory"
+  },
+  {
+    "id": 9,
+    "topic": "Python",
+    "difficulty": "Hard",
+    "category": "Python",
+    "tags": [
+      "async",
+      "asyncio",
+      "event loop",
+      "concurrency"
+    ],
+    "question": "How does async/await work in Python? Explain the event loop and when you'd choose asyncio over threading.",
+    "follow_up": "What is the difference between asyncio.gather() and asyncio.wait()?",
+    "question_type": "implementation"
+  },
+  {
+    "id": 10,
+    "topic": "Python",
+    "difficulty": "Hard",
+    "category": "Python",
+    "tags": [
+      "multiprocessing",
+      "threading",
+      "concurrency",
+      "GIL"
+    ],
+    "question": "Compare multiprocessing, threading, and asyncio in Python. When would you choose each?",
+    "follow_up": "How do you safely share state between processes?",
+    "question_type": "design"
+  },
+  {
+    "id": 11,
+    "topic": "SQL",
+    "difficulty": "Easy",
+    "category": "SQL",
+    "tags": [
+      "joins",
+      "INNER JOIN",
+      "LEFT JOIN",
+      "OUTER JOIN"
+    ],
+    "question": "What is the difference between INNER JOIN, LEFT JOIN, and FULL OUTER JOIN? Give a concrete example for each.",
+    "follow_up": null,
+    "question_type": "theory"
+  },
+  {
+    "id": 12,
+    "topic": "SQL",
+    "difficulty": "Easy",
+    "category": "SQL",
+    "tags": [
+      "GROUP BY",
+      "HAVING",
+      "aggregation"
+    ],
+    "question": "Explain GROUP BY and HAVING. What is the key difference between HAVING and WHERE?",
+    "follow_up": "Write a query to find customers who made more than 5 purchases.",
+    "question_type": "implementation"
+  },
+  {
+    "id": 13,
+    "topic": "SQL",
+    "difficulty": "Medium",
+    "category": "SQL",
+    "tags": [
+      "window functions",
+      "ROW_NUMBER",
+      "RANK",
+      "analytic functions"
+    ],
+    "question": "What are window functions? Write a query using ROW_NUMBER() to find the top 3 products per category by sales.",
+    "follow_up": "What is the difference between ROW_NUMBER(), RANK(), and DENSE_RANK()?",
+    "question_type": "implementation"
+  },
+  {
+    "id": 14,
+    "topic": "SQL",
+    "difficulty": "Medium",
+    "category": "SQL",
+    "tags": [
+      "CTE",
+      "WITH clause",
+      "recursive"
+    ],
+    "question": "What is a CTE and what advantages does it have over a subquery?",
+    "follow_up": "Can you write a recursive CTE to traverse a hierarchical org chart?",
+    "question_type": "implementation"
+  },
+  {
+    "id": 15,
+    "topic": "SQL",
+    "difficulty": "Medium",
+    "category": "SQL",
+    "tags": [
+      "subqueries",
+      "correlated subqueries",
+      "EXISTS"
+    ],
+    "question": "What is the difference between a correlated and non-correlated subquery? When is each more efficient?",
+    "follow_up": null,
+    "question_type": "theory"
+  },
+  {
+    "id": 16,
+    "topic": "SQL",
+    "difficulty": "Hard",
+    "category": "SQL",
+    "tags": [
+      "query optimization",
+      "performance",
+      "indexes"
+    ],
+    "question": "A query takes 30 seconds on a 100M row table. Walk me through your complete optimization process.",
+    "follow_up": "How do you diagnose whether the issue is I/O bound vs CPU bound?",
+    "question_type": "case_study"
+  },
+  {
+    "id": 17,
+    "topic": "SQL",
+    "difficulty": "Hard",
+    "category": "SQL",
+    "tags": [
+      "indexes",
+      "B-tree",
+      "composite index",
+      "covering index"
+    ],
+    "question": "Explain database indexing. When do indexes actually hurt performance? What is a covering index?",
+    "follow_up": "For a query SELECT a, b FROM t WHERE c = 1 AND d > 5, which columns would you index and why?",
+    "question_type": "theory"
+  },
+  {
+    "id": 18,
+    "topic": "SQL",
+    "difficulty": "Hard",
+    "category": "SQL",
+    "tags": [
+      "EXPLAIN",
+      "query plan",
+      "execution plan"
+    ],
+    "question": "How do you use EXPLAIN / EXPLAIN ANALYZE? What key things do you look for in a query execution plan?",
+    "follow_up": null,
+    "question_type": "implementation"
+  },
+  {
+    "id": 19,
+    "topic": "Machine Learning",
+    "difficulty": "Easy",
+    "category": "ML",
+    "tags": [
+      "bias",
+      "variance",
+      "overfitting",
+      "underfitting"
+    ],
+    "question": "Explain the bias-variance tradeoff. How does model complexity affect each?",
+    "follow_up": "How would you diagnose high bias vs high variance from learning curves?",
+    "question_type": "theory"
+  },
+  {
+    "id": 20,
+    "topic": "Machine Learning",
+    "difficulty": "Easy",
+    "category": "ML",
+    "tags": [
+      "precision",
+      "recall",
+      "F1",
+      "classification metrics"
+    ],
+    "question": "When would you optimize for precision vs recall? Give a real-world example for each.",
+    "follow_up": "What is the F1 score and when is it the right metric?",
+    "question_type": "theory"
+  },
+  {
+    "id": 21,
+    "topic": "Machine Learning",
+    "difficulty": "Medium",
+    "category": "ML",
+    "tags": [
+      "cross-validation",
+      "k-fold",
+      "train-test split"
+    ],
+    "question": "Explain k-fold cross-validation. Why is it preferred over a single train-test split?",
+    "follow_up": "What is stratified k-fold and when would you use it?",
+    "question_type": "theory"
+  },
+  {
+    "id": 22,
+    "topic": "Machine Learning",
+    "difficulty": "Medium",
+    "category": "ML",
+    "tags": [
+      "regularization",
+      "L1",
+      "L2",
+      "Lasso",
+      "Ridge"
+    ],
+    "question": "What is regularization? Compare L1 (Lasso) and L2 (Ridge) \u2014 when would you choose each?",
+    "follow_up": "What is Elastic Net and when does it outperform either?",
+    "question_type": "theory"
+  },
+  {
+    "id": 23,
+    "topic": "Machine Learning",
+    "difficulty": "Medium",
+    "category": "ML",
+    "tags": [
+      "class imbalance",
+      "SMOTE",
+      "oversampling",
+      "undersampling",
+      "weighted loss"
+    ],
+    "question": "You have a dataset with 98% negative and 2% positive examples. How do you approach this?",
+    "follow_up": "What are the tradeoffs between oversampling, undersampling, and weighted loss?",
+    "question_type": "case_study"
+  },
+  {
+    "id": 24,
+    "topic": "Machine Learning",
+    "difficulty": "Medium",
+    "category": "ML",
+    "tags": [
+      "feature importance",
+      "permutation importance",
+      "SHAP"
+    ],
+    "question": "What is feature importance in tree-based models? What are its limitations, and how does SHAP improve on it?",
+    "follow_up": "What is the difference between global and local feature importance?",
+    "question_type": "theory"
+  },
+  {
+    "id": 25,
+    "topic": "Machine Learning",
+    "difficulty": "Hard",
+    "category": "ML",
+    "tags": [
+      "gradient descent",
+      "SGD",
+      "Adam",
+      "learning rate",
+      "optimization"
+    ],
+    "question": "Compare SGD, momentum, RMSProp, and Adam optimizers. When would you prefer each?",
+    "follow_up": "What is learning rate scheduling and why does it matter?",
+    "question_type": "theory"
+  },
+  {
+    "id": 26,
+    "topic": "Machine Learning",
+    "difficulty": "Hard",
+    "category": "ML",
+    "tags": [
+      "data leakage",
+      "train-test contamination",
+      "temporal leakage"
+    ],
+    "question": "What is data leakage? Describe 3 different ways it can occur in a typical ML pipeline.",
+    "follow_up": "How would you detect if your model has data leakage?",
+    "question_type": "case_study"
+  },
+  {
+    "id": 27,
+    "topic": "Machine Learning",
+    "difficulty": "Hard",
+    "category": "ML",
+    "tags": [
+      "production evaluation",
+      "offline metrics",
+      "online metrics",
+      "monitoring"
+    ],
+    "question": "How do you evaluate a model in production vs offline? Why can offline metrics be misleading?",
+    "follow_up": "How would you design an A/B test to compare two model versions?",
+    "question_type": "design"
+  },
+  {
+    "id": 28,
+    "topic": "Machine Learning",
+    "difficulty": "Hard",
+    "category": "ML",
+    "tags": [
+      "parametric",
+      "non-parametric",
+      "model assumptions"
+    ],
+    "question": "What is the difference between parametric and non-parametric models? Give examples and explain when to choose each.",
+    "follow_up": null,
+    "question_type": "theory"
+  },
+  {
+    "id": 29,
+    "topic": "XGBoost",
+    "difficulty": "Easy",
+    "category": "ML",
+    "tags": [
+      "boosting",
+      "ensemble",
+      "weak learners",
+      "XGBoost"
+    ],
+    "question": "What is the core intuition behind boosting algorithms? How does XGBoost improve on basic gradient boosting?",
+    "follow_up": null,
+    "question_type": "theory"
+  },
+  {
+    "id": 30,
+    "topic": "XGBoost",
+    "difficulty": "Easy",
+    "category": "ML",
+    "tags": [
+      "hyperparameters",
+      "n_estimators",
+      "max_depth",
+      "learning_rate",
+      "XGBoost"
+    ],
+    "question": "What are the most important hyperparameters of XGBoost and how does each one affect the model?",
+    "follow_up": "How would you approach hyperparameter tuning for XGBoost in a time-constrained setting?",
+    "question_type": "implementation"
+  },
+  {
+    "id": 31,
+    "topic": "XGBoost",
+    "difficulty": "Medium",
+    "category": "ML",
+    "tags": [
+      "missing values",
+      "sparsity",
+      "XGBoost internals"
+    ],
+    "question": "How does XGBoost handle missing values? What is the sparsity-aware split finding algorithm?",
+    "follow_up": null,
+    "question_type": "theory"
+  },
+  {
+    "id": 32,
+    "topic": "XGBoost",
+    "difficulty": "Medium",
+    "category": "ML",
+    "tags": [
+      "gradient boosting",
+      "random forest",
+      "comparison",
+      "XGBoost"
+    ],
+    "question": "What are the key differences between XGBoost and Random Forest? In what situations would Random Forest be preferable?",
+    "follow_up": null,
+    "question_type": "theory"
+  },
+  {
+    "id": 33,
+    "topic": "XGBoost",
+    "difficulty": "Medium",
+    "category": "ML",
+    "tags": [
+      "overfitting",
+      "regularization",
+      "early stopping",
+      "XGBoost"
+    ],
+    "question": "How would you prevent overfitting in an XGBoost model? What regularization parameters does it offer?",
+    "follow_up": "How does early stopping work in XGBoost and how do you set it up correctly?",
+    "question_type": "implementation"
+  },
+  {
+    "id": 34,
+    "topic": "XGBoost",
+    "difficulty": "Hard",
+    "category": "ML",
+    "tags": [
+      "gradient boosting math",
+      "second-order Taylor",
+      "tree structure",
+      "XGBoost"
+    ],
+    "question": "Explain the mathematical foundation of gradient boosting. How does XGBoost use second-order Taylor expansion?",
+    "follow_up": null,
+    "question_type": "theory"
+  },
+  {
+    "id": 35,
+    "topic": "XGBoost",
+    "difficulty": "Hard",
+    "category": "ML",
+    "tags": [
+      "probability calibration",
+      "Platt scaling",
+      "isotonic regression",
+      "XGBoost"
+    ],
+    "question": "How would you calibrate XGBoost probabilities? Compare Platt scaling vs isotonic regression.",
+    "follow_up": "How do you evaluate if your probabilities are well-calibrated?",
+    "question_type": "implementation"
+  },
+  {
+    "id": 36,
+    "topic": "XGBoost",
+    "difficulty": "Hard",
+    "category": "ML",
+    "tags": [
+      "deep learning",
+      "comparison",
+      "tabular data",
+      "XGBoost"
+    ],
+    "question": "When would XGBoost underperform neural networks on tabular data? What characteristics of the data drive this?",
+    "follow_up": null,
+    "question_type": "theory"
+  },
+  {
+    "id": 37,
+    "topic": "System Design",
+    "difficulty": "Easy",
+    "category": "SystemDesign",
+    "tags": [
+      "batch inference",
+      "data pipeline",
+      "ML deployment"
+    ],
+    "question": "How would you design a batch ML inference pipeline that processes 10M records nightly?",
+    "follow_up": "How would you handle failures mid-batch and ensure exactly-once processing?",
+    "question_type": "design"
+  },
+  {
+    "id": 38,
+    "topic": "System Design",
+    "difficulty": "Medium",
+    "category": "SystemDesign",
+    "tags": [
+      "feature store",
+      "recommendation system",
+      "online features",
+      "offline features"
+    ],
+    "question": "Design a feature store for a recommendation system that needs both batch and real-time features.",
+    "follow_up": "How do you handle feature freshness and training-serving skew?",
+    "question_type": "design"
+  },
+  {
+    "id": 39,
+    "topic": "System Design",
+    "difficulty": "Medium",
+    "category": "SystemDesign",
+    "tags": [
+      "model serving",
+      "scalability",
+      "API",
+      "load balancing"
+    ],
+    "question": "How would you serve a ML model at scale to handle 100k requests per second?",
+    "follow_up": "How does model size affect your infrastructure choices?",
+    "question_type": "design"
+  },
+  {
+    "id": 40,
+    "topic": "System Design",
+    "difficulty": "Medium",
+    "category": "SystemDesign",
+    "tags": [
+      "feature drift",
+      "data drift",
+      "concept drift",
+      "monitoring"
+    ],
+    "question": "How do you detect and handle feature drift in production ML? What monitoring would you put in place?",
+    "follow_up": "What is the difference between data drift and concept drift?",
+    "question_type": "design"
+  },
+  {
+    "id": 41,
+    "topic": "System Design",
+    "difficulty": "Medium",
+    "category": "SystemDesign",
+    "tags": [
+      "A/B testing",
+      "experimentation",
+      "statistical significance",
+      "model comparison"
+    ],
+    "question": "Design an A/B testing framework for comparing two ML models in production.",
+    "follow_up": "How do you determine when you have enough samples to declare a winner?",
+    "question_type": "design"
+  },
+  {
+    "id": 42,
+    "topic": "System Design",
+    "difficulty": "Hard",
+    "category": "SystemDesign",
+    "tags": [
+      "real-time inference",
+      "latency",
+      "P99",
+      "optimization"
+    ],
+    "question": "Design a real-time ML inference system with P99 latency under 100ms. What are the bottlenecks and how do you address them?",
+    "follow_up": null,
+    "question_type": "design"
+  },
+  {
+    "id": 43,
+    "topic": "System Design",
+    "difficulty": "Hard",
+    "category": "SystemDesign",
+    "tags": [
+      "self-healing",
+      "monitoring",
+      "automated retraining",
+      "MLOps"
+    ],
+    "question": "How would you design a self-healing ML pipeline that automatically detects degradation and retrains?",
+    "follow_up": "What safeguards prevent a bad retrained model from reaching production?",
+    "question_type": "design"
+  },
+  {
+    "id": 44,
+    "topic": "System Design",
+    "difficulty": "Hard",
+    "category": "SystemDesign",
+    "tags": [
+      "multi-tenant",
+      "ML platform",
+      "resource isolation"
+    ],
+    "question": "Design a multi-tenant ML platform that supports 50 data science teams with different compute needs and isolation requirements.",
+    "follow_up": null,
+    "question_type": "design"
+  },
+  {
+    "id": 45,
+    "topic": "Leadership",
+    "difficulty": "Easy",
+    "category": "Leadership",
+    "tags": [
+      "communication",
+      "stakeholder management",
+      "technical communication"
+    ],
+    "question": "Describe a time you had to explain a complex ML model result to a non-technical stakeholder. How did you approach it?",
+    "follow_up": "What do you do when the stakeholder pushes back on your findings?",
+    "question_type": "behavioral"
+  },
+  {
+    "id": 46,
+    "topic": "Leadership",
+    "difficulty": "Easy",
+    "category": "Leadership",
+    "tags": [
+      "prioritization",
+      "time management",
+      "project management"
+    ],
+    "question": "How do you prioritize tasks when everything is marked urgent and you have competing deadlines?",
+    "follow_up": "How do you push back on low-priority requests from senior stakeholders?",
+    "question_type": "behavioral"
+  },
+  {
+    "id": 47,
+    "topic": "Leadership",
+    "difficulty": "Medium",
+    "category": "Leadership",
+    "tags": [
+      "production failure",
+      "incident response",
+      "postmortem"
+    ],
+    "question": "Tell me about a time your model or data pipeline failed in production. What happened and how did you respond?",
+    "follow_up": "What process changes did you implement afterward to prevent recurrence?",
+    "question_type": "behavioral"
+  },
+  {
+    "id": 48,
+    "topic": "Leadership",
+    "difficulty": "Medium",
+    "category": "Leadership",
+    "tags": [
+      "disagreement",
+      "technical conflict",
+      "persuasion"
+    ],
+    "question": "How do you handle a technical disagreement with a senior engineer about an architectural decision?",
+    "follow_up": "Describe a specific case where you changed your position after debate.",
+    "question_type": "behavioral"
+  },
+  {
+    "id": 49,
+    "topic": "Leadership",
+    "difficulty": "Medium",
+    "category": "Leadership",
+    "tags": [
+      "decision making",
+      "uncertainty",
+      "incomplete data"
+    ],
+    "question": "Tell me about a time you had to make a critical decision with incomplete data. How did you decide?",
+    "follow_up": "How do you quantify and communicate uncertainty in your recommendations to leadership?",
+    "question_type": "behavioral"
+  },
+  {
+    "id": 50,
+    "topic": "Leadership",
+    "difficulty": "Hard",
+    "category": "Leadership",
+    "tags": [
+      "mentoring",
+      "team growth",
+      "coaching"
+    ],
+    "question": "How have you mentored junior data scientists? Give a specific example of how you changed someone's trajectory.",
+    "follow_up": "How do you adapt your mentoring style to different learning styles?",
+    "question_type": "behavioral"
+  },
+  {
+    "id": 51,
+    "topic": "Leadership",
+    "difficulty": "Hard",
+    "category": "Leadership",
+    "tags": [
+      "culture",
+      "process improvement",
+      "engineering excellence"
+    ],
+    "question": "Describe how you have influenced engineering culture or improved processes at your company.",
+    "follow_up": "How do you drive adoption of new practices across a resistant team?",
+    "question_type": "behavioral"
+  },
+  {
+    "id": 52,
+    "topic": "Leadership",
+    "difficulty": "Hard",
+    "category": "Leadership",
+    "tags": [
+      "technical debt",
+      "prioritization",
+      "product velocity"
+    ],
+    "question": "Describe a situation where you had to balance paying down technical debt with new feature delivery. How did you make the case to leadership?",
+    "follow_up": null,
+    "question_type": "behavioral"
+  },
+  {
+    "id": 53,
+    "topic": "RAG",
+    "difficulty": "Easy",
+    "category": "LLM",
+    "tags": [
+      "RAG",
+      "retrieval-augmented generation",
+      "vector search",
+      "LLM"
+    ],
+    "question": "What is RAG (Retrieval-Augmented Generation) and why is it preferred over fine-tuning for knowledge-intensive tasks?",
+    "follow_up": "What are the main failure modes of a RAG system?",
+    "question_type": "theory"
+  },
+  {
+    "id": 54,
+    "topic": "Prompt Engineering",
+    "difficulty": "Easy",
+    "category": "LLM",
+    "tags": [
+      "prompt engineering",
+      "few-shot",
+      "chain-of-thought",
+      "LLM"
+    ],
+    "question": "What are the key prompt engineering techniques? Explain few-shot prompting and chain-of-thought.",
+    "follow_up": "When does chain-of-thought prompting help vs hurt performance?",
+    "question_type": "implementation"
+  },
+  {
+    "id": 55,
+    "topic": "RAG Evaluation",
+    "difficulty": "Medium",
+    "category": "LLM",
+    "tags": [
+      "RAG evaluation",
+      "retrieval quality",
+      "RAGAS",
+      "faithfulness",
+      "LLM"
+    ],
+    "question": "How would you evaluate a RAG system? What metrics would you use for retrieval quality vs generation quality?",
+    "follow_up": "What is RAGAS and what does each metric in it measure?",
+    "question_type": "implementation"
+  },
+  {
+    "id": 56,
+    "topic": "Fine-tuning",
+    "difficulty": "Medium",
+    "category": "LLM",
+    "tags": [
+      "fine-tuning",
+      "LoRA",
+      "PEFT",
+      "prompting vs fine-tuning",
+      "LLM"
+    ],
+    "question": "When would you choose fine-tuning over prompting? What factors drive this decision?",
+    "follow_up": "What is LoRA and why is it preferred over full fine-tuning?",
+    "question_type": "theory"
+  },
+  {
+    "id": 57,
+    "topic": "LLM Hallucination",
+    "difficulty": "Medium",
+    "category": "LLM",
+    "tags": [
+      "hallucination",
+      "grounding",
+      "factuality",
+      "confidence calibration",
+      "LLM"
+    ],
+    "question": "How do you detect and mitigate hallucinations in LLM-based applications?",
+    "follow_up": "How do you build a system that knows when it doesn't know?",
+    "question_type": "design"
+  },
+  {
+    "id": 58,
+    "topic": "Embeddings",
+    "difficulty": "Medium",
+    "category": "LLM",
+    "tags": [
+      "embeddings",
+      "semantic search",
+      "vector databases",
+      "dense retrieval"
+    ],
+    "question": "Explain the difference between embedding models and generative models. How do you use embeddings for semantic search?",
+    "follow_up": "What are the tradeoffs between different embedding model sizes?",
+    "question_type": "theory"
+  },
+  {
+    "id": 59,
+    "topic": "LLM System Design",
+    "difficulty": "Hard",
+    "category": "LLM",
+    "tags": [
+      "RAG architecture",
+      "production",
+      "scalability",
+      "chunking strategy",
+      "LLM"
+    ],
+    "question": "Design a production RAG system that handles 1000 concurrent users with sub-second latency. What are the key architectural decisions?",
+    "follow_up": "How does chunking strategy affect retrieval quality?",
+    "question_type": "design"
+  },
+  {
+    "id": 60,
+    "topic": "LLM Evaluation",
+    "difficulty": "Hard",
+    "category": "LLM",
+    "tags": [
+      "LLM evaluation",
+      "LLM-as-judge",
+      "evaluation framework",
+      "benchmarking"
+    ],
+    "question": "How would you build an LLM evaluation framework from scratch? How do you handle the LLM-as-judge approach?",
+    "follow_up": "What are the known biases in LLM-as-judge evaluation?",
+    "question_type": "design"
+  },
+  {
+    "id": 61,
+    "topic": "Structured Extraction",
+    "difficulty": "Hard",
+    "category": "LLM",
+    "tags": [
+      "structured extraction",
+      "information extraction",
+      "JSON mode",
+      "function calling",
+      "LLM"
+    ],
+    "question": "What are the challenges of using LLMs for structured data extraction at scale? How do you ensure reliability?",
+    "follow_up": "How do you handle cases where the LLM returns malformed output?",
+    "question_type": "implementation"
+  },
+  {
+    "id": 62,
+    "topic": "Long Context",
+    "difficulty": "Hard",
+    "category": "LLM",
+    "tags": [
+      "context window",
+      "long documents",
+      "chunking",
+      "summarization",
+      "LLM"
+    ],
+    "question": "How do you handle tasks that require processing documents longer than the LLM's context window?",
+    "follow_up": "What is the 'lost in the middle' problem and how do you mitigate it?",
+    "question_type": "implementation"
+  },
+  {
+    "id": 63,
+    "topic": "Docker",
+    "difficulty": "Easy",
+    "category": "Cloud",
+    "tags": [
+      "Docker",
+      "containerization",
+      "reproducibility",
+      "deployment"
+    ],
+    "question": "What is Docker and why is it used in ML deployments? What goes into a good ML Dockerfile?",
+    "follow_up": "What is the difference between CMD and ENTRYPOINT in a Dockerfile?",
+    "question_type": "implementation"
+  },
+  {
+    "id": 64,
+    "topic": "CI/CD",
+    "difficulty": "Easy",
+    "category": "Cloud",
+    "tags": [
+      "CI/CD",
+      "testing",
+      "automation",
+      "MLOps"
+    ],
+    "question": "What is CI/CD and why is it important for ML projects? What would a CI pipeline for a ML project include?",
+    "follow_up": null,
+    "question_type": "theory"
+  },
+  {
+    "id": 65,
+    "topic": "Model Monitoring",
+    "difficulty": "Medium",
+    "category": "Cloud",
+    "tags": [
+      "monitoring",
+      "model performance",
+      "data drift",
+      "alerting"
+    ],
+    "question": "How would you monitor a deployed ML model? What metrics and alerts would you set up?",
+    "follow_up": "How do you distinguish between model degradation vs upstream data quality issues?",
+    "question_type": "design"
+  },
+  {
+    "id": 66,
+    "topic": "Model Versioning",
+    "difficulty": "Medium",
+    "category": "Cloud",
+    "tags": [
+      "model versioning",
+      "MLflow",
+      "DVC",
+      "experiment tracking"
+    ],
+    "question": "How do you implement model versioning? What metadata do you track alongside each model version?",
+    "follow_up": "How do you roll back to a previous model version in production?",
+    "question_type": "implementation"
+  },
+  {
+    "id": 67,
+    "topic": "Model Registry",
+    "difficulty": "Medium",
+    "category": "Cloud",
+    "tags": [
+      "model registry",
+      "model lifecycle",
+      "staging",
+      "production"
+    ],
+    "question": "What is a model registry and what is its role in the ML lifecycle? Walk me through a model's journey from development to production.",
+    "follow_up": null,
+    "question_type": "theory"
+  },
+  {
+    "id": 68,
+    "topic": "Deployment Strategies",
+    "difficulty": "Hard",
+    "category": "Cloud",
+    "tags": [
+      "blue-green deployment",
+      "canary deployment",
+      "shadow mode"
+    ],
+    "question": "Compare blue-green deployment, canary release, and shadow mode for ML models. When would you use each?",
+    "follow_up": "What are the rollback strategies and risks for each approach?",
+    "question_type": "design"
+  },
+  {
+    "id": 70,
+    "topic": "Edge ML",
+    "difficulty": "Hard",
+    "category": "Cloud",
+    "tags": [
+      "edge deployment",
+      "model compression",
+      "quantization",
+      "TensorRT"
+    ],
+    "question": "What are the challenges of deploying ML models at the edge? How do you optimize a model for edge devices?",
+    "follow_up": "Compare quantization, pruning, and knowledge distillation as compression techniques.",
+    "question_type": "theory"
+  },
+  {
+    "id": 71,
+    "topic": "General",
+    "difficulty": "Easy",
+    "category": "General",
+    "tags": [
+      "supervised",
+      "unsupervised",
+      "reinforcement",
+      "learning paradigms"
+    ],
+    "question": "Explain the difference between supervised, unsupervised, and reinforcement learning with examples of each.",
+    "follow_up": null,
+    "question_type": "theory"
+  },
+  {
+    "id": 72,
+    "topic": "Problem Framing",
+    "difficulty": "Medium",
+    "category": "General",
+    "tags": [
+      "problem framing",
+      "DS process",
+      "approach",
+      "scoping"
+    ],
+    "question": "Walk me through how you approach a new data science problem from scratch \u2014 from understanding the business question to model deployment.",
+    "follow_up": "How do you decide when a model is good enough to ship?",
+    "question_type": "case_study"
+  },
+  {
+    "id": 73,
+    "topic": "Missing Data",
+    "difficulty": "Medium",
+    "category": "General",
+    "tags": [
+      "missing data",
+      "imputation",
+      "MCAR",
+      "MAR",
+      "MNAR"
+    ],
+    "question": "How do you handle missing data? Explain the difference between MCAR, MAR, and MNAR and how each changes your approach.",
+    "follow_up": "What are the tradeoffs between deletion, simple imputation, and model-based imputation?",
+    "question_type": "theory"
+  },
+  {
+    "id": 74,
+    "topic": "Dimensionality",
+    "difficulty": "Medium",
+    "category": "General",
+    "tags": [
+      "curse of dimensionality",
+      "high-dimensional data",
+      "PCA",
+      "feature selection"
+    ],
+    "question": "What is the curse of dimensionality? How does it affect distance-based algorithms, and what techniques address it?",
+    "follow_up": null,
+    "question_type": "theory"
+  },
+  {
+    "id": 75,
+    "topic": "Data Flywheel",
+    "difficulty": "Hard",
+    "category": "General",
+    "tags": [
+      "data flywheel",
+      "feedback loops",
+      "product ML",
+      "moat"
+    ],
+    "question": "What is a data flywheel and how do you build one? What makes it a sustainable competitive moat?",
+    "follow_up": "How do you bootstrap a data flywheel when you are starting with no data?",
+    "question_type": "design"
+  },
+  {
+    "id": 76,
+    "topic": "Transfer Learning",
+    "difficulty": "Hard",
+    "category": "General",
+    "tags": [
+      "transfer learning",
+      "pre-trained models",
+      "fine-tuning",
+      "domain adaptation"
+    ],
+    "question": "Explain transfer learning. When is it effective and what are its failure modes?",
+    "follow_up": "How do you decide which layers to freeze vs fine-tune?",
+    "question_type": "theory"
+  },
+  {
+    "id": 77,
+    "topic": "Machine Learning",
+    "difficulty": "Easy",
+    "category": "ML",
+    "tags": [
+      "confusion matrix",
+      "classification",
+      "evaluation"
+    ],
+    "question": "What is a confusion matrix? Explain what true positives, false positives, true negatives, and false negatives mean.",
+    "follow_up": "How would you derive precision and recall from a confusion matrix?",
+    "question_type": "theory"
+  },
+  {
+    "id": 78,
+    "topic": "Machine Learning",
+    "difficulty": "Easy",
+    "category": "ML",
+    "tags": [
+      "classification",
+      "regression",
+      "supervised learning"
+    ],
+    "question": "What is the difference between classification and regression? Give a real-world example of each.",
+    "follow_up": "What type of output does each produce, and how does that affect the loss function you choose?",
+    "question_type": "theory"
+  },
+  {
+    "id": 79,
+    "topic": "SQL",
+    "difficulty": "Easy",
+    "category": "SQL",
+    "tags": [
+      "DELETE",
+      "TRUNCATE",
+      "DROP",
+      "DDL",
+      "DML"
+    ],
+    "question": "What is the difference between DELETE, TRUNCATE, and DROP in SQL?",
+    "follow_up": "Which of these can be rolled back in a transaction, and why?",
+    "question_type": "theory"
+  },
+  {
+    "id": 80,
+    "topic": "SQL",
+    "difficulty": "Easy",
+    "category": "SQL",
+    "tags": [
+      "subquery",
+      "nested query",
+      "filtering"
+    ],
+    "question": "What is a subquery in SQL and when would you use one instead of a JOIN?",
+    "follow_up": "When would you rewrite a subquery as a JOIN for performance reasons, and when is the subquery form actually clearer or faster?",
+    "question_type": "implementation"
+  },
+  {
+    "id": 81,
+    "topic": "LLM",
+    "difficulty": "Easy",
+    "category": "LLM",
+    "tags": [
+      "tokenization",
+      "tokens",
+      "context window"
+    ],
+    "question": "What is tokenization in the context of LLMs and how does it affect what you can send to a model?",
+    "follow_up": "Why might the same text have a different token count depending on the model?",
+    "question_type": "theory"
+  },
+  {
+    "id": 82,
+    "topic": "LLM",
+    "difficulty": "Easy",
+    "category": "LLM",
+    "tags": [
+      "temperature",
+      "sampling",
+      "inference",
+      "randomness"
+    ],
+    "question": "What does the temperature parameter control in LLM inference? What happens at temperature 0 vs a high value like 1.5?",
+    "follow_up": "When would you want a low temperature and when would you want a high one?",
+    "question_type": "theory"
+  },
+  {
+    "id": 83,
+    "topic": "System Design",
+    "difficulty": "Easy",
+    "category": "SystemDesign",
+    "tags": [
+      "monolith",
+      "microservices",
+      "architecture"
+    ],
+    "question": "What is the difference between a monolithic and a microservices architecture? What are the trade-offs of each?",
+    "follow_up": "At what point would you consider breaking a monolith into microservices?",
+    "question_type": "design"
+  },
+  {
+    "id": 84,
+    "topic": "System Design",
+    "difficulty": "Easy",
+    "category": "SystemDesign",
+    "tags": [
+      "REST",
+      "API",
+      "HTTP",
+      "stateless"
+    ],
+    "question": "What is a REST API and what constraints make an API RESTful?",
+    "follow_up": "How does REST differ from GraphQL, and when might you prefer one over the other?",
+    "question_type": "theory"
+  },
+  {
+    "id": 85,
+    "topic": "General",
+    "difficulty": "Easy",
+    "category": "General",
+    "tags": [
+      "SQL",
+      "NoSQL",
+      "databases",
+      "storage"
+    ],
+    "question": "What is the difference between a relational (SQL) and a non-relational (NoSQL) database? When would you choose each?",
+    "follow_up": "Give a concrete example of a use case where a document store like MongoDB would outperform PostgreSQL.",
+    "question_type": "theory"
+  },
+  {
+    "id": 86,
+    "topic": "General",
+    "difficulty": "Easy",
+    "category": "General",
+    "tags": [
+      "git",
+      "version control",
+      "reproducibility"
+    ],
+    "question": "What is version control and why is it important in a data science or ML project?",
+    "follow_up": "How would you handle large binary files like trained model artifacts in git?",
+    "question_type": "theory"
+  },
+  {
+    "id": 87,
+    "topic": "Python",
+    "difficulty": "Easy",
+    "category": "Python",
+    "tags": [
+      "list",
+      "tuple",
+      "immutability",
+      "data structures"
+    ],
+    "question": "What is the difference between a list and a tuple in Python? When would you choose one over the other?",
+    "follow_up": "Can a tuple contain mutable objects? What are the implications?",
+    "question_type": "theory"
+  },
+  {
+    "id": 89,
+    "topic": "Cloud",
+    "difficulty": "Easy",
+    "category": "Cloud",
+    "tags": [
+      "IaaS",
+      "PaaS",
+      "SaaS",
+      "cloud models"
+    ],
+    "question": "What is the difference between IaaS, PaaS, and SaaS? Give an ML-relevant example of each.",
+    "follow_up": "Where would a managed training service like SageMaker or Vertex AI sit in this taxonomy?",
+    "question_type": "theory"
+  },
+  {
+    "id": 90,
+    "topic": "XGBoost",
+    "difficulty": "Hard",
+    "category": "ML",
+    "tags": [
+      "XGBoost",
+      "Hessian",
+      "second-order gradients",
+      "tree structure",
+      "split gain"
+    ],
+    "question": "Why does XGBoost use both the gradient and the Hessian (second-order derivative) in its objective function, while standard gradient boosting only uses first-order gradients?",
+    "follow_up": "How does including the Hessian affect the optimal leaf weight formula and the split gain calculation?",
+    "question_type": "theory"
+  },
+  {
+    "id": 91,
+    "topic": "Python",
+    "difficulty": "Medium",
+    "category": "Python",
+    "tags": [
+      "type hints",
+      "Pydantic",
+      "validation",
+      "dataclasses"
+    ],
+    "question": "What do Python type hints actually do at runtime? How does Pydantic build on them to provide real data validation?",
+    "follow_up": "When would you choose a Pydantic model over a plain dataclass?",
+    "question_type": "theory"
+  },
+  {
+    "id": 92,
+    "topic": "Python",
+    "difficulty": "Medium",
+    "category": "Python",
+    "tags": [
+      "pandas",
+      "vectorized operations",
+      "performance",
+      "apply"
+    ],
+    "question": "Why is `.apply()` in pandas typically slow, and what vectorized alternatives should you reach for first?",
+    "follow_up": "Give an example where .apply() is genuinely necessary and cannot be replaced by vectorized operations.",
+    "question_type": "implementation"
+  },
+  {
+    "id": 93,
+    "topic": "Python",
+    "difficulty": "Easy",
+    "category": "Python",
+    "tags": [
+      "pytest",
+      "fixtures",
+      "testing",
+      "scope"
+    ],
+    "question": "What are pytest fixtures and how do you use them to share test setup across multiple tests?",
+    "follow_up": "What is the difference between function, module, and session scope for a fixture, and when would you use each?",
+    "question_type": "implementation"
+  },
+  {
+    "id": 94,
+    "topic": "Python",
+    "difficulty": "Medium",
+    "category": "Python",
+    "tags": [
+      "functools",
+      "lru_cache",
+      "memoization",
+      "caching"
+    ],
+    "question": "How does `functools.lru_cache` work? What are its limitations and how do you invalidate a cached result?",
+    "follow_up": "What memory leak risk arises when you apply lru_cache to a method on a class instance?",
+    "question_type": "implementation"
+  },
+  {
+    "id": 95,
+    "topic": "Python",
+    "difficulty": "Hard",
+    "category": "Python",
+    "tags": [
+      "__slots__",
+      "memory",
+      "OOP",
+      "instance dict"
+    ],
+    "question": "What does `__slots__` do in Python and in what situation would you use it?",
+    "follow_up": "What do you give up when using __slots__ compared to a normal class?",
+    "question_type": "theory"
+  },
+  {
+    "id": 96,
+    "topic": "SQL",
+    "difficulty": "Medium",
+    "category": "SQL",
+    "tags": [
+      "ACID",
+      "transactions",
+      "isolation",
+      "atomicity",
+      "consistency"
+    ],
+    "question": "What are ACID properties in a relational database? Walk through a concrete example where a violation of each property would cause a bug.",
+    "follow_up": "What is transaction isolation and what read anomalies do the different isolation levels protect against?",
+    "question_type": "theory"
+  },
+  {
+    "id": 97,
+    "topic": "SQL",
+    "difficulty": "Medium",
+    "category": "SQL",
+    "tags": [
+      "normalization",
+      "1NF",
+      "2NF",
+      "3NF",
+      "denormalization"
+    ],
+    "question": "What is database normalization? Explain 1NF, 2NF, and 3NF with examples. When would you intentionally denormalize a schema?",
+    "follow_up": "What problems does denormalization introduce and how do you manage them in practice?",
+    "question_type": "theory"
+  },
+  {
+    "id": 98,
+    "topic": "SQL",
+    "difficulty": "Medium",
+    "category": "SQL",
+    "tags": [
+      "materialized views",
+      "views",
+      "query optimization",
+      "caching"
+    ],
+    "question": "What is a materialized view and how does it differ from a regular view? When is one preferable to the other?",
+    "follow_up": "How does the refresh strategy (on-commit vs on-demand) affect the tradeoff between data freshness and query performance?",
+    "question_type": "theory"
+  },
+  {
+    "id": 99,
+    "topic": "Machine Learning",
+    "difficulty": "Easy",
+    "category": "ML",
+    "tags": [
+      "clustering",
+      "k-means",
+      "unsupervised",
+      "centroid"
+    ],
+    "question": "How does K-means clustering work? What are its main assumptions and where does it break down?",
+    "follow_up": "How do you choose K, and how do the elbow method and silhouette score differ in their approach to this?",
+    "question_type": "theory"
+  },
+  {
+    "id": 100,
+    "topic": "Machine Learning",
+    "difficulty": "Easy",
+    "category": "ML",
+    "tags": [
+      "categorical features",
+      "one-hot encoding",
+      "label encoding",
+      "feature engineering"
+    ],
+    "question": "When should you use label encoding vs one-hot encoding for categorical features? What goes wrong if you choose the wrong one?",
+    "follow_up": "How do tree-based models handle categorical variables differently from linear models, and does that change your encoding choice?",
+    "question_type": "theory"
+  },
+  {
+    "id": 101,
+    "topic": "Machine Learning",
+    "difficulty": "Medium",
+    "category": "ML",
+    "tags": [
+      "activation functions",
+      "ReLU",
+      "sigmoid",
+      "neural networks",
+      "deep learning"
+    ],
+    "question": "What is the role of activation functions in neural networks, and what problem does ReLU solve compared to sigmoid?",
+    "follow_up": "What is the dying ReLU problem, and how do Leaky ReLU and GELU address it?",
+    "question_type": "theory"
+  },
+  {
+    "id": 102,
+    "topic": "Machine Learning",
+    "difficulty": "Medium",
+    "category": "ML",
+    "tags": [
+      "backpropagation",
+      "chain rule",
+      "vanishing gradient",
+      "deep learning"
+    ],
+    "question": "Explain backpropagation in your own words. What is the vanishing gradient problem and why does it matter for training deep networks?",
+    "follow_up": "How do batch normalization and residual connections help address the vanishing gradient problem?",
+    "question_type": "theory"
+  },
+  {
+    "id": 103,
+    "topic": "Machine Learning",
+    "difficulty": "Medium",
+    "category": "ML",
+    "tags": [
+      "time series",
+      "stationarity",
+      "seasonality",
+      "forecasting",
+      "ARIMA"
+    ],
+    "question": "How do you approach a time series forecasting problem? What is stationarity and how do you test for it?",
+    "follow_up": "How do you handle seasonality and trend \u2014 and how does your approach differ between classical statistical methods and ML models?",
+    "question_type": "theory"
+  },
+  {
+    "id": 104,
+    "topic": "Machine Learning",
+    "difficulty": "Medium",
+    "category": "ML",
+    "tags": [
+      "causal inference",
+      "Simpson's paradox",
+      "confounding",
+      "correlation vs causation"
+    ],
+    "question": "What is Simpson's paradox and why is it a real risk in business ML and analytics?",
+    "follow_up": "How do you distinguish between a confounding variable and a mediating variable, and why does it matter for feature selection?",
+    "question_type": "theory"
+  },
+  {
+    "id": 105,
+    "topic": "Machine Learning",
+    "difficulty": "Hard",
+    "category": "ML",
+    "tags": [
+      "attention",
+      "transformers",
+      "self-attention",
+      "deep learning",
+      "NLP"
+    ],
+    "question": "Explain the self-attention mechanism in transformers. What problem does it solve that RNNs could not handle well?",
+    "follow_up": "What is the computational bottleneck of standard self-attention, and how do techniques like sparse attention or FlashAttention address it?",
+    "question_type": "theory"
+  },
+  {
+    "id": 106,
+    "topic": "Machine Learning",
+    "difficulty": "Medium",
+    "category": "ML",
+    "tags": [
+      "feature engineering",
+      "target encoding",
+      "feature transformation",
+      "leakage"
+    ],
+    "question": "What is feature engineering and how much does it typically matter compared to model selection? Give two concrete examples of transformations that significantly impact model performance.",
+    "follow_up": "What are the risks of target encoding and how do you implement it safely to avoid data leakage?",
+    "question_type": "implementation"
+  },
+  {
+    "id": 107,
+    "topic": "LLM Agents",
+    "difficulty": "Medium",
+    "category": "LLM",
+    "tags": [
+      "agents",
+      "ReAct",
+      "tool use",
+      "reasoning",
+      "LLM"
+    ],
+    "question": "What is a ReAct-style LLM agent? How does it interleave reasoning and tool use to solve multi-step tasks?",
+    "follow_up": "What are the main failure modes of agentic LLM systems \u2014 when does the agent loop get stuck or produce incorrect results?",
+    "question_type": "theory"
+  },
+  {
+    "id": 108,
+    "topic": "LLM Agents",
+    "difficulty": "Hard",
+    "category": "LLM",
+    "tags": [
+      "multi-agent",
+      "orchestration",
+      "coordination",
+      "LangGraph",
+      "LLM"
+    ],
+    "question": "When would you design a multi-agent LLM system rather than a single agent? What are the coordination and reliability challenges?",
+    "follow_up": "How do you handle state consistency and error recovery across agents in a multi-agent pipeline?",
+    "question_type": "design"
+  },
+  {
+    "id": 109,
+    "topic": "LLM Security",
+    "difficulty": "Medium",
+    "category": "LLM",
+    "tags": [
+      "prompt injection",
+      "security",
+      "adversarial input",
+      "LLM safety"
+    ],
+    "question": "What is a prompt injection attack against an LLM application? Give a concrete example and explain how you defend against it.",
+    "follow_up": "How do indirect prompt injections (from retrieved content) differ from direct injections, and why are they harder to defend against?",
+    "question_type": "design"
+  },
+  {
+    "id": 110,
+    "topic": "LLM Production",
+    "difficulty": "Medium",
+    "category": "LLM",
+    "tags": [
+      "cost optimization",
+      "caching",
+      "batching",
+      "model selection",
+      "LLM"
+    ],
+    "question": "What are the main levers for reducing LLM API costs in a production application without sacrificing output quality?",
+    "follow_up": "How do you decide which parts of a pipeline can use a smaller, cheaper model vs a larger one?",
+    "question_type": "implementation"
+  },
+  {
+    "id": 111,
+    "topic": "LLM Production",
+    "difficulty": "Medium",
+    "category": "LLM",
+    "tags": [
+      "memory",
+      "conversation history",
+      "state management",
+      "LLM"
+    ],
+    "question": "How do you manage conversation history and state in a production LLM application? What are the tradeoffs of different memory strategies?",
+    "follow_up": "How does your approach change when user sessions can span hours or days with many turns?",
+    "question_type": "implementation"
+  },
+  {
+    "id": 112,
+    "topic": "Statistics",
+    "difficulty": "Easy",
+    "category": "General",
+    "tags": [
+      "hypothesis testing",
+      "p-value",
+      "Type I error",
+      "Type II error",
+      "statistics"
+    ],
+    "question": "What is a p-value? Explain Type I and Type II errors and how you balance the tradeoff between them.",
+    "follow_up": "What is the difference between statistical significance and practical significance, and why does the distinction matter?",
+    "question_type": "theory"
+  },
+  {
+    "id": 113,
+    "topic": "Statistics",
+    "difficulty": "Medium",
+    "category": "General",
+    "tags": [
+      "Bayesian",
+      "Frequentist",
+      "prior",
+      "posterior",
+      "statistics"
+    ],
+    "question": "What is the fundamental difference between Bayesian and Frequentist statistics? Give a practical example where each is the more natural choice.",
+    "follow_up": "What is a prior distribution and how sensitive are Bayesian results to the choice of prior?",
+    "question_type": "theory"
+  },
+  {
+    "id": 114,
+    "topic": "Statistics",
+    "difficulty": "Medium",
+    "category": "General",
+    "tags": [
+      "statistical power",
+      "sample size",
+      "effect size",
+      "experiment design"
+    ],
+    "question": "What is statistical power and how do you determine the minimum sample size for an A/B test?",
+    "follow_up": "What is peeking \u2014 stopping an experiment early once you see a significant result \u2014 and why is it a problem?",
+    "question_type": "theory"
+  },
+  {
+    "id": 115,
+    "topic": "EDA",
+    "difficulty": "Easy",
+    "category": "General",
+    "tags": [
+      "EDA",
+      "exploratory data analysis",
+      "data quality",
+      "distributions"
+    ],
+    "question": "Walk me through your approach to exploratory data analysis on a new dataset before building a model.",
+    "follow_up": "What specific things do you look for to catch data quality issues before they propagate into training?",
+    "question_type": "case_study"
+  },
+  {
+    "id": 116,
+    "topic": "Problem Framing",
+    "difficulty": "Hard",
+    "category": "General",
+    "tags": [
+      "model deployment",
+      "feedback loops",
+      "optimization",
+      "unintended consequences"
+    ],
+    "question": "Describe a scenario where optimizing a model for high predictive accuracy causes a business problem in production.",
+    "follow_up": "How do feedback loops between model predictions and training data create self-fulfilling or self-defeating models?",
+    "question_type": "case_study"
+  },
+  {
+    "id": 117,
+    "topic": "ML Ethics",
+    "difficulty": "Medium",
+    "category": "General",
+    "tags": [
+      "fairness",
+      "bias",
+      "model ethics",
+      "disparate impact"
+    ],
+    "question": "How do you detect and measure bias in a deployed ML model? What does 'fair' mean and who decides?",
+    "follow_up": "Can a model be statistically fair across all demographic groups simultaneously? What does the fairness impossibility result say about this?",
+    "question_type": "design"
+  },
+  {
+    "id": 118,
+    "topic": "Leadership",
+    "difficulty": "Medium",
+    "category": "Leadership",
+    "tags": [
+      "influence",
+      "roadmap",
+      "data-driven decisions",
+      "stakeholder management"
+    ],
+    "question": "Tell me about a time you used data to change a product or engineering decision that had already been made. How did you frame the case?",
+    "follow_up": "What do you do when leadership agrees with your data but still chooses not to act on it?",
+    "question_type": "behavioral"
+  },
+  {
+    "id": 119,
+    "topic": "Leadership",
+    "difficulty": "Medium",
+    "category": "Leadership",
+    "tags": [
+      "failure",
+      "accountability",
+      "learning",
+      "judgment"
+    ],
+    "question": "Tell me about the most significant technical mistake you have made in your career. What was the impact and what did you learn?",
+    "follow_up": "How do you build a team culture where people surface mistakes early rather than hide them?",
+    "question_type": "behavioral"
+  },
+  {
+    "id": 120,
+    "topic": "System Design",
+    "difficulty": "Medium",
+    "category": "SystemDesign",
+    "tags": [
+      "streaming",
+      "batch processing",
+      "Kafka",
+      "Spark",
+      "pipeline"
+    ],
+    "question": "When would you choose a streaming pipeline over a batch pipeline? Walk through the tradeoffs in latency, operational complexity, and correctness guarantees.",
+    "follow_up": "How do you handle late-arriving data in a streaming pipeline without reprocessing everything?",
+    "question_type": "design"
+  },
+  {
+    "id": 121,
+    "topic": "System Design",
+    "difficulty": "Medium",
+    "category": "SystemDesign",
+    "tags": [
+      "data warehouse",
+      "data lake",
+      "lakehouse",
+      "storage",
+      "analytics"
+    ],
+    "question": "What is the difference between a data warehouse, a data lake, and a lakehouse? When would you recommend each?",
+    "follow_up": "What problems with raw data lakes does the lakehouse pattern solve?",
+    "question_type": "theory"
+  }
+]

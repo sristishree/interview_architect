@@ -1,0 +1,30 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Environment
+.env
+.python-version
+
+# Virtual environments
+.venv/
+venv/
+
+# Dataset — raw downloads and splits (large / regenerable)
+data/raw/
+data/splits/
+
+# Outputs
+output*.json
+
+# LangGraph
+.langgraph_api/
+
+# IDE
+.vscode/

@@ -1,0 +1,74 @@
+ADITYA SHARMA
+Lead Data Scientist | ML Engineer
+Email: aditya.sharma@email.com | Phone: +91-9876543210
+LinkedIn: linkedin.com/in/aditya-sharma | GitHub: github.com/adityaml
+
+SUMMARY
+Lead Data Scientist with 6 years of experience building and deploying ML systems at scale.
+Specialised in NLP, tree-based ML, and LLM-based applications. Led teams of 3-5 engineers.
+Strong track record of taking models from research to production.
+
+SKILLS
+Languages: Python, SQL, Scala
+ML Frameworks: XGBoost, LightGBM, scikit-learn, PyTorch, HuggingFace Transformers
+LLM / GenAI: LangChain, LangGraph, LiteLLM, OpenAI API, Anthropic Claude API
+Cloud / DevOps: AWS (SageMaker, S3, Lambda, EC2, RDS), Docker, Kubernetes, Airflow
+Data Engineering: Apache Spark, dbt, PostgreSQL, MongoDB, Redis
+
+PROFESSIONAL EXPERIENCE
+
+Perfios Technology Solutions — Lead Data Scientist
+June 2021 – Present (3 years)
+- Led development of Document Intelligence Platform processing 2M+ financial documents/month
+- Built Address Matching System achieving 96% precision across 100M records using fuzzy NLP
+- Designed credit risk scoring pipeline serving 50,000 predictions/day with SLA of 200ms P95
+- Mentored team of 4 junior data scientists; introduced code review and experiment tracking practices
+- Drove adoption of MLflow for experiment tracking and model registry across the data science org
+
+Fractal Analytics — Data Scientist
+August 2019 – May 2021 (1.75 years)
+- Built recommendation engine for a major retail client; increased click-through rate by 23%
+- Implemented XGBoost-based churn prediction model achieving AUC of 0.89 (vs 0.72 baseline)
+- Automated feature engineering pipeline reducing model iteration cycle from 3 weeks to 4 days
+- Delivered A/B testing framework for model evaluation in production
+
+Mu Sigma Business Solutions — Business Analyst
+June 2018 – July 2019 (1.1 years)
+- Built dashboards and data visualizations for Fortune 500 FMCG and retail clients
+- Initial exposure to ML: customer segmentation using K-Means clustering in R and Python
+
+PROJECTS
+
+1. Document Intelligence Platform (Perfios, 2022-2024)
+   LLM-based extraction system for financial documents — bank statements, ITRs, salary slips.
+   Built RAG pipeline for document Q&A using LangChain + FAISS + OpenAI GPT-4.
+   Chunking strategy: sliding window with 20% overlap; retrieval: top-5 with MMR reranking.
+   Reduced manual review effort by 60%. Deployed on AWS Lambda behind FastAPI.
+   Stack: LangChain, OpenAI, FAISS, FastAPI, AWS Lambda, S3, PostgreSQL
+
+2. Address Matching System (Perfios, 2021-2022)
+   NLP-based deduplication system for 100M address records across multiple databases.
+   Techniques: Levenshtein distance, n-gram Jaccard similarity, trained sentence-transformer embeddings.
+   Achieved 96% precision, 91% recall. Production: AWS Lambda, 50ms P95 latency at 500 RPS.
+   Stack: Python, scikit-learn, sentence-transformers, AWS Lambda, Redis
+
+3. Credit Risk Scoring Model (Perfios, 2022)
+   End-to-end loan default prediction pipeline. XGBoost model with automated feature engineering.
+   SHAP for model explainability. A/B tested against legacy scorecard — 15% improvement in Gini.
+   Deployed via SageMaker endpoint with auto-scaling. MLflow for experiment tracking.
+   Stack: Python, XGBoost, SHAP, MLflow, AWS SageMaker
+
+4. Churn Prediction Model (Fractal, 2020)
+   XGBoost-based churn model for a telecom client. AUC 0.89 vs baseline 0.72.
+   Features: RFM metrics, network usage patterns, support ticket history.
+   Real-time scoring via REST API with Redis cache for feature serving.
+   Stack: Python, XGBoost, scikit-learn, Redis, Flask
+
+EDUCATION
+B.Tech — Computer Science and Engineering
+Indian Institute of Technology (IIT), Roorkee
+2014 – 2018 | CGPA: 8.2/10
+
+CERTIFICATIONS
+- AWS Certified Machine Learning – Specialty (2022)
+- Deep Learning Specialization — Coursera / deeplearning.ai (2020)
