@@ -47,6 +47,10 @@ def run(resume_path: str, difficulty: str | None = None, output_json: str | None
     if result.get("error"):
         sys.exit(f"Pipeline error: {result['error']}")
 
+    from app.db import SessionStore
+    session_id = SessionStore().save(result)
+    print(f"Session saved (id={session_id})")
+
     interview_set = result["interview_set"]
     _print_interview(interview_set)
 
