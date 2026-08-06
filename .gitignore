@@ -28,3 +28,10 @@ output*.json
 
 # IDE
 .vscode/
+
+# Frontend
+ui/node_modules/
+ui/dist/
+
+# Uploaded resumes
+data/uploads/
