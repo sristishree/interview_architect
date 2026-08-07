@@ -47,6 +47,9 @@ def run(resume_path: str, difficulty: str | None = None, output_json: str | None
     if result.get("error"):
         sys.exit(f"Pipeline error: {result['error']}")
 
+    if not result.get("interview_set"):
+        sys.exit("Pipeline error: run completed but produced no interview set")
+
     from app.db import SessionStore
     session_id = SessionStore().save(result)
     print(f"Session saved (id={session_id})")

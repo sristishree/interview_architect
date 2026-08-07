@@ -14,6 +14,9 @@ class InterviewSession(Base):
     id: Mapped[int] = mapped_column(Integer, primary_key=True, autoincrement=True)
     created_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow)
 
+    # ── LangGraph identifiers (set for API runs, null for CLI runs) ───────────
+    thread_id: Mapped[str | None] = mapped_column(String, nullable=True, unique=True)
+
     # ── Run inputs ────────────────────────────────────────────────────────────
     resume_path: Mapped[str] = mapped_column(String)
     difficulty_override: Mapped[str | None] = mapped_column(String, nullable=True)
@@ -23,6 +26,9 @@ class InterviewSession(Base):
     resolved_difficulty: Mapped[str | None] = mapped_column(String, nullable=True)
     total_questions: Mapped[int | None] = mapped_column(Integer, nullable=True)
     estimated_duration_minutes: Mapped[int | None] = mapped_column(Integer, nullable=True)
+
+    # ── Error (set on failed runs, null on success) ───────────────────────────
+    error: Mapped[str | None] = mapped_column(Text, nullable=True)
 
     # ── Full pipeline artifacts (for detail view) ─────────────────────────────
     parsed_resume_json: Mapped[str | None] = mapped_column(Text, nullable=True)

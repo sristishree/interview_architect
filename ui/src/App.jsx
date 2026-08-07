@@ -1,34 +1,37 @@
-import { useState } from 'react'
+import { useState, useCallback } from 'react'
 import UploadForm from './components/UploadForm'
-import StatusPoller from './components/StatusPoller'
-import InterviewResults from './components/InterviewResults'
+import JobCard from './components/JobCard'
+import ErrorBoundary from './components/ErrorBoundary'
+import HistoryList from './components/HistoryList'
+import SessionDetail from './components/SessionDetail'
 
 export default function App() {
-  const [step, setStep] = useState('upload')
-  const [runInfo, setRunInfo] = useState(null)
-  const [result, setResult] = useState(null)
-  const [error, setError] = useState(null)
+  const [page, setPage] = useState('generate')
+  const [jobs, setJobs] = useState([])
+  const [selectedSessionId, setSelectedSessionId] = useState(null)
 
-  function handleRunStarted(info) {
-    setRunInfo(info)
-    setStep('running')
-  }
+  const addJob = useCallback((info, filename) => {
+    setJobs((prev) => [
+      {
+        id: crypto.randomUUID(),
+        thread_id: info.thread_id,
+        run_id: info.run_id,
+        status: 'running',
+        filename,
+        result: null,
+        error: null,
+      },
+      ...prev,
+    ])
+  }, [])
 
-  function handleDone(res) {
-    setResult(res)
-    setStep('done')
-  }
+  const updateJob = useCallback((id, updates) => {
+    setJobs((prev) => prev.map((j) => (j.id === id ? { ...j, ...updates } : j)))
+  }, [])
 
-  function handleError(msg) {
-    setError(msg)
-    setStep('error')
-  }
-
-  function handleReset() {
-    setStep('upload')
-    setRunInfo(null)
-    setResult(null)
-    setError(null)
+  function switchPage(p) {
+    setPage(p)
+    setSelectedSessionId(null)
   }
 
   return (
@@ -36,25 +39,47 @@ export default function App() {
       <header className="app-header">
         <h1>Interview Architect</h1>
         <p>Generate a structured interview question set from a resume</p>
+        <nav className="app-nav">
+          <button
+            className={`nav-tab ${page === 'generate' ? 'active' : ''}`}
+            onClick={() => switchPage('generate')}
+          >
+            Generate
+          </button>
+          <button
+            className={`nav-tab ${page === 'history' ? 'active' : ''}`}
+            onClick={() => switchPage('history')}
+          >
+            History
+          </button>
+        </nav>
       </header>
 
       <main className="app-main">
-        {step === 'upload' && (
-          <UploadForm onRunStarted={handleRunStarted} onError={handleError} />
-        )}
-        {step === 'running' && (
-          <StatusPoller runInfo={runInfo} onDone={handleDone} onError={handleError} />
-        )}
-        {step === 'done' && (
-          <InterviewResults result={result} onReset={handleReset} />
-        )}
-        {step === 'error' && (
-          <div className="error-card">
-            <div className="error-icon">✕</div>
-            <h2>Something went wrong</h2>
-            <p className="error-message">{error}</p>
-            <button className="btn-primary" onClick={handleReset}>Try again</button>
+        {page === 'generate' && (
+          <div className="generate-page">
+            <UploadForm onRunStarted={addJob} />
+            {jobs.length > 0 && (
+              <div className="jobs-list">
+                {jobs.map((job) => (
+                  <ErrorBoundary key={job.id}>
+                    <JobCard job={job} onUpdate={updateJob} />
+                  </ErrorBoundary>
+                ))}
+              </div>
+            )}
           </div>
+        )}
+
+        {page === 'history' && !selectedSessionId && (
+          <HistoryList onSelect={setSelectedSessionId} />
+        )}
+
+        {page === 'history' && selectedSessionId && (
+          <SessionDetail
+            sessionId={selectedSessionId}
+            onBack={() => setSelectedSessionId(null)}
+          />
         )}
       </main>
     </div>

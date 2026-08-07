@@ -1,3 +1,4 @@
+import logging
 from typing import List
 
 from langchain_core.tools import tool
@@ -5,6 +6,7 @@ from langchain_core.tools import tool
 from app.knowledge_base.store import QuestionStore
 from app.models.question import GeneratedQuestionList
 
+logger = logging.getLogger(__name__)
 _store = QuestionStore()
 
 
@@ -26,9 +28,7 @@ def get_experience_questions(
     kb_results = _store.search(
         topic="Leadership", n=max(1, n // 2), difficulty=difficulty, category="Leadership"
     )
-
     remaining = max(1, n - len(kb_results))
-    llm = get_llm(fast=True).with_structured_output(GeneratedQuestionList)
 
     prompt = f"""Generate {remaining} behavioral interview questions about a candidate's experience at:
 {company_role}
@@ -41,6 +41,12 @@ Focus on:
 
 Tags should be 3-5 relevant keywords."""
 
-    generated = llm.invoke(prompt)
-    combined = kb_results + [q.model_dump() for q in generated.questions]
-    return combined[:n]
+    try:
+        llm = get_llm(fast=True).with_structured_output(GeneratedQuestionList, method="json_schema")
+        result = llm.invoke(prompt)
+        llm_questions = [q.model_dump() for q in result.questions]
+    except Exception as e:
+        logger.warning("experience_tool LLM call failed: %s", e)
+        llm_questions = []
+
+    return (kb_results + llm_questions)[:n]

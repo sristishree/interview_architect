@@ -1,9 +1,12 @@
+import logging
 from typing import List, Optional
 
 from langchain_core.tools import tool
 
 from app.knowledge_base.store import QuestionStore
+from app.models.question import GeneratedQuestionList
 
+logger = logging.getLogger(__name__)
 _store = QuestionStore()
 
 
@@ -11,24 +14,38 @@ _store = QuestionStore()
 def get_skill_questions(skill: str, n: int = 5, difficulty: Optional[str] = None) -> List[dict]:
     """
     Retrieve interview questions for a specific skill from the knowledge base.
-    Falls back to web search (via web_search_tool) when fewer than n//2 results are found.
+    Falls back to LLM generation when fewer than n//2 relevant results are found.
 
     Args:
         skill: Skill name, e.g. 'Python', 'XGBoost', 'SQL', 'Docker'.
         n: Number of questions to return.
         difficulty: Optional filter — 'Easy', 'Medium', or 'Hard'.
     """
-    results = _store.search(topic=skill, n=n, difficulty=difficulty)
+    from app.config import get_llm
 
-    if len(results) < max(1, n // 2):
+    resolved_difficulty = difficulty or "Medium"
+    kb_results = _store.search(topic=skill, n=max(2, n // 2), difficulty=difficulty)
+    remaining = max(1, n - len(kb_results))
+
+    if remaining > 0:
+        prompt = (
+            f"Generate {remaining} technical interview questions specifically about '{skill}'.\n"
+            f"Difficulty: {resolved_difficulty}\n\n"
+            f"Rules:\n"
+            f"- Every question must be directly and specifically about '{skill}' — not general programming.\n"
+            f"- Set the topic field to '{skill}'.\n"
+            f"- Tags should be 3-5 keywords directly related to '{skill}'.\n"
+            f"- Focus on practical knowledge, common pitfalls, and real-world usage of '{skill}'."
+        )
         try:
-            from app.tools.web_search_tool import search_and_generate_questions
-            extra = search_and_generate_questions.invoke(
-                {"topic": skill, "n": n - len(results), "difficulty": difficulty or "Medium"}
-            )
-            _store.add(extra)
-            results = _store.search(topic=skill, n=n, difficulty=difficulty)
-        except Exception:
-            pass  # Tavily key not set or network error — return what we have
+            llm = get_llm(fast=True).with_structured_output(GeneratedQuestionList, method="json_schema")
+            result = llm.invoke(prompt)
+            llm_questions = [q.model_dump() for q in result.questions]
+        except Exception as e:
+            logger.warning("skill_tool LLM call failed for '%s': %s", skill, e)
+            llm_questions = []
+    else:
+        llm_questions = []
 
-    return results
+    logger.info("skill_tool '%s': KB=%d, LLM=%d", skill[:40], len(kb_results), len(llm_questions))
+    return (kb_results + llm_questions)[:n]

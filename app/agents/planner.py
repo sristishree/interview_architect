@@ -57,7 +57,7 @@ REASONING
 - Explain WHY you made allocation decisions for this specific candidate.
 - A 6yr Lead DS who built prod ML systems gets hard system-design questions, not basic Python."""
 
-_llm = get_llm().with_structured_output(InterviewPlan)
+_llm = get_llm().with_structured_output(InterviewPlan, method="json_schema")
 
 
 def plan_interview_node(state: "InterviewState") -> dict:

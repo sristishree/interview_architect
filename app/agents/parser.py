@@ -40,7 +40,7 @@ Do NOT infer, add, or assume information not present in the text.
 For experience_years: sum durations from the dates given. If dates are missing, use context clues but note the uncertainty.
 For skills, projects, companies, education: include all items as written — do not clean, merge, or expand them."""
 
-_llm = get_llm(fast=True).with_structured_output(ParsedResume)
+_llm = get_llm(fast=True).with_structured_output(ParsedResume, method="json_schema")
 
 
 def parse_resume_node(state: "InterviewState") -> dict:
@@ -49,5 +49,6 @@ def parse_resume_node(state: "InterviewState") -> dict:
         ("system", _SYSTEM),
         ("human", f"Parse this resume:\n\n{raw_text}"),
     ])
-    result.raw_text = raw_text
-    return {"parsed_resume": result.model_dump()}
+    parsed = result.model_dump()
+    parsed["raw_text"] = raw_text  # stored for logging; not in schema, never LLM-generated
+    return {"parsed_resume": parsed}

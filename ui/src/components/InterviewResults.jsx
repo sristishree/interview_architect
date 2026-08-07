@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import DownloadPDFButton from './DownloadPDFButton'
 
 const TYPE_COLOR = {
   implementation: '#3b82f6',
@@ -68,7 +69,7 @@ function SectionCard({ section }) {
   )
 }
 
-export default function InterviewResults({ result, onReset }) {
+export default function InterviewResults({ result, onReset, resetLabel = 'New Interview' }) {
   const { interview_set, candidate_profile } = result
 
   return (
@@ -90,7 +91,8 @@ export default function InterviewResults({ result, onReset }) {
             />
           </div>
         </div>
-        <button className="btn-secondary" onClick={onReset}>New Interview</button>
+        <DownloadPDFButton result={result} />
+        <button className="btn-secondary" onClick={onReset}>{resetLabel}</button>
       </div>
 
       {interview_set.sections.map((s) => (

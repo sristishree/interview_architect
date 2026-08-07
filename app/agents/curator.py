@@ -42,7 +42,7 @@ Your job:
 Return a complete InterviewSet with all fields filled.
 curator_notes: 1-2 sentences on any tradeoffs you made (e.g. "Dropped 3 Python basics, focused on async and GIL given senior level")."""
 
-_llm = get_llm().with_structured_output(InterviewSet)
+_llm = get_llm().with_structured_output(InterviewSet, method="json_schema")
 
 
 def curate_interview_node(state: "InterviewState") -> dict:

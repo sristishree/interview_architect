@@ -2,7 +2,8 @@ import pytest
 
 from app.knowledge_base.store import QuestionStore
 from app.models.plan import InterviewPlan, TopicPlan
-from app.models.question import Category, Difficulty, InterviewSection, InterviewSet, Question, QuestionType
+from app.models.enums import Category, Difficulty, QuestionType
+from app.models.question import InterviewSection, InterviewSet, Question
 from app.models.resume import CandidateProfile, Company, ParsedResume, Project
 
 

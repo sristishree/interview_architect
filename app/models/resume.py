@@ -16,6 +16,13 @@ class Project(BaseModel):
 
 class ParsedResume(BaseModel):
     """Raw extraction from the resume. No inference — only what is explicitly written."""
+    is_resume: bool = Field(
+        description=(
+            "True if the document is clearly a professional resume or CV — "
+            "it must have at least one of: work experience, education, or a skills section. "
+            "False for any other document (article, invoice, code file, random text, etc.)."
+        )
+    )
     name: str
     role: Optional[str] = Field(description="Job title if mentioned in resume header or about/summary seciont")
     experience_years: float = Field(description="""Total professional experience in years, either clearly 
@@ -28,7 +35,6 @@ class ParsedResume(BaseModel):
     - Multiple projects should be extracted as separate items of the list
     - The bullet points or details of each project should be extracted as items of the project list item""")
     companies: List[Company] = Field(description="Employers' names with role and duration of work there rounded to years")
-    raw_text: str = Field(description="Full resume text for downstream use")
 
 class CandidateProfile(BaseModel):
     """

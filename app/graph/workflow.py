@@ -101,6 +101,13 @@ def retrieve_questions_node(state: InterviewState) -> dict:
     }
 
 
+def _after_parse(state: InterviewState) -> str:
+    parsed = state.get("parsed_resume") or {}
+    if not parsed.get("is_resume", True):
+        return "abort"
+    return "extract_profile"
+
+
 def _should_retry_retrieval(state: InterviewState) -> str:
     if (
         state.get("shortfall", 0) > 0
@@ -110,17 +117,23 @@ def _should_retry_retrieval(state: InterviewState) -> str:
     return END
 
 
+def _abort_node(state: InterviewState) -> dict:
+    return {"error": "The uploaded document does not appear to be a resume or CV."}
+
+
 def build_graph() -> StateGraph:
     builder = StateGraph(InterviewState)
 
     builder.add_node("parse_resume", parse_resume_node)
+    builder.add_node("abort", _abort_node)
     builder.add_node("extract_profile", extract_profile_node)
     builder.add_node("plan_interview", plan_interview_node)
     builder.add_node("retrieve_questions", retrieve_questions_node)
     builder.add_node("curate_interview", curate_interview_node)
 
     builder.add_edge(START, "parse_resume")
-    builder.add_edge("parse_resume", "extract_profile")
+    builder.add_conditional_edges("parse_resume", _after_parse, {"abort": "abort", "extract_profile": "extract_profile"})
+    builder.add_edge("abort", END)
     builder.add_edge("extract_profile", "plan_interview")
     builder.add_edge("plan_interview", "retrieve_questions")
     builder.add_edge("retrieve_questions", "curate_interview")

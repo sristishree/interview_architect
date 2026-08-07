@@ -29,7 +29,7 @@ class QuestionStore:
         n: int = 5,
         difficulty: Optional[str] = None,
         category: Optional[str] = None,
-        min_score: float = 0.35,
+        min_score: float = 0.6,
     ) -> List[dict]:
         candidates = self.questions
 
@@ -60,6 +60,10 @@ class QuestionStore:
         self.questions.extend(new)
         with open(self.path, "w") as f:
             json.dump(self.questions, f, indent=2)
+
+    def categories(self) -> List[str]:
+        """Return the sorted list of distinct category values currently in the KB."""
+        return sorted({q["category"] for q in self.questions if q.get("category")})
 
     def get_by_ids(self, ids: List[int]) -> List[dict]:
         id_set = set(ids)
