@@ -18,14 +18,35 @@ export default function UploadForm({ onRunStarted }) {
 
   function handleDrop(e) {
     e.preventDefault()
+    e.stopPropagation()
     setDragging(false)
     const f = e.dataTransfer.files[0]
-    if (f) { setFile(f); setError(null) }
+    if (!f) return
+    const ext = f.name.split('.').pop().toLowerCase()
+    if (!['pdf', 'docx', 'txt'].includes(ext)) {
+      setError('Only PDF, DOCX, or TXT files are supported.')
+      return
+    }
+    setFile(f)
+    setError(null)
   }
 
   function handleDragOver(e) {
     e.preventDefault()
+    e.stopPropagation()
+  }
+
+  function handleDragEnter(e) {
+    e.preventDefault()
+    e.stopPropagation()
     setDragging(true)
+  }
+
+  function handleDragLeave(e) {
+    // only clear when leaving the drop zone itself, not a child element
+    if (!e.currentTarget.contains(e.relatedTarget)) {
+      setDragging(false)
+    }
   }
 
   async function handleSubmit(e) {
@@ -50,8 +71,9 @@ export default function UploadForm({ onRunStarted }) {
     <form className="upload-form" onSubmit={handleSubmit}>
       <div
         className={`drop-zone ${dragging ? 'dragging' : ''} ${file ? 'has-file' : ''}`}
+        onDragEnter={handleDragEnter}
         onDragOver={handleDragOver}
-        onDragLeave={() => setDragging(false)}
+        onDragLeave={handleDragLeave}
         onDrop={handleDrop}
         onClick={() => inputRef.current.click()}
       >

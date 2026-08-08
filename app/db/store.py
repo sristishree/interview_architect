@@ -33,7 +33,6 @@ class SessionStore:
             total_questions=interview_set.get("total_questions") if interview_set else None,
             estimated_duration_minutes=interview_set.get("estimated_duration_minutes") if interview_set else None,
             error=state.get("error"),
-            parsed_resume_json=_dump(state.get("parsed_resume")),
             candidate_profile_json=_dump(state.get("candidate_profile")),
             interview_plan_json=_dump(state.get("interview_plan")),
             interview_set_json=_dump(interview_set),
@@ -110,7 +109,6 @@ def _to_summary(row: InterviewSession) -> dict:
 def _to_detail(row: InterviewSession) -> dict:
     return {
         **_to_summary(row),
-        "parsed_resume": _load(row.parsed_resume_json),
         "candidate_profile": _load(row.candidate_profile_json),
         "interview_plan": _load(row.interview_plan_json),
         "interview_set": _load(row.interview_set_json),

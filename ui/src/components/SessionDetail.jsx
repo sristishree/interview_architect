@@ -1,11 +1,13 @@
 import { useEffect, useState } from 'react'
 import { fetchSession } from '../api'
 import InterviewResults from './InterviewResults'
+import ResumePane from './ResumePane'
 
 export default function SessionDetail({ sessionId, onBack }) {
   const [session, setSession] = useState(null)
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
+  const [showResume, setShowResume] = useState(false)
 
   useEffect(() => {
     fetchSession(sessionId)
@@ -29,23 +31,42 @@ export default function SessionDetail({ sessionId, onBack }) {
       <div className="history-empty">
         <p style={{ fontWeight: 600, marginBottom: 8 }}>This run did not complete</p>
         <p className="error-message">{reason}</p>
-        <button className="btn-secondary" style={{ marginTop: 16 }} onClick={onBack}>
-          ← Back
-        </button>
+        <button className="btn-secondary" style={{ marginTop: 16 }} onClick={onBack}>Back</button>
       </div>
     )
   }
 
-  // Shape the session data to match what InterviewResults expects
   const result = {
     interview_set: session.interview_set,
     candidate_profile: session.candidate_profile,
     interview_plan: session.interview_plan,
   }
 
+  const resumeToggle = (
+    <button
+      className={`btn-secondary ${showResume ? 'active' : ''}`}
+      onClick={() => setShowResume((v) => !v)}
+    >
+      {showResume ? 'Hide Resume' : 'Show Resume'}
+    </button>
+  )
+
   return (
-    <div style={{ width: '100%', maxWidth: 760 }}>
-      <InterviewResults result={result} onReset={onBack} resetLabel="← Back to History" />
+    <div className={`session-detail-page ${showResume ? 'has-pane' : ''}`}>
+      <div className="session-detail-toolbar">
+        <button className="btn-secondary" onClick={onBack}>Back to History</button>
+      </div>
+
+      <div className={`session-detail-body ${showResume ? 'with-pane' : ''}`}>
+        <div className="session-detail-main">
+          <InterviewResults result={result} headerAction={resumeToggle} />
+        </div>
+        {showResume && (
+          <aside className="session-detail-aside">
+            <ResumePane sessionId={sessionId} resumePath={session.resume_path} />
+          </aside>
+        )}
+      </div>
     </div>
   )
 }

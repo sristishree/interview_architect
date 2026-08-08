@@ -3,8 +3,8 @@ import { cancelInterview } from '../api'
 import InterviewResults from './InterviewResults'
 
 const ALL_NODES = [
-  { key: 'parse_resume',       label: 'Parsing resume' },
-  { key: 'extract_profile',    label: 'Extracting candidate profile' },
+  { key: 'extract_text',       label: 'Extracting resume text' },
+  { key: 'build_profile',      label: 'Building candidate profile' },
   { key: 'plan_interview',     label: 'Planning interview' },
   { key: 'retrieve_questions', label: 'Retrieving questions' },
   { key: 'curate_interview',   label: 'Curating final question set' },
@@ -89,9 +89,7 @@ function DoneCard({ job }) {
   return (
     <div className="job-card job-card--done">
       <div className="job-card-header" onClick={() => setExpanded((e) => !e)}>
-        <span className="job-filename">
-          {interview_set?.candidate_name || job.filename}
-        </span>
+        <span className="job-filename">{job.filename}</span>
         <div className="job-card-header-right">
           <span className="job-status-badge done">✓ Done</span>
           <span className="job-toggle">{expanded ? '▲' : '▼'}</span>
@@ -99,7 +97,7 @@ function DoneCard({ job }) {
       </div>
       {expanded && (
         <div className="job-card-body">
-          <InterviewResults result={job.result} onReset={() => setExpanded(false)} resetLabel="Collapse" />
+          <InterviewResults result={job.result} />
         </div>
       )}
     </div>

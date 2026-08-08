@@ -1,3 +1,4 @@
+import asyncio
 import json
 import logging
 import os
@@ -16,8 +17,8 @@ logger = logging.getLogger(__name__)
 router = APIRouter(prefix="/interview", tags=["interview"])
 
 _NODE_LABELS = {
-    "parse_resume":       "Parsing resume",
-    "extract_profile":    "Extracting candidate profile",
+    "extract_text":       "Extracting resume text",
+    "build_profile":      "Building candidate profile",
     "plan_interview":     "Planning interview",
     "retrieve_questions": "Retrieving questions",
     "curate_interview":   "Curating final question set",
@@ -26,6 +27,8 @@ _NODE_LABELS = {
 UPLOAD_DIR = Path("data/uploads")
 LANGGRAPH_URL = os.getenv("LANGGRAPH_URL", "http://localhost:2024")
 ASSISTANT_ID = "interview_architect"
+ALLOWED_EXTENSIONS = {".pdf", ".docx", ".txt"}
+STREAM_TIMEOUT_SECONDS = 600  # 10 minutes
 
 
 def _graph_input(resume_path: str, difficulty_override: Optional[str] = None) -> dict:
@@ -57,8 +60,13 @@ async def create_interview(
         raise HTTPException(status_code=422, detail="Provide either 'file' or 'resume_path'")
 
     if file is not None:
+        suffix = Path(file.filename).suffix.lower() if file.filename else ""
+        if suffix not in ALLOWED_EXTENSIONS:
+            raise HTTPException(
+                status_code=422,
+                detail=f"Unsupported file type '{suffix or '(none)'}'. Only PDF, DOCX, and TXT are accepted.",
+            )
         UPLOAD_DIR.mkdir(parents=True, exist_ok=True)
-        suffix = Path(file.filename).suffix if file.filename else ".txt"
         dest = UPLOAD_DIR / f"{uuid.uuid4().hex}{suffix}"
         dest.write_bytes(await file.read())
         path = str(dest.resolve())
@@ -149,43 +157,42 @@ async def stream_interview_status(thread_id: str, run_id: str):
     """
     async def generate():
         client = get_client(url=LANGGRAPH_URL)
+        final_values: dict = {}
+        stream_error: str | None = None
+
         try:
-            async for chunk in client.runs.join_stream(
-                thread_id, run_id, stream_mode="updates"
-            ):
-                if chunk.event != "updates" or not isinstance(chunk.data, dict):
-                    continue
-                for node_name in chunk.data:
-                    if node_name not in _NODE_LABELS:
-                        continue
-                    payload = {"type": "progress", "node": node_name, "label": _NODE_LABELS[node_name]}
-                    yield f"data: {json.dumps(payload)}\n\n"
+            async with asyncio.timeout(STREAM_TIMEOUT_SECONDS):
+                async for chunk in client.runs.join_stream(
+                    thread_id, run_id, stream_mode=["updates", "values"]
+                ):
+                    if chunk.event == "updates" and isinstance(chunk.data, dict):
+                        for node_name in chunk.data:
+                            if node_name not in _NODE_LABELS:
+                                continue
+                            payload = {"type": "progress", "node": node_name, "label": _NODE_LABELS[node_name]}
+                            yield f"data: {json.dumps(payload)}\n\n"
+                    elif chunk.event == "values" and isinstance(chunk.data, dict):
+                        # Each values event is the full state snapshot — last one wins
+                        final_values = chunk.data
+                    elif chunk.event == "error":
+                        stream_error = chunk.data if isinstance(chunk.data, str) else "Run failed"
+        except asyncio.TimeoutError:
+            yield f"data: {json.dumps({'type': 'error', 'message': 'Run timed out after 10 minutes'})}\n\n"
+            return
         except Exception as exc:
             yield f"data: {json.dumps({'type': 'error', 'message': str(exc)})}\n\n"
             return
 
-        # Stream exhausted — fetch final state and always persist
+        # Stream ended — final_values already holds the terminal state, no polling needed
         try:
             from app.db import SessionStore
 
-            run = await client.runs.get(thread_id, run_id)
-            run_status = run["status"]
+            values = dict(final_values)
 
-            try:
-                state = await client.threads.get_state(thread_id)
-                values = dict(state["values"])
-            except Exception:
-                values = {}
+            if stream_error and not values.get("error"):
+                values["error"] = stream_error
 
-            # Ensure every run (including graph-level failures) is saved to DB
-            if run_status == "error" and not values.get("error"):
-                values["error"] = "Run failed during processing"
             SessionStore().save_if_new(thread_id, values)
-
-            if run_status != "success":
-                msg = values.get("error") or f"Run ended with status: {run_status}"
-                yield f"data: {json.dumps({'type': 'error', 'message': msg})}\n\n"
-                return
 
             if values.get("error") or not values.get("interview_set"):
                 msg = values.get("error") or "Run completed but produced no interview set"

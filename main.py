@@ -26,7 +26,7 @@ def run(resume_path: str, difficulty: str | None = None, output_json: str | None
         {
             "resume_path": resume_path,
             "difficulty_override": difficulty,
-            "parsed_resume": None,
+            "raw_text": None,
             "candidate_profile": None,
             "interview_plan": None,
             "retrieved_questions": [],

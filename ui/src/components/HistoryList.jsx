@@ -27,6 +27,7 @@ export default function HistoryList({ onSelect }) {
   const [sessions, setSessions] = useState([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
+  const [hideFailed, setHideFailed] = useState(false)
 
   useEffect(() => {
     fetchSessions()
@@ -62,9 +63,20 @@ export default function HistoryList({ onSelect }) {
     )
   }
 
+  const visible = hideFailed ? sessions.filter((s) => !s.failed) : sessions
+
   return (
     <div className="history-list">
-      <h2 className="history-title">Past Interviews</h2>
+      <div className="history-toolbar">
+        <label className="history-filter-toggle">
+          <input
+            type="checkbox"
+            checked={hideFailed}
+            onChange={(e) => setHideFailed(e.target.checked)}
+          />
+          Hide failed runs
+        </label>
+      </div>
       <div className="history-table-wrapper">
         <table className="history-table">
           <thead>
@@ -77,7 +89,7 @@ export default function HistoryList({ onSelect }) {
             </tr>
           </thead>
           <tbody>
-            {sessions.map((s) => (
+            {visible.map((s) => (
               <tr key={s.id} className={`history-row${s.failed ? ' history-row--failed' : ''}`} onClick={() => onSelect(s.id)} title={s.failed && s.error ? s.error : undefined}>
                 <td className="history-candidate">
                   {s.candidate_name || <span className="text-muted">Unknown</span>}

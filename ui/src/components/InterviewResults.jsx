@@ -69,7 +69,7 @@ function SectionCard({ section }) {
   )
 }
 
-export default function InterviewResults({ result, onReset, resetLabel = 'New Interview' }) {
+export default function InterviewResults({ result, onReset, resetLabel = 'New Interview', headerAction }) {
   const { interview_set, candidate_profile } = result
 
   return (
@@ -91,8 +91,10 @@ export default function InterviewResults({ result, onReset, resetLabel = 'New In
             />
           </div>
         </div>
-        <DownloadPDFButton result={result} />
-        <button className="btn-secondary" onClick={onReset}>{resetLabel}</button>
+        <div className="results-header-actions">
+          <DownloadPDFButton result={result} />
+          {headerAction ?? (onReset && <button className="btn-secondary" onClick={onReset}>{resetLabel}</button>)}
+        </div>
       </div>
 
       {interview_set.sections.map((s) => (

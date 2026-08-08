@@ -14,7 +14,7 @@ export default function DownloadPDFButton({ result }) {
     >
       {({ loading }) => (
         <button className="btn-secondary" disabled={loading}>
-          {loading ? 'Preparing…' : '↓ Download PDF'}
+          {loading ? 'Preparing…' : 'Download PDF'}
         </button>
       )}
     </PDFDownloadLink>
