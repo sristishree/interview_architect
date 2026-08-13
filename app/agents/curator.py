@@ -2,22 +2,24 @@
 Question Curator Agent
 ----------------------
 Receives all retrieved questions (potentially 3-5x more than needed) and:
-  1. Removes exact and semantic duplicates
-  2. Ensures diversity — no two questions that ask essentially the same thing
-  3. Selects the best questions respecting the plan's allocation
-  4. Orders them into interview sections (warm-up → depth → leadership)
-  5. Estimates total interview duration
-  6. Returns shortfall so the graph can loop back for more if dedup removed too many
+  1. Pre-filters by question_type if a focus_config type filter is active
+  2. Removes exact and semantic duplicates
+  3. Ensures diversity — no two questions that ask essentially the same thing
+  4. Selects the best questions respecting the plan's allocation
+  5. Orders them into interview sections (warm-up → depth → leadership)
+  6. Estimates total interview duration
+  7. Returns shortfall so the graph can loop back for more if dedup removed too many
 
 Uses LITELLM_MODEL (default: gpt-4o) since curation requires judgment about question quality.
 """
 
 import json
-from typing import TYPE_CHECKING, List
+from typing import TYPE_CHECKING, List, Optional
 
 from app.config import get_structured_llm
+from app.models.focus import FocusConfig
 from app.models.plan import InterviewPlan
-from app.models.question import InterviewSection, InterviewSet
+from app.models.question import InterviewSet
 from app.models.resume import CandidateProfile
 
 if TYPE_CHECKING:
@@ -48,7 +50,20 @@ _llm = get_structured_llm(InterviewSet)
 def curate_interview_node(state: "InterviewState") -> dict:
     profile = CandidateProfile.model_validate(state["candidate_profile"])
     plan = InterviewPlan.model_validate(state["interview_plan"])
-    questions: List[dict] = state["retrieved_questions"]
+    questions: List[dict] = list(state["retrieved_questions"])
+
+    # Pre-filter by type if a focus type filter is active — enforces the constraint
+    # before the LLM sees the questions so the curator can't accidentally include
+    # type-mismatched ones. Dropped questions count toward shortfall → retry loop.
+    allowed_types: Optional[set] = None
+    focus_dict = state.get("focus_config")
+    if focus_dict:
+        focus = FocusConfig.model_validate(focus_dict)
+        if focus.question_types:
+            allowed_types = {qt.value for qt in focus.question_types}
+
+    if allowed_types:
+        questions = [q for q in questions if q.get("question_type") in allowed_types]
 
     result: InterviewSet = _llm.invoke([
         ("system", _SYSTEM),

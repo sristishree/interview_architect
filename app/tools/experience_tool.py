@@ -1,5 +1,5 @@
 import logging
-from typing import List
+from typing import List, Optional
 
 from langchain_core.tools import tool
 
@@ -10,7 +10,10 @@ logger = logging.getLogger(__name__)
 
 @tool
 def get_experience_questions(
-    company_role: str, n: int = 3, difficulty: str = "Medium"
+    company_role: str,
+    n: int = 3,
+    difficulty: str = "Medium",
+    question_types: Optional[List[str]] = None,
 ) -> List[dict]:
     """
     Generate deep probing questions anchored to a candidate's specific work experience entry.
@@ -21,7 +24,13 @@ def get_experience_questions(
             "Perfios (Lead Data Scientist, 3yr) — Responsibilities: Built X; Designed Y; Led Z"
         n: Number of questions to return.
         difficulty: 'Easy', 'Medium', or 'Hard'.
+        question_types: Optional list of allowed question types, e.g. ['implementation', 'behavioral'].
     """
+    type_constraint = (
+        f"\n4. Only generate these question types: {', '.join(question_types)}"
+        if question_types
+        else ""
+    )
 
     prompt = f"""You are a senior technical interviewer probing a candidate's actual depth and involvement in their stated work experience.
 
@@ -36,12 +45,13 @@ RULES:
 1. Every question MUST anchor to a specific responsibility or claim from the entry above — quote or paraphrase it explicitly in the question stem.
 2. Do NOT ask generic behavioral questions (e.g. "Tell me about a challenge"). Every question must require knowledge that only someone who personally implemented or designed the work would have.
 3. Cover these angles across your {n} questions:
-   - IMPLEMENTATION DEPTH (question_type = "implementation"): Ask HOW they built or implemented a specific thing they claimed. Expect the candidate to walk through architecture, key decisions, and trade-offs. E.g. "You mention building X — walk me through the design: what components did you build, what did you choose off-the-shelf, and why?"
-   - TECHNICAL KNOWLEDGE (question_type = "theory"): Probe whether they understand the underlying concepts of a tool or method they listed. E.g. "You used Y — what are its failure modes / when would you NOT use it?"
-   - OWNERSHIP VERIFICATION (question_type = "behavioral"): Clarify the candidate's specific role vs. the team. E.g. "For Z, were you the primary designer, or were you implementing someone else's design? What specifically did you decide?"
-   - IMPACT CHALLENGE (if metrics appear): Challenge the measurement. E.g. "You say you improved X by 40% — how was the baseline established and what was the exact measurement methodology?"
+   - IMPLEMENTATION DEPTH (question_type = "implementation"): Ask HOW they built or implemented a specific thing they claimed.
+   - TECHNICAL KNOWLEDGE (question_type = "theory"): Probe whether they understand the underlying concepts of a tool or method they listed.
+   - OWNERSHIP VERIFICATION (question_type = "behavioral"): Clarify the candidate's specific role vs. the team.
+   - IMPACT CHALLENGE (if metrics appear): Challenge the measurement methodology.
+{type_constraint}
 
-4. For follow_up: add a sharper follow-up that probes the weakest assumption in the question — the thing a candidate could bluff through without.
+4. For follow_up: add a sharper follow-up that probes the weakest assumption in the question.
 
 Tags should be 3-5 technical keywords from the specific work described (not generic terms like "machine learning")."""
 

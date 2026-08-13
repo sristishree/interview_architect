@@ -15,6 +15,22 @@ function Badge({ label, color }) {
   )
 }
 
+function ModeBadge({ session }) {
+  if (!session.interview_mode || session.interview_mode === 'full') {
+    return <span className="mode-badge mode-badge--full">Full · {session.total_questions ?? '?'} Qs</span>
+  }
+  const fc = session.focus_config
+  const raw = fc?.section?.replace(/_/g, ' ') || 'Unknown'
+  const section = raw.charAt(0).toUpperCase() + raw.slice(1)
+  const count = fc?.question_count ?? session.total_questions ?? '?'
+  const types = fc?.question_types?.join('+') || null
+  return (
+    <span className="mode-badge mode-badge--focused" title={types || undefined}>
+      Focused: {section} · {count} Qs
+    </span>
+  )
+}
+
 function formatDate(iso) {
   if (!iso) return '—'
   return new Date(iso).toLocaleString(undefined, {
@@ -84,6 +100,7 @@ export default function HistoryList({ onSelect }) {
               <th>Candidate</th>
               <th>Date</th>
               <th>Difficulty</th>
+              <th>Mode</th>
               <th>Questions</th>
               <th>Duration</th>
             </tr>
@@ -108,6 +125,7 @@ export default function HistoryList({ onSelect }) {
                     />
                   ) : '—'}
                 </td>
+                <td><ModeBadge session={s} /></td>
                 <td>{s.total_questions ?? '—'}</td>
                 <td>{s.estimated_duration_minutes ? `~${s.estimated_duration_minutes} min` : '—'}</td>
               </tr>

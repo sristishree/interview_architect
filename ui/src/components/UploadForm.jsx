@@ -8,6 +8,21 @@ const DIFFICULTIES = [
   { value: 'Hard', label: 'Hard' },
 ]
 
+const SECTIONS = [
+  { value: 'work_experience', label: 'Work Experience' },
+  { value: 'projects', label: 'Projects' },
+  { value: 'skills', label: 'Skills' },
+]
+
+const QUESTION_TYPES = [
+  { value: 'design', label: 'Design' },
+  { value: 'implementation', label: 'Implementation' },
+  { value: 'theory', label: 'Theory' },
+  { value: 'optimization', label: 'Optimization' },
+  { value: 'behavioral', label: 'Behavioral' },
+  { value: 'case_study', label: 'Case Study' },
+]
+
 export default function UploadForm({ onRunStarted }) {
   const [file, setFile] = useState(null)
   const [difficulty, setDifficulty] = useState('')
@@ -15,6 +30,24 @@ export default function UploadForm({ onRunStarted }) {
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState(null)
   const inputRef = useRef()
+
+  // Mode
+  const [mode, setMode] = useState('full')
+
+  // Full interview
+  const [fullCount, setFullCount] = useState('')
+
+  // Focused interview
+  const [section, setSection] = useState('work_experience')
+  const [selectedTypes, setSelectedTypes] = useState([])
+  const [modifier, setModifier] = useState('')
+  const [focusCount, setFocusCount] = useState(10)
+
+  function toggleType(value) {
+    setSelectedTypes((prev) =>
+      prev.includes(value) ? prev.filter((t) => t !== value) : [...prev, value]
+    )
+  }
 
   function handleDrop(e) {
     e.preventDefault()
@@ -43,7 +76,6 @@ export default function UploadForm({ onRunStarted }) {
   }
 
   function handleDragLeave(e) {
-    // only clear when leaving the drop zone itself, not a child element
     if (!e.currentTarget.contains(e.relatedTarget)) {
       setDragging(false)
     }
@@ -52,13 +84,34 @@ export default function UploadForm({ onRunStarted }) {
   async function handleSubmit(e) {
     e.preventDefault()
     if (!file) return
+
+    let focusConfig = null
+    let questionCountOverride = null
+
+    if (mode === 'focused') {
+      focusConfig = {
+        section,
+        question_count: focusCount,
+        question_types: selectedTypes.length > 0 ? selectedTypes : null,
+        modifier: modifier.trim() || null,
+      }
+    } else if (fullCount !== '') {
+      questionCountOverride = parseInt(fullCount, 10)
+    }
+
     setLoading(true)
     setError(null)
     try {
-      const info = await submitInterview(file, null, difficulty || null)
+      const info = await submitInterview(file, null, difficulty || null, focusConfig, questionCountOverride)
       onRunStarted(info, file.name)
       setFile(null)
       setDifficulty('')
+      setFullCount('')
+      setMode('full')
+      setSection('work_experience')
+      setSelectedTypes([])
+      setModifier('')
+      setFocusCount(10)
       if (inputRef.current) inputRef.current.value = ''
     } catch (err) {
       setError(err.message)
@@ -113,6 +166,111 @@ export default function UploadForm({ onRunStarted }) {
           </select>
         </label>
       </div>
+
+      <div className="mode-toggle">
+        <button
+          type="button"
+          className={`mode-tab ${mode === 'full' ? 'active' : ''}`}
+          onClick={() => setMode('full')}
+        >
+          Full Interview
+        </button>
+        <button
+          type="button"
+          className={`mode-tab ${mode === 'focused' ? 'active' : ''}`}
+          onClick={() => setMode('focused')}
+        >
+          Focused Interview
+        </button>
+      </div>
+
+      {mode === 'full' && (
+        <div className="count-field">
+          <div className="field-label">
+            Question Count
+            <div className="count-slider-row">
+              <span className="count-range-label">5</span>
+              <input
+                type="range"
+                className="count-slider"
+                min={5}
+                max={30}
+                value={fullCount === '' ? 18 : fullCount}
+                onChange={(e) => setFullCount(e.target.value)}
+              />
+              <span className="count-range-label">30</span>
+              <span className="count-value">
+                {fullCount === '' ? <span className="count-auto">auto</span> : fullCount}
+              </span>
+              {fullCount !== '' && (
+                <button type="button" className="count-reset" onClick={() => setFullCount('')}>
+                  reset
+                </button>
+              )}
+            </div>
+          </div>
+        </div>
+      )}
+
+      {mode === 'focused' && (
+        <div className="focus-fields">
+          <label className="field-label">
+            Section
+            <select
+              className="field-select"
+              value={section}
+              onChange={(e) => setSection(e.target.value)}
+            >
+              {SECTIONS.map((s) => (
+                <option key={s.value} value={s.value}>{s.label}</option>
+              ))}
+            </select>
+          </label>
+
+          <div className="field-label">
+            Question Types <span className="field-hint-text">(optional — all types if none selected)</span>
+            <div className="type-multiselect">
+              {QUESTION_TYPES.map((t) => (
+                <span
+                  key={t.value}
+                  className={`type-chip ${selectedTypes.includes(t.value) ? 'selected' : ''}`}
+                  onClick={() => toggleType(t.value)}
+                >
+                  {t.label}
+                </span>
+              ))}
+            </div>
+          </div>
+
+          <label className="field-label">
+            Modifier <span className="field-hint-text">(optional)</span>
+            <textarea
+              className="modifier-input"
+              rows={2}
+              placeholder="e.g. focus on system design aspects"
+              value={modifier}
+              onChange={(e) => setModifier(e.target.value)}
+            />
+          </label>
+
+          <div className="field-label">
+            Question Count
+            <div className="count-slider-row">
+              <span className="count-range-label">5</span>
+              <input
+                type="range"
+                className="count-slider"
+                min={5}
+                max={30}
+                value={focusCount}
+                onChange={(e) => setFocusCount(Number(e.target.value))}
+              />
+              <span className="count-range-label">30</span>
+              <span className="count-value">{focusCount}</span>
+            </div>
+          </div>
+        </div>
+      )}
 
       {error && <p className="form-error">{error}</p>}
 

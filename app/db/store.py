@@ -33,6 +33,8 @@ class SessionStore:
             total_questions=interview_set.get("total_questions") if interview_set else None,
             estimated_duration_minutes=interview_set.get("estimated_duration_minutes") if interview_set else None,
             error=state.get("error"),
+            interview_mode=state.get("interview_mode"),
+            focus_config_json=_dump(state.get("focus_config")),
             candidate_profile_json=_dump(state.get("candidate_profile")),
             interview_plan_json=_dump(state.get("interview_plan")),
             interview_set_json=_dump(interview_set),
@@ -82,6 +84,10 @@ def _migrate(engine) -> None:
             ))
         if "error" not in existing_cols:
             conn.execute(text("ALTER TABLE interview_sessions ADD COLUMN error TEXT"))
+        if "interview_mode" not in existing_cols:
+            conn.execute(text("ALTER TABLE interview_sessions ADD COLUMN interview_mode VARCHAR"))
+        if "focus_config_json" not in existing_cols:
+            conn.execute(text("ALTER TABLE interview_sessions ADD COLUMN focus_config_json TEXT"))
 
 
 def _dump(obj) -> str | None:
@@ -99,6 +105,8 @@ def _to_summary(row: InterviewSession) -> dict:
         "resume_path": row.resume_path,
         "difficulty_override": row.difficulty_override,
         "resolved_difficulty": row.resolved_difficulty,
+        "interview_mode": row.interview_mode,
+        "focus_config": _load(row.focus_config_json),
         "total_questions": row.total_questions,
         "estimated_duration_minutes": row.estimated_duration_minutes,
         "failed": failed,

@@ -5,6 +5,7 @@ import InterviewResults from './InterviewResults'
 const ALL_NODES = [
   { key: 'extract_text',       label: 'Extracting resume text' },
   { key: 'build_profile',      label: 'Building candidate profile' },
+  { key: 'validate_focus',     label: 'Validating focus settings' },
   { key: 'plan_interview',     label: 'Planning interview' },
   { key: 'retrieve_questions', label: 'Retrieving questions' },
   { key: 'curate_interview',   label: 'Curating final question set' },
@@ -29,7 +30,7 @@ function RunningCard({ job }) {
       } else if (msg.type === 'done') {
         doneRef.current = true
         es.close()
-        onDone(msg.result)
+        onDone(msg.result, msg.notices || [])
       } else if (msg.type === 'error') {
         doneRef.current = true
         es.close()
@@ -84,7 +85,8 @@ function RunningCard({ job }) {
 
 function DoneCard({ job }) {
   const [expanded, setExpanded] = useState(true)
-  const { interview_set } = job.result
+  const [dismissedNotices, setDismissedNotices] = useState(new Set())
+  const notices = (job.notices || []).filter((_, i) => !dismissedNotices.has(i))
 
   return (
     <div className="job-card job-card--done">
@@ -97,6 +99,17 @@ function DoneCard({ job }) {
       </div>
       {expanded && (
         <div className="job-card-body">
+          {notices.map((msg, i) => (
+            <div key={i} className="notice-banner">
+              <span>⚠ {msg}</span>
+              <button
+                type="button"
+                onClick={(e) => { e.stopPropagation(); setDismissedNotices((prev) => new Set([...prev, i])) }}
+              >
+                ×
+              </button>
+            </div>
+          ))}
           <InterviewResults result={job.result} />
         </div>
       )}
@@ -132,7 +145,7 @@ export default function JobCard({ job, onUpdate }) {
   // without needing to re-run the effect when onUpdate changes.
   const handlersRef = useRef(null)
   handlersRef.current = {
-    onDone:   (result) => onUpdate(job.id, { status: 'done',     result }),
+    onDone:   (result, notices) => onUpdate(job.id, { status: 'done', result, notices: notices || [] }),
     onError:  (error)  => onUpdate(job.id, { status: 'error',    error }),
     onCancel: ()       => onUpdate(job.id, { status: 'canceled' }),
   }

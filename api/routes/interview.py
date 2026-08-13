@@ -19,6 +19,7 @@ router = APIRouter(prefix="/interview", tags=["interview"])
 _NODE_LABELS = {
     "extract_text":       "Extracting resume text",
     "build_profile":      "Building candidate profile",
+    "validate_focus":     "Validating focus settings",
     "plan_interview":     "Planning interview",
     "retrieve_questions": "Retrieving questions",
     "curate_interview":   "Curating final question set",
@@ -31,13 +32,22 @@ ALLOWED_EXTENSIONS = {".pdf", ".docx", ".txt"}
 STREAM_TIMEOUT_SECONDS = 600  # 10 minutes
 
 
-def _graph_input(resume_path: str, difficulty_override: Optional[str] = None) -> dict:
+def _graph_input(
+    resume_path: str,
+    difficulty_override: Optional[str] = None,
+    focus_config: Optional[dict] = None,
+    question_count_override: Optional[int] = None,
+) -> dict:
     return {
         "resume_path": resume_path,
         "difficulty_override": difficulty_override,
+        "focus_config": focus_config,
+        "question_count_override": question_count_override,
+        "interview_mode": "full",
         "retrieved_questions": [],
         "retrieval_attempts": 0,
         "shortfall": 0,
+        "fallback_notice": None,
     }
 
 
@@ -46,6 +56,8 @@ async def create_interview(
     file: Optional[UploadFile] = File(default=None),
     resume_path: Optional[str] = Form(default=None),
     difficulty_override: Optional[str] = Form(default=None),
+    focus_config: Optional[str] = Form(default=None),       # JSON-encoded FocusConfig
+    question_count_override: Optional[int] = Form(default=None),
 ):
     """
     Start an interview generation run.
@@ -76,12 +88,20 @@ async def create_interview(
             raise HTTPException(status_code=422, detail=f"File not found: {resume_path}")
         path = str(resolved)
 
+    focus_dict = None
+    if focus_config:
+        try:
+            from app.models.focus import FocusConfig
+            focus_dict = FocusConfig.model_validate_json(focus_config).model_dump()
+        except Exception:
+            raise HTTPException(status_code=422, detail="Invalid focus_config JSON")
+
     client = get_client(url=LANGGRAPH_URL)
     thread = await client.threads.create()
     run = await client.runs.create(
         thread_id=thread["thread_id"],
         assistant_id=ASSISTANT_ID,
-        input=_graph_input(path, difficulty_override),
+        input=_graph_input(path, difficulty_override, focus_dict, question_count_override),
     )
 
     return RunCreatedResponse(
@@ -203,8 +223,25 @@ async def stream_interview_status(thread_id: str, run_id: str):
                 "interview_set": values.get("interview_set"),
                 "candidate_profile": values.get("candidate_profile"),
                 "interview_plan": values.get("interview_plan"),
+                "interview_mode": values.get("interview_mode", "full"),
             }
-            yield f"data: {json.dumps({'type': 'done', 'result': result})}\n\n"
+
+            notices = []
+            if values.get("fallback_notice"):
+                notices.append(values["fallback_notice"])
+
+            shortfall = values.get("shortfall", 0)
+            iset = values.get("interview_set") or {}
+            plan = values.get("interview_plan") or {}
+            if shortfall > 0 and iset.get("total_questions", 0) < plan.get("total_questions", 0):
+                actual = iset.get("total_questions", 0)
+                requested = plan.get("total_questions", 0)
+                notices.append(f"Could only generate {actual} of {requested} requested questions.")
+
+            payload = {"type": "done", "result": result}
+            if notices:
+                payload["notices"] = notices
+            yield f"data: {json.dumps(payload)}\n\n"
         except Exception as exc:
             yield f"data: {json.dumps({'type': 'error', 'message': str(exc)})}\n\n"
 
