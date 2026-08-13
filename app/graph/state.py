@@ -7,10 +7,10 @@ class InterviewState(TypedDict):
     resume_path: str
     difficulty_override: Optional[str]      # None = auto-detect from experience
 
-    # ── Stage 1: Resume Parser ───────────────────────────────────────────────
-    parsed_resume: Optional[dict]           # ParsedResume.model_dump()
+    # ── Stage 1: Text Extractor (pypdf / PaddleOCR, no LLM) ─────────────────
+    raw_text: Optional[str]
 
-    # ── Stage 2: Profile Extractor ───────────────────────────────────────────
+    # ── Stage 2: Profile Builder (single LLM call) ───────────────────────────
     candidate_profile: Optional[dict]       # CandidateProfile.model_dump()
 
     # ── Stage 3: Interview Planner ───────────────────────────────────────────

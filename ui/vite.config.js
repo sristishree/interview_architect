@@ -6,6 +6,7 @@ export default defineConfig({
   server: {
     proxy: {
       '/interview': 'http://localhost:8001',
+      '/sessions': 'http://localhost:8001',
     },
   },
 })

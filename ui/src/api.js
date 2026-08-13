@@ -1,3 +1,19 @@
+export async function fetchSessions() {
+  const res = await fetch('/sessions', { signal: AbortSignal.timeout(10_000) })
+  if (!res.ok) throw new Error(`Server error ${res.status}`)
+  return res.json()
+}
+
+export async function fetchSession(id) {
+  const res = await fetch(`/sessions/${id}`)
+  if (!res.ok) throw new Error('Session not found')
+  return res.json()
+}
+
+export async function cancelInterview(threadId, runId) {
+  await fetch(`/interview/${threadId}/${runId}`, { method: 'DELETE' })
+}
+
 export async function submitInterview(file, resumePath, difficultyOverride) {
   const form = new FormData()
   if (file) form.append('file', file)

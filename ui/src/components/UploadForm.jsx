@@ -8,34 +8,60 @@ const DIFFICULTIES = [
   { value: 'Hard', label: 'Hard' },
 ]
 
-export default function UploadForm({ onRunStarted, onError }) {
+export default function UploadForm({ onRunStarted }) {
   const [file, setFile] = useState(null)
   const [difficulty, setDifficulty] = useState('')
   const [dragging, setDragging] = useState(false)
   const [loading, setLoading] = useState(false)
+  const [error, setError] = useState(null)
   const inputRef = useRef()
 
   function handleDrop(e) {
     e.preventDefault()
+    e.stopPropagation()
     setDragging(false)
     const f = e.dataTransfer.files[0]
-    if (f) setFile(f)
+    if (!f) return
+    const ext = f.name.split('.').pop().toLowerCase()
+    if (!['pdf', 'docx', 'txt'].includes(ext)) {
+      setError('Only PDF, DOCX, or TXT files are supported.')
+      return
+    }
+    setFile(f)
+    setError(null)
   }
 
   function handleDragOver(e) {
     e.preventDefault()
+    e.stopPropagation()
+  }
+
+  function handleDragEnter(e) {
+    e.preventDefault()
+    e.stopPropagation()
     setDragging(true)
+  }
+
+  function handleDragLeave(e) {
+    // only clear when leaving the drop zone itself, not a child element
+    if (!e.currentTarget.contains(e.relatedTarget)) {
+      setDragging(false)
+    }
   }
 
   async function handleSubmit(e) {
     e.preventDefault()
     if (!file) return
     setLoading(true)
+    setError(null)
     try {
       const info = await submitInterview(file, null, difficulty || null)
-      onRunStarted(info)
+      onRunStarted(info, file.name)
+      setFile(null)
+      setDifficulty('')
+      if (inputRef.current) inputRef.current.value = ''
     } catch (err) {
-      onError(err.message)
+      setError(err.message)
     } finally {
       setLoading(false)
     }
@@ -45,8 +71,9 @@ export default function UploadForm({ onRunStarted, onError }) {
     <form className="upload-form" onSubmit={handleSubmit}>
       <div
         className={`drop-zone ${dragging ? 'dragging' : ''} ${file ? 'has-file' : ''}`}
+        onDragEnter={handleDragEnter}
         onDragOver={handleDragOver}
-        onDragLeave={() => setDragging(false)}
+        onDragLeave={handleDragLeave}
         onDrop={handleDrop}
         onClick={() => inputRef.current.click()}
       >
@@ -55,7 +82,7 @@ export default function UploadForm({ onRunStarted, onError }) {
           type="file"
           accept=".pdf,.docx,.txt"
           style={{ display: 'none' }}
-          onChange={(e) => setFile(e.target.files[0] || null)}
+          onChange={(e) => { setFile(e.target.files[0] || null); setError(null) }}
         />
         {file ? (
           <div className="file-info">
@@ -87,11 +114,9 @@ export default function UploadForm({ onRunStarted, onError }) {
         </label>
       </div>
 
-      <button
-        type="submit"
-        className="btn-primary"
-        disabled={!file || loading}
-      >
+      {error && <p className="form-error">{error}</p>}
+
+      <button type="submit" className="btn-primary" disabled={!file || loading}>
         {loading ? 'Submitting…' : 'Generate Interview'}
       </button>
     </form>

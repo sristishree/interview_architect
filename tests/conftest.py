@@ -2,8 +2,9 @@ import pytest
 
 from app.knowledge_base.store import QuestionStore
 from app.models.plan import InterviewPlan, TopicPlan
-from app.models.question import Category, Difficulty, InterviewSection, InterviewSet, Question, QuestionType
-from app.models.resume import CandidateProfile, Company, ParsedResume, Project
+from app.models.enums import Category, Difficulty, QuestionType
+from app.models.question import InterviewSection, InterviewSet, Question
+from app.models.resume import CandidateProfile, WorkExperience, Project
 
 
 @pytest.fixture
@@ -12,11 +13,12 @@ def store() -> QuestionStore:
 
 
 @pytest.fixture
-def sample_parsed_resume() -> ParsedResume:
-    return ParsedResume(
+def sample_candidate_profile() -> CandidateProfile:
+    return CandidateProfile(
+        is_resume=True,
         name="Aditya Sharma",
         role="Lead Data Scientist",
-        experience_years=6.0,
+        years_of_experience=6.0,
         skills=["Python", "SQL", "XGBoost", "LangChain", "Docker", "AWS"],
         projects=[
             Project(
@@ -32,20 +34,27 @@ def sample_parsed_resume() -> ParsedResume:
                 details=["2M+ documents/month", "60% reduction in manual review"],
             ),
         ],
-        companies=[
-            Company(name="Perfios", role="Lead Data Scientist", duration_years=3.0),
-            Company(name="Fractal Analytics", role="Data Scientist", duration_years=2.0),
+        work_experiences=[
+            WorkExperience(
+                name="Perfios",
+                role="Lead Data Scientist",
+                duration_years=3.0,
+                responsibilities=[
+                    "Led ML pipeline redesign for credit scoring serving 500K daily applications",
+                    "Built feature store using Feast reducing training latency by 40%",
+                    "Managed team of 4 ML engineers",
+                ],
+            ),
+            WorkExperience(
+                name="Fractal Analytics",
+                role="Data Scientist",
+                duration_years=2.0,
+                responsibilities=[
+                    "Built XGBoost models for churn prediction achieving 87% AUC",
+                    "Designed A/B testing framework for model evaluation",
+                ],
+            ),
         ],
-        raw_text="Sample resume text",
-    )
-
-
-@pytest.fixture
-def sample_candidate_profile() -> CandidateProfile:
-    return CandidateProfile(
-        name="Aditya Sharma",
-        role="Lead Data Scientist",
-        years_of_experience=6.0,
         seniority="Lead",
         domains=["ML Engineering", "LLMs", "Backend"],
         key_skills=["XGBoost", "Python", "LangChain", "SQL"],

@@ -1,18 +1,34 @@
+import asyncio
+import json
+import logging
 import os
 import uuid
 from pathlib import Path
 from typing import Optional
 
 from fastapi import APIRouter, File, Form, HTTPException, UploadFile
+from fastapi.responses import StreamingResponse
 from langgraph_sdk import get_client
 
 from api.schemas import RunCreatedResponse, RunStatusResponse
 
+logger = logging.getLogger(__name__)
+
 router = APIRouter(prefix="/interview", tags=["interview"])
+
+_NODE_LABELS = {
+    "extract_text":       "Extracting resume text",
+    "build_profile":      "Building candidate profile",
+    "plan_interview":     "Planning interview",
+    "retrieve_questions": "Retrieving questions",
+    "curate_interview":   "Curating final question set",
+}
 
 UPLOAD_DIR = Path("data/uploads")
 LANGGRAPH_URL = os.getenv("LANGGRAPH_URL", "http://localhost:2024")
 ASSISTANT_ID = "interview_architect"
+ALLOWED_EXTENSIONS = {".pdf", ".docx", ".txt"}
+STREAM_TIMEOUT_SECONDS = 600  # 10 minutes
 
 
 def _graph_input(resume_path: str, difficulty_override: Optional[str] = None) -> dict:
@@ -44,8 +60,13 @@ async def create_interview(
         raise HTTPException(status_code=422, detail="Provide either 'file' or 'resume_path'")
 
     if file is not None:
+        suffix = Path(file.filename).suffix.lower() if file.filename else ""
+        if suffix not in ALLOWED_EXTENSIONS:
+            raise HTTPException(
+                status_code=422,
+                detail=f"Unsupported file type '{suffix or '(none)'}'. Only PDF, DOCX, and TXT are accepted.",
+            )
         UPLOAD_DIR.mkdir(parents=True, exist_ok=True)
-        suffix = Path(file.filename).suffix if file.filename else ".txt"
         dest = UPLOAD_DIR / f"{uuid.uuid4().hex}{suffix}"
         dest.write_bytes(await file.read())
         path = str(dest.resolve())
@@ -113,4 +134,82 @@ async def get_interview_status(thread_id: str, run_id: str):
         status=run["status"],
         result=result,
         error=error,
+    )
+
+
+@router.delete("/{thread_id}/{run_id}", status_code=204)
+async def cancel_interview(thread_id: str, run_id: str):
+    """Cancel a running interview generation."""
+    client = get_client(url=LANGGRAPH_URL)
+    try:
+        await client.runs.cancel(thread_id, run_id)
+    except Exception:
+        pass  # Already completed or not found — treat as success
+
+
+@router.get("/{thread_id}/{run_id}/stream")
+async def stream_interview_status(thread_id: str, run_id: str):
+    """
+    SSE stream for a running interview. Emits:
+      {"type": "progress", "node": "<name>", "label": "<human label>"}  — one per completed node
+      {"type": "done",     "result": {...}}                              — run complete
+      {"type": "error",    "message": "..."}                            — run failed
+    """
+    async def generate():
+        client = get_client(url=LANGGRAPH_URL)
+        final_values: dict = {}
+        stream_error: str | None = None
+
+        try:
+            async with asyncio.timeout(STREAM_TIMEOUT_SECONDS):
+                async for chunk in client.runs.join_stream(
+                    thread_id, run_id, stream_mode=["updates", "values"]
+                ):
+                    if chunk.event == "updates" and isinstance(chunk.data, dict):
+                        for node_name in chunk.data:
+                            if node_name not in _NODE_LABELS:
+                                continue
+                            payload = {"type": "progress", "node": node_name, "label": _NODE_LABELS[node_name]}
+                            yield f"data: {json.dumps(payload)}\n\n"
+                    elif chunk.event == "values" and isinstance(chunk.data, dict):
+                        # Each values event is the full state snapshot — last one wins
+                        final_values = chunk.data
+                    elif chunk.event == "error":
+                        stream_error = chunk.data if isinstance(chunk.data, str) else "Run failed"
+        except asyncio.TimeoutError:
+            yield f"data: {json.dumps({'type': 'error', 'message': 'Run timed out after 10 minutes'})}\n\n"
+            return
+        except Exception as exc:
+            yield f"data: {json.dumps({'type': 'error', 'message': str(exc)})}\n\n"
+            return
+
+        # Stream ended — final_values already holds the terminal state, no polling needed
+        try:
+            from app.db import SessionStore
+
+            values = dict(final_values)
+
+            if stream_error and not values.get("error"):
+                values["error"] = stream_error
+
+            SessionStore().save_if_new(thread_id, values)
+
+            if values.get("error") or not values.get("interview_set"):
+                msg = values.get("error") or "Run completed but produced no interview set"
+                yield f"data: {json.dumps({'type': 'error', 'message': msg})}\n\n"
+                return
+
+            result = {
+                "interview_set": values.get("interview_set"),
+                "candidate_profile": values.get("candidate_profile"),
+                "interview_plan": values.get("interview_plan"),
+            }
+            yield f"data: {json.dumps({'type': 'done', 'result': result})}\n\n"
+        except Exception as exc:
+            yield f"data: {json.dumps({'type': 'error', 'message': str(exc)})}\n\n"
+
+    return StreamingResponse(
+        generate(),
+        media_type="text/event-stream",
+        headers={"Cache-Control": "no-cache", "X-Accel-Buffering": "no"},
     )

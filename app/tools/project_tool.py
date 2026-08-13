@@ -1,3 +1,4 @@
+import logging
 from typing import List
 
 from langchain_core.tools import tool
@@ -5,6 +6,7 @@ from langchain_core.tools import tool
 from app.knowledge_base.store import QuestionStore
 from app.models.question import GeneratedQuestionList
 
+logger = logging.getLogger(__name__)
 _store = QuestionStore()
 
 
@@ -22,12 +24,9 @@ def get_project_questions(
         n: Number of questions to return.
         difficulty: 'Easy', 'Medium', or 'Hard'.
     """
-    from app.config import get_llm
 
     kb_results = _store.search(topic=project_description, n=max(2, n // 2), difficulty=difficulty)
-
     remaining = max(1, n - len(kb_results))
-    llm = get_llm(fast=True).with_structured_output(GeneratedQuestionList)
 
     prompt = f"""Generate {remaining} specific technical interview questions for this project:
 
@@ -42,6 +41,12 @@ Focus on:
 
 Tags should be 3-5 keywords relevant to the project."""
 
-    generated = llm.invoke(prompt)
-    combined = kb_results + [q.model_dump() for q in generated.questions]
-    return combined[:n]
+    try:
+        from app.config import get_structured_llm
+        result = get_structured_llm(GeneratedQuestionList, fast=True).invoke(prompt)
+        llm_questions = [q.model_dump() for q in result.questions]
+    except Exception as e:
+        logger.warning("project_tool LLM call failed: %s", e)
+        llm_questions = []
+
+    return (kb_results + llm_questions)[:n]

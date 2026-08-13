@@ -1773,5 +1773,96 @@
     "question": "What is the difference between a data warehouse, a data lake, and a lakehouse? When would you recommend each?",
     "follow_up": "What problems with raw data lakes does the lakehouse pattern solve?",
     "question_type": "theory"
+  },
+  {
+    "topic": "Cloud Infrastructure for ML (GKE, AWS ECS)",
+    "difficulty": "Medium",
+    "category": "Cloud",
+    "tags": [
+      "AWS ECS",
+      "Amazon EKS",
+      "ML Workloads",
+      "Container Orchestration",
+      "Scalability",
+      "AWS"
+    ],
+    "question": "Your team is deploying a new machine learning inference service that needs to be highly scalable and integrated with other AWS services. Discuss the trade-offs between using Amazon ECS and Amazon EKS for orchestrating this containerized ML workload, focusing on setup complexity, operational overhead, and integration capabilities.",
+    "follow_up": "If the ML model required GPU-enabled instances for accelerated inference, how would that influence your choice between ECS and EKS?",
+    "question_type": "design",
+    "id": 122
+  },
+  {
+    "topic": "Cloud Infrastructure for ML (GKE, AWS ECS)",
+    "difficulty": "Medium",
+    "category": "Cloud",
+    "tags": [
+      "Edge Computing",
+      "ML Inference",
+      "AWS Outposts",
+      "AWS Wavelength",
+      "AWS Local Zones",
+      "Low Latency",
+      "Hybrid Cloud"
+    ],
+    "question": "A machine learning application requires extremely low-latency inference for devices at the network edge (e.g., IoT devices, connected vehicles). Explain how AWS services such as AWS Outposts, AWS Wavelength, or AWS Local Zones could be used to deploy and run these ML models closer to the data source. What are the primary benefits and potential operational challenges?",
+    "follow_up": "Describe a scenario where AWS Snow Family might be a more appropriate solution for ML data transfer and initial processing in an edge context, compared to Wavelength or Local Zones.",
+    "question_type": "design",
+    "id": 123
+  },
+  {
+    "topic": "Data Structures & Algorithms (Python)",
+    "difficulty": "Easy",
+    "category": "Python",
+    "tags": [
+      "Binary Tree",
+      "Recursion",
+      "Tree Traversal"
+    ],
+    "question": "Given the root of a binary tree, return its maximum depth. The maximum depth is the number of nodes along the longest path from the root node down to the farthest leaf node.",
+    "follow_up": "Can you solve this iteratively?",
+    "question_type": "implementation",
+    "id": 124
+  },
+  {
+    "topic": "Data Structures & Algorithms (Python)",
+    "difficulty": "Easy",
+    "category": "Python",
+    "tags": [
+      "Binary Search Tree",
+      "Validation",
+      "Tree Traversal"
+    ],
+    "question": "Given the root of a binary tree, determine if it is a valid Binary Search Tree (BST). A valid BST is defined as follows: the left subtree of a node contains only nodes with keys less than the node's key; the right subtree of a node contains only nodes with keys greater than the node's key; both the left and right subtrees must also be binary search trees.",
+    "follow_up": "What are the time and space complexities of your solution?",
+    "question_type": "implementation",
+    "id": 125
+  },
+  {
+    "topic": "Data Structures & Algorithms (Python)",
+    "difficulty": "Easy",
+    "category": "Python",
+    "tags": [
+      "Hash Table",
+      "Array",
+      "Dictionary"
+    ],
+    "question": "Given an array of integers `nums` and an integer `target`, return indices of the two numbers such that they add up to `target`. You may assume that each input would have exactly one solution, and you may not use the same element twice.",
+    "follow_up": "How would your approach change if the array was sorted?",
+    "question_type": "implementation",
+    "id": 126
+  },
+  {
+    "topic": "Data Structures & Algorithms (Python)",
+    "difficulty": "Easy",
+    "category": "Python",
+    "tags": [
+      "Linked List",
+      "Traversal",
+      "Reversal"
+    ],
+    "question": "Given the `head` of a singly linked list, reverse the list, and return the reversed list.",
+    "follow_up": "Can you implement this using both an iterative and a recursive approach?",
+    "question_type": "implementation",
+    "id": 127
   }
 ]
