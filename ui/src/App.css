@@ -5,16 +5,16 @@ body {
   background: #f1f5f9;
   color: #1e293b;
   min-height: 100vh;
+  scrollbar-gutter: stable;
 }
 
 /* ── Layout ── */
 .app { min-height: 100vh; display: flex; flex-direction: column; }
 
 .app-header {
-  background: #4f46e5;
+  background: #0d9488;
   color: white;
   padding: 24px 32px;
-  text-align: center;
 }
 .app-header h1 { font-size: 1.75rem; font-weight: 700; letter-spacing: -0.02em; }
 .app-header p  { margin-top: 4px; opacity: 0.8; font-size: 0.95rem; }
@@ -45,9 +45,9 @@ body {
   cursor: pointer;
   transition: border-color 0.15s, background 0.15s;
 }
-.drop-zone:hover   { border-color: #4f46e5; background: #f5f3ff; }
-.drop-zone.dragging { border-color: #4f46e5; background: #eef2ff; }
-.drop-zone.has-file { border-color: #4f46e5; border-style: solid; }
+.drop-zone:hover   { border-color: #0d9488; background: #ccfbf1; }
+.drop-zone.dragging { border-color: #0d9488; background: #f0fdfa; }
+.drop-zone.has-file { border-color: #0d9488; border-style: solid; }
 
 .drop-prompt { display: flex; flex-direction: column; gap: 8px; align-items: center; }
 .upload-icon { font-size: 2rem; color: #94a3b8; }
@@ -56,7 +56,7 @@ body {
 
 .file-info  { display: flex; flex-direction: column; gap: 6px; align-items: center; }
 .file-icon  { font-size: 2rem; }
-.file-name  { font-size: 0.95rem; font-weight: 600; color: #4f46e5; word-break: break-all; }
+.file-name  { font-size: 0.95rem; font-weight: 600; color: #0d9488; word-break: break-all; }
 .file-hint  { font-size: 0.8rem; color: #94a3b8; }
 
 .form-row { display: flex; gap: 16px; }
@@ -79,12 +79,12 @@ body {
   color: #1e293b;
   cursor: pointer;
 }
-.field-select:focus { outline: none; border-color: #4f46e5; }
+.field-select:focus { outline: none; border-color: #0d9488; }
 
 /* ── Buttons ── */
 .btn-primary {
   padding: 12px 24px;
-  background: #4f46e5;
+  background: #0d9488;
   color: white;
   border: none;
   border-radius: 8px;
@@ -93,14 +93,14 @@ body {
   cursor: pointer;
   transition: background 0.15s, opacity 0.15s;
 }
-.btn-primary:hover:not(:disabled) { background: #4338ca; }
+.btn-primary:hover:not(:disabled) { background: #0f766e; }
 .btn-primary:disabled { opacity: 0.45; cursor: not-allowed; }
 
 .btn-secondary {
   padding: 10px 20px;
   background: white;
-  color: #4f46e5;
-  border: 1px solid #4f46e5;
+  color: #0d9488;
+  border: 1px solid #0d9488;
   border-radius: 8px;
   font-size: 0.9rem;
   font-weight: 500;
@@ -108,7 +108,7 @@ body {
   transition: background 0.15s;
   white-space: nowrap;
 }
-.btn-secondary:hover { background: #f5f3ff; }
+.btn-secondary:hover { background: #ccfbf1; }
 
 /* ── Status card ── */
 .status-card {
@@ -129,7 +129,7 @@ body {
   width: 44px;
   height: 44px;
   border: 3px solid #e2e8f0;
-  border-top-color: #4f46e5;
+  border-top-color: #0d9488;
   border-radius: 50%;
   animation: spin 0.8s linear infinite;
 }
@@ -157,7 +157,7 @@ body {
   transition: color 0.2s;
 }
 .progress-step.done   { color: #10b981; }
-.progress-step.active { color: #4f46e5; }
+.progress-step.active { color: #0d9488; }
 .step-dot { font-size: 0.8rem; width: 16px; text-align: center; flex-shrink: 0; }
 .step-label { flex: 1; }
 
@@ -206,9 +206,9 @@ body {
   flex-shrink: 0;
 }
 .results-header-actions .btn-secondary.active {
-  background: #eef2ff;
-  border-color: #4f46e5;
-  color: #4f46e5;
+  background: #f0fdfa;
+  border-color: #0d9488;
+  color: #0d9488;
 }
 .candidate-name { font-size: 1.4rem; font-weight: 700; }
 .candidate-role { font-size: 0.9rem; color: #64748b; margin-top: 4px; }
@@ -364,7 +364,7 @@ body {
   font-weight: 600;
   white-space: nowrap;
 }
-.job-status-badge.running  { background: #eff6ff; color: #3b82f6; }
+.job-status-badge.running  { background: #f0fdfa; color: #0d9488; }
 .job-status-badge.done     { background: #f0fdf4; color: #16a34a; }
 .job-status-badge.error    { background: #fef2f2; color: #dc2626; }
 .job-status-badge.canceled { background: #f8fafc; color: #94a3b8; }
@@ -384,8 +384,8 @@ body {
 .job-spinner {
   width: 10px;
   height: 10px;
-  border: 2px solid #bfdbfe;
-  border-top-color: #3b82f6;
+  border: 2px solid #99f6e4;
+  border-top-color: #0d9488;
   border-radius: 50%;
   animation: spin 0.8s linear infinite;
   flex-shrink: 0;
@@ -421,26 +421,28 @@ body {
   margin-top: -8px;
 }
 
-/* ── Nav tabs ── */
+/* ── Nav bar ── */
 .app-nav {
   display: flex;
-  justify-content: center;
-  gap: 4px;
-  margin-top: 16px;
+  gap: 0;
+  padding: 0 32px;
+  background: white;
+  border-bottom: 1px solid #e2e8f0;
 }
 .nav-tab {
-  padding: 7px 20px;
-  border-radius: 999px;
-  border: 1px solid rgba(255,255,255,0.3);
+  padding: 12px 20px;
+  border: none;
+  border-bottom: 2px solid transparent;
   background: transparent;
-  color: rgba(255,255,255,0.7);
+  color: #64748b;
   font-size: 0.875rem;
   font-weight: 500;
   cursor: pointer;
-  transition: background 0.15s, color 0.15s;
+  transition: color 0.15s, border-color 0.15s;
+  margin-bottom: -1px;
 }
-.nav-tab:hover  { background: rgba(255,255,255,0.1); color: white; }
-.nav-tab.active { background: white; color: #4f46e5; border-color: white; }
+.nav-tab:hover  { color: #0d9488; }
+.nav-tab.active { color: #0d9488; border-bottom-color: #0d9488; }
 
 /* ── Session detail split layout ── */
 .session-detail-page {

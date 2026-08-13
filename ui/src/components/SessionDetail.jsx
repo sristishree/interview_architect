@@ -7,7 +7,6 @@ export default function SessionDetail({ sessionId, onBack }) {
   const [session, setSession] = useState(null)
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
-  const [showResume, setShowResume] = useState(false)
 
   useEffect(() => {
     fetchSession(sessionId)
@@ -42,30 +41,19 @@ export default function SessionDetail({ sessionId, onBack }) {
     interview_plan: session.interview_plan,
   }
 
-  const resumeToggle = (
-    <button
-      className={`btn-secondary ${showResume ? 'active' : ''}`}
-      onClick={() => setShowResume((v) => !v)}
-    >
-      {showResume ? 'Hide Resume' : 'Show Resume'}
-    </button>
-  )
-
   return (
-    <div className={`session-detail-page ${showResume ? 'has-pane' : ''}`}>
+    <div className="session-detail-page has-pane">
       <div className="session-detail-toolbar">
         <button className="btn-secondary" onClick={onBack}>Back to History</button>
       </div>
 
-      <div className={`session-detail-body ${showResume ? 'with-pane' : ''}`}>
+      <div className="session-detail-body with-pane">
         <div className="session-detail-main">
-          <InterviewResults result={result} headerAction={resumeToggle} />
+          <InterviewResults result={result} />
         </div>
-        {showResume && (
-          <aside className="session-detail-aside">
-            <ResumePane sessionId={sessionId} resumePath={session.resume_path} />
-          </aside>
-        )}
+        <aside className="session-detail-aside">
+          <ResumePane sessionId={sessionId} resumePath={session.resume_path} />
+        </aside>
       </div>
     </div>
   )

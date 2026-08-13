@@ -16,7 +16,7 @@ Uses LITELLM_MODEL (default: gpt-4o) for the strategic reasoning required.
 import json
 from typing import TYPE_CHECKING, Optional
 
-from app.config import get_llm
+from app.config import get_structured_llm
 from app.models.plan import InterviewPlan
 from app.models.resume import CandidateProfile
 
@@ -72,7 +72,7 @@ REASONING
 - A 6yr Lead DS who built prod ML systems gets hard system-design questions, not basic Python.
 - Work experience topics must be distinct from project topics — don't repeat the same work twice."""
 
-_llm = get_llm().with_structured_output(InterviewPlan, method="json_schema")
+_llm = get_structured_llm(InterviewPlan)
 
 
 def plan_interview_node(state: "InterviewState") -> dict:

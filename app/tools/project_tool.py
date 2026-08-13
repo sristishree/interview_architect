@@ -24,7 +24,6 @@ def get_project_questions(
         n: Number of questions to return.
         difficulty: 'Easy', 'Medium', or 'Hard'.
     """
-    from app.config import get_llm
 
     kb_results = _store.search(topic=project_description, n=max(2, n // 2), difficulty=difficulty)
     remaining = max(1, n - len(kb_results))
@@ -43,8 +42,8 @@ Focus on:
 Tags should be 3-5 keywords relevant to the project."""
 
     try:
-        llm = get_llm(fast=True).with_structured_output(GeneratedQuestionList, method="json_schema")
-        result = llm.invoke(prompt)
+        from app.config import get_structured_llm
+        result = get_structured_llm(GeneratedQuestionList, fast=True).invoke(prompt)
         llm_questions = [q.model_dump() for q in result.questions]
     except Exception as e:
         logger.warning("project_tool LLM call failed: %s", e)

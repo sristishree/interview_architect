@@ -22,7 +22,6 @@ def search_and_generate_questions(
         n: Number of questions to generate.
         difficulty: Target difficulty — 'Easy', 'Medium', or 'Hard'.
     """
-    from app.config import get_llm
     from app.knowledge_base.store import QuestionStore
 
     api_key = os.getenv("TAVILY_API_KEY")
@@ -51,8 +50,8 @@ def search_and_generate_questions(
     )
 
     try:
-        llm = get_llm(fast=True).with_structured_output(GeneratedQuestionList, method="json_schema")
-        result = llm.invoke(prompt)
+        from app.config import get_structured_llm
+        result = get_structured_llm(GeneratedQuestionList, fast=True).invoke(prompt)
         return [q.model_dump() for q in result.questions]
     except Exception as e:
         logger.warning("web_search_tool LLM call failed: %s", e)

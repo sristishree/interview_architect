@@ -39,21 +39,22 @@ export default function App() {
       <header className="app-header">
         <h1>Interview Architect</h1>
         <p>Generate a structured interview question set from a resume</p>
-        <nav className="app-nav">
-          <button
-            className={`nav-tab ${page === 'generate' ? 'active' : ''}`}
-            onClick={() => switchPage('generate')}
-          >
-            Generate
-          </button>
-          <button
-            className={`nav-tab ${page === 'history' ? 'active' : ''}`}
-            onClick={() => switchPage('history')}
-          >
-            History
-          </button>
-        </nav>
       </header>
+
+      <nav className="app-nav">
+        <button
+          className={`nav-tab ${page === 'generate' ? 'active' : ''}`}
+          onClick={() => switchPage('generate')}
+        >
+          Generate
+        </button>
+        <button
+          className={`nav-tab ${page === 'history' ? 'active' : ''}`}
+          onClick={() => switchPage('history')}
+        >
+          History
+        </button>
+      </nav>
 
       <main className="app-main">
         {page === 'generate' && (

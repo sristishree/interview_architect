@@ -20,7 +20,7 @@ and infer correctly in one shot.
 
 from typing import TYPE_CHECKING
 
-from app.config import get_llm
+from app.config import get_structured_llm
 from app.models.resume import CandidateProfile
 
 if TYPE_CHECKING:
@@ -51,7 +51,7 @@ Rules:
 - Do not invent information not present in the resume.
 - Responsibilities under work_experiences must be copied verbatim — every bullet point, nothing paraphrased."""
 
-_llm = get_llm().with_structured_output(CandidateProfile, method="json_schema")
+_llm = get_structured_llm(CandidateProfile)
 
 
 def build_profile_node(state: "InterviewState") -> dict:

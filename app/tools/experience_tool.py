@@ -22,7 +22,6 @@ def get_experience_questions(
         n: Number of questions to return.
         difficulty: 'Easy', 'Medium', or 'Hard'.
     """
-    from app.config import get_llm
 
     prompt = f"""You are a senior technical interviewer probing a candidate's actual depth and involvement in their stated work experience.
 
@@ -47,8 +46,8 @@ RULES:
 Tags should be 3-5 technical keywords from the specific work described (not generic terms like "machine learning")."""
 
     try:
-        llm = get_llm(fast=True).with_structured_output(GeneratedQuestionList, method="json_schema")
-        result = llm.invoke(prompt)
+        from app.config import get_structured_llm
+        result = get_structured_llm(GeneratedQuestionList, fast=True).invoke(prompt)
         return [q.model_dump() for q in result.questions][:n]
     except Exception as e:
         logger.warning("experience_tool LLM call failed: %s", e)

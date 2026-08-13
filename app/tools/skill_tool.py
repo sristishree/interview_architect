@@ -21,7 +21,6 @@ def get_skill_questions(skill: str, n: int = 5, difficulty: Optional[str] = None
         n: Number of questions to return.
         difficulty: Optional filter — 'Easy', 'Medium', or 'Hard'.
     """
-    from app.config import get_llm
 
     resolved_difficulty = difficulty or "Medium"
     kb_results = _store.search(topic=skill, n=max(2, n // 2), difficulty=difficulty)
@@ -38,8 +37,8 @@ def get_skill_questions(skill: str, n: int = 5, difficulty: Optional[str] = None
             f"- Focus on practical knowledge, common pitfalls, and real-world usage of '{skill}'."
         )
         try:
-            llm = get_llm(fast=True).with_structured_output(GeneratedQuestionList, method="json_schema")
-            result = llm.invoke(prompt)
+            from app.config import get_structured_llm
+            result = get_structured_llm(GeneratedQuestionList, fast=True).invoke(prompt)
             llm_questions = [q.model_dump() for q in result.questions]
         except Exception as e:
             logger.warning("skill_tool LLM call failed for '%s': %s", skill, e)
