@@ -137,7 +137,7 @@ def plan_interview_node(state: "InterviewState") -> dict:
 
     if interview_mode == InterviewMode.FOCUSED and focus_dict:
         focus = FocusConfig.model_validate(focus_dict)
-        total_questions = focus.question_count
+        total_questions = focus.question_count if focus.question_count is not None else _compute_question_count(profile)
 
         section_data = _get_section_data(profile, focus.section)
         types_filter = [qt.value for qt in focus.question_types] if focus.question_types else []

@@ -1,3 +1,6 @@
+from dotenv import load_dotenv
+load_dotenv(override=True)
+
 from fastapi import FastAPI
 from api.routes.interview import router as interview_router
 from api.routes.sessions import router as sessions_router

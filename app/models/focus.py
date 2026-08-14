@@ -21,4 +21,4 @@ class FocusConfig(BaseModel):
     section: ResumeSection
     question_types: Optional[List[QuestionType]] = None  # None = all types allowed
     modifier: Optional[str] = None                        # soft prompt steer only
-    question_count: int = Field(default=10, ge=5, le=30)
+    question_count: Optional[int] = Field(default=None, ge=5, le=30)  # None = let planner decide
