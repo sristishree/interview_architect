@@ -27,6 +27,10 @@ class InterviewSession(Base):
     total_questions: Mapped[int | None] = mapped_column(Integer, nullable=True)
     estimated_duration_minutes: Mapped[int | None] = mapped_column(Integer, nullable=True)
 
+    # ── Interview mode ────────────────────────────────────────────────────────
+    interview_mode: Mapped[str | None] = mapped_column(String, nullable=True)
+    focus_config_json: Mapped[str | None] = mapped_column(Text, nullable=True)
+
     # ── Error (set on failed runs, null on success) ───────────────────────────
     error: Mapped[str | None] = mapped_column(Text, nullable=True)
 

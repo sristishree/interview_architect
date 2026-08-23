@@ -11,7 +11,12 @@ _store = QuestionStore()
 
 
 @tool
-def get_skill_questions(skill: str, n: int = 5, difficulty: Optional[str] = None) -> List[dict]:
+def get_skill_questions(
+    skill: str,
+    n: int = 5,
+    difficulty: Optional[str] = None,
+    question_types: Optional[List[str]] = None,
+) -> List[dict]:
     """
     Retrieve interview questions for a specific skill from the knowledge base.
     Falls back to LLM generation when fewer than n//2 relevant results are found.
@@ -20,11 +25,17 @@ def get_skill_questions(skill: str, n: int = 5, difficulty: Optional[str] = None
         skill: Skill name, e.g. 'Python', 'XGBoost', 'SQL', 'Docker'.
         n: Number of questions to return.
         difficulty: Optional filter — 'Easy', 'Medium', or 'Hard'.
+        question_types: Optional list of allowed question types, e.g. ['implementation', 'design'].
     """
-
     resolved_difficulty = difficulty or "Medium"
-    kb_results = _store.search(topic=skill, n=max(2, n // 2), difficulty=difficulty)
+    kb_results = _store.search(
+        topic=skill, n=max(2, n // 2), difficulty=difficulty, question_types=question_types
+    )
     remaining = max(1, n - len(kb_results))
+
+    type_constraint = (
+        f"- question_type must be one of: {', '.join(question_types)}\n" if question_types else ""
+    )
 
     if remaining > 0:
         prompt = (
@@ -34,7 +45,8 @@ def get_skill_questions(skill: str, n: int = 5, difficulty: Optional[str] = None
             f"- Every question must be directly and specifically about '{skill}' — not general programming.\n"
             f"- Set the topic field to '{skill}'.\n"
             f"- Tags should be 3-5 keywords directly related to '{skill}'.\n"
-            f"- Focus on practical knowledge, common pitfalls, and real-world usage of '{skill}'."
+            f"- Focus on practical knowledge, common pitfalls, and real-world usage of '{skill}'.\n"
+            f"{type_constraint}"
         )
         try:
             from app.config import get_structured_llm

@@ -1,8 +1,10 @@
 """
 Central LLM factory.
 
-All agents and tools import from here so the LiteLLM base_url and api_key
-are configured in one place. Swap LITELLM_* env vars to point at any backend.
+All agents and tools import from here. Configured via env vars:
+    OPENROUTER_API_KEY  — required
+    OPENROUTER_MODEL      — default: openai/gpt-4o
+    OPENROUTER_MODEL_FAST — default: openai/gpt-4o-mini  (extraction + tool calls)
 """
 
 import os
@@ -14,19 +16,21 @@ from pydantic import BaseModel
 
 T = TypeVar("T", bound=BaseModel)
 
+_OPENROUTER_BASE_URL = "https://openrouter.ai/api/v1"
+
 
 def get_llm(fast: bool = False) -> ChatOpenAI:
     """
-    fast=False → LITELLM_MODEL      (default: gpt-4o)   — reasoning-heavy agents
-    fast=True  → LITELLM_MODEL_FAST (default: gpt-4o-mini) — extraction + tool generation
+    fast=False → OPENROUTER_MODEL      (default: openai/gpt-4o)      — reasoning-heavy agents
+    fast=True  → OPENROUTER_MODEL_FAST (default: openai/gpt-4o-mini) — extraction + tool generation
     """
-    model_env = "LITELLM_MODEL_FAST" if fast else "LITELLM_MODEL"
-    default = "gpt-4o-mini" if fast else "gpt-4o"
+    model_env = "OPENROUTER_MODEL_FAST" if fast else "OPENROUTER_MODEL"
+    default = "openai/gpt-4o-mini" if fast else "openai/gpt-4o"
 
     return ChatOpenAI(
         model=os.getenv(model_env, default),
-        base_url=os.getenv("LITELLM_BASE_URL"),
-        api_key=os.getenv("LITELLM_API_KEY"),
+        base_url=_OPENROUTER_BASE_URL,
+        api_key=os.getenv("OPENROUTER_API_KEY"),
     )
 
 

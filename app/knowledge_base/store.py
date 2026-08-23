@@ -29,6 +29,7 @@ class QuestionStore:
         n: int = 5,
         difficulty: Optional[str] = None,
         category: Optional[str] = None,
+        question_types: Optional[List[str]] = None,
         min_score: float = 0.6,
     ) -> List[dict]:
         candidates = self.questions
@@ -37,6 +38,8 @@ class QuestionStore:
             candidates = [q for q in candidates if q["difficulty"] == difficulty]
         if category:
             candidates = [q for q in candidates if q["category"] == category]
+        if question_types:
+            candidates = [q for q in candidates if q.get("question_type") in question_types]
 
         scored = [(self._score(q, topic), q) for q in candidates]
         scored = [(s, q) for s, q in scored if s >= min_score]

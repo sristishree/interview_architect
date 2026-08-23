@@ -14,7 +14,7 @@ The model schema is divided into two groups that the LLM handles in a single pas
   INFERRED ENRICHMENT — reason over the extracted data:
     role, domains, key_skills, project_themes, seniority, interview_focus, suggested_difficulty
 
-Uses the stronger model (LITELLM_MODEL / gpt-4o) since it must both extract accurately
+Uses the stronger model (OPENROUTER_MODEL/openai/gpt-4o) since it must both extract accurately
 and infer correctly in one shot.
 """
 
