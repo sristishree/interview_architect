@@ -29,11 +29,10 @@ pip install -r requirements.txt
 Copy `.env.example` to `.env` and fill in your keys:
 
 ```bash
-# LiteLLM proxy
-LITELLM_BASE_URL=https://your-litellm-host/
-LITELLM_API_KEY=your_key
-LITELLM_MODEL=gemini-2.5-flash
-LITELLM_MODEL_FAST=gemini-2.5-flash
+# OpenRouter
+OPENROUTER_API_KEY=sk-or-...
+OPENROUTER_MODEL=openai/gpt-4o
+OPENROUTER_MODEL_FAST=openai/gpt-4o-mini
 
 # LangSmith tracing
 LANGCHAIN_TRACING_V2=true

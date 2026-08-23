@@ -13,6 +13,8 @@ class GeneratedQuestion(BaseModel):
     question: str
     follow_up: Optional[str] = None
     question_type: QuestionType = QuestionType.theory
+    answer: Optional[str] = None   # preserved from KB source; not shown in interview output
+    source: Optional[str] = None   # provenance tag e.g. "github:owner/repo"
 
     @field_validator('difficulty', mode='before')
     @classmethod
@@ -45,6 +47,8 @@ class Question(BaseModel):
     question: str
     follow_up: Optional[str] = None
     question_type: QuestionType = QuestionType.theory
+    answer: Optional[str] = None
+    source: Optional[str] = None
 
 
 class InterviewSection(BaseModel):

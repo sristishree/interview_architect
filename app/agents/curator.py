@@ -10,7 +10,7 @@ Receives all retrieved questions (potentially 3-5x more than needed) and:
   6. Estimates total interview duration
   7. Returns shortfall so the graph can loop back for more if dedup removed too many
 
-Uses LITELLM_MODEL (default: gpt-4o) since curation requires judgment about question quality.
+Uses OPENROUTER_MODEL (default: openai/gpt-4o) since curation requires judgment about question quality.
 """
 
 import json

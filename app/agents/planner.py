@@ -13,7 +13,7 @@ and work experience details:
   5. Specifies question type mix per topic (implementation, design, theory, behavioral, etc.)
 
 This planning trace is the most valuable thing to inspect in LangSmith.
-Uses LITELLM_MODEL (default: gpt-4o) for the strategic reasoning required.
+Uses OPENROUTER_MODEL (default: openai/gpt-4o) for the strategic reasoning required.
 """
 
 import json

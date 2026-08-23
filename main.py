@@ -8,8 +8,8 @@ load_dotenv()
 
 
 def run(resume_path: str, difficulty: str | None = None, output_json: str | None = None):
-    if not os.getenv("LITELLM_API_KEY"):
-        sys.exit("Error: LITELLM_API_KEY is not set. Add it to your .env file.")
+    if not os.getenv("OPENROUTER_API_KEY"):
+        sys.exit("Error: OPENROUTER_API_KEY is not set. Add it to your .env file.")
     if not os.path.exists(resume_path):
         sys.exit(f"Error: resume file not found — {resume_path}")
 
