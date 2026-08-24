@@ -1,0 +1,3047 @@
+[
+  {
+    "topic": "Compilation vs Interpretation",
+    "category": "Programming",
+    "tags": [
+      "compiler",
+      "interpreter",
+      "machine code",
+      "source code",
+      "execution"
+    ],
+    "question": "What is the difference between compilation and interpretation?",
+    "follow_up": "In what scenarios would you prefer an interpreted language over a compiled one, and vice-versa?",
+    "question_type": "theory",
+    "difficulty": "Easy",
+    "answer": "Compilation translates source code into machine code creating an executable file. Interpretation translates and executes code line by line without an executable.",
+    "source": "kaggle:syedmharis/software-engineer-interview-questions"
+  },
+  {
+    "topic": "Polymorphism",
+    "category": "OOP",
+    "tags": [
+      "polymorphism",
+      "object-oriented programming",
+      "method overriding",
+      "inheritance",
+      "superclass"
+    ],
+    "question": "Explain the concept of polymorphism.",
+    "follow_up": "Can you provide a real-world example of how polymorphism is used in software design?",
+    "question_type": "theory",
+    "difficulty": "Medium",
+    "answer": "Polymorphism allows objects of different classes to be treated as objects of a common superclass, enabling method overriding.",
+    "source": "kaggle:syedmharis/software-engineer-interview-questions"
+  },
+  {
+    "topic": "Encapsulation",
+    "category": "OOP",
+    "tags": [
+      "encapsulation",
+      "object-oriented programming",
+      "data hiding",
+      "access modifiers",
+      "class design"
+    ],
+    "question": "Define encapsulation and give an example.",
+    "follow_up": "What are the benefits of encapsulation in terms of code maintainability and security?",
+    "question_type": "theory",
+    "difficulty": "Medium",
+    "answer": "Encapsulation bundles data and methods in a class, restricting direct data access. Example: class with private data and public methods.",
+    "source": "kaggle:syedmharis/software-engineer-interview-questions"
+  },
+  {
+    "topic": "Abstract Class vs Interface",
+    "category": "OOP",
+    "tags": [
+      "abstract class",
+      "interface",
+      "object-oriented programming",
+      "inheritance",
+      "method signature"
+    ],
+    "question": "What is an abstract class, and how is it different from an interface?",
+    "follow_up": "When would you choose to use an abstract class over an interface, and vice versa?",
+    "question_type": "theory",
+    "difficulty": "Medium",
+    "answer": "An abstract class can't be instantiated and can have abstract and concrete methods. An interface only has method signatures without implementations.",
+    "source": "kaggle:syedmharis/software-engineer-interview-questions"
+  },
+  {
+    "topic": "Object-Oriented Programming Principles",
+    "category": "OOP",
+    "tags": [
+      "OOP",
+      "encapsulation",
+      "inheritance",
+      "polymorphism",
+      "abstraction"
+    ],
+    "question": "Describe the principles of Object-Oriented Programming (OOP).",
+    "follow_up": "How do these principles contribute to writing more robust and scalable software?",
+    "question_type": "theory",
+    "difficulty": "Medium",
+    "answer": "OOP principles include encapsulation, inheritance, polymorphism, and abstraction, promoting organized and maintainable code.",
+    "source": "kaggle:syedmharis/software-engineer-interview-questions"
+  },
+  {
+    "topic": "Constructor",
+    "category": "OOP",
+    "tags": [
+      "constructor",
+      "object initialization",
+      "class instantiation",
+      "object state",
+      "OOP"
+    ],
+    "question": "What is the purpose of a constructor?",
+    "follow_up": "Can a class have multiple constructors? If so, what is that concept called?",
+    "question_type": "theory",
+    "difficulty": "Easy",
+    "answer": "A constructor initializes object properties upon class instantiation, ensuring a well-defined state.",
+    "source": "kaggle:syedmharis/software-engineer-interview-questions"
+  },
+  {
+    "topic": "Stack vs Heap Memory",
+    "category": "Programming",
+    "tags": [
+      "memory management",
+      "stack",
+      "heap",
+      "dynamic allocation",
+      "garbage collection"
+    ],
+    "question": "Explain the difference between stack and heap memory.",
+    "follow_up": "What are the implications of stack overflow and memory leaks in heap memory?",
+    "question_type": "theory",
+    "difficulty": "Medium",
+    "answer": "Stack memory stores local variables and function calls; heap memory is for dynamic allocation. Stack operates in LIFO, heap managed manually or by garbage collection.",
+    "source": "kaggle:syedmharis/software-engineer-interview-questions"
+  },
+  {
+    "topic": "Design Patterns",
+    "category": "Software Engineering",
+    "tags": [
+      "design patterns",
+      "software design",
+      "creational patterns",
+      "structural patterns",
+      "behavioral patterns"
+    ],
+    "question": "What is a design pattern, and can you name a few?",
+    "follow_up": "Choose one design pattern and explain a scenario where its application would be particularly beneficial.",
+    "question_type": "theory",
+    "difficulty": "Medium",
+    "answer": "Design patterns are solutions to common design problems. Examples: Singleton, Factory, Observer, MVC.",
+    "source": "kaggle:syedmharis/software-engineer-interview-questions"
+  },
+  {
+    "topic": "DRY Principle",
+    "category": "General",
+    "tags": [
+      "Software Engineering",
+      "Code Quality",
+      "Principle",
+      "Maintainability"
+    ],
+    "question": "Define the term \"DRY\" in software development.",
+    "follow_up": "How can violating the DRY principle negatively impact a project, and what are some common anti-patterns that emerge from it?",
+    "question_type": "theory",
+    "difficulty": "Easy",
+    "answer": "DRY (Don't Repeat Yourself) advocates for avoiding code duplication by reusing existing code.",
+    "source": "kaggle:syedmharis/software-engineer-interview-questions"
+  },
+  {
+    "topic": "SOLID Principles",
+    "category": "General",
+    "tags": [
+      "OOP",
+      "Design Principles",
+      "Software Architecture",
+      "Maintainability",
+      "Scalability"
+    ],
+    "question": "What are the SOLID principles?",
+    "follow_up": "Choose one SOLID principle and explain its significance with a practical example.",
+    "question_type": "theory",
+    "difficulty": "Medium",
+    "answer": "SOLID represents five design principles for OOP: Single Responsibility, Open/Closed, Liskov Substitution, Interface Segregation, Dependency Inversion.",
+    "source": "kaggle:syedmharis/software-engineer-interview-questions"
+  },
+  {
+    "topic": "Array vs. Linked List",
+    "category": "Data Structures",
+    "tags": [
+      "Data Structures",
+      "Memory Management",
+      "Pointers",
+      "Performance"
+    ],
+    "question": "What is the difference between an array and a linked list?",
+    "follow_up": "In what scenarios would a linked list be preferred over an array, and vice versa? Discuss the time complexity implications.",
+    "question_type": "theory",
+    "difficulty": "Medium",
+    "answer": "An array has fixed size and stores elements in contiguous memory; a linked list consists of nodes with data and references, allowing dynamic size.",
+    "source": "kaggle:syedmharis/software-engineer-interview-questions"
+  },
+  {
+    "topic": "Algorithm Time Complexity",
+    "category": "Algorithms",
+    "tags": [
+      "Big O Notation",
+      "Algorithm Analysis",
+      "Performance",
+      "Efficiency"
+    ],
+    "question": "Explain the time complexity of an algorithm.",
+    "follow_up": "Besides time, what other complexities are considered when analyzing an algorithm, and why are they important?",
+    "question_type": "theory",
+    "difficulty": "Easy",
+    "answer": "Time complexity measures the time an algorithm takes relative to its input size, expressed in Big O notation.",
+    "source": "kaggle:syedmharis/software-engineer-interview-questions"
+  },
+  {
+    "topic": "Binary Search Tree vs. Hash Table",
+    "category": "Data Structures",
+    "tags": [
+      "Data Structures",
+      "Search Algorithms",
+      "Hashing",
+      "Performance",
+      "Ordering"
+    ],
+    "question": "Describe the difference between a binary search tree and a hash table.",
+    "follow_up": "Discuss a real-world scenario where a BST would be more suitable than a hash table, and another where a hash table would be superior.",
+    "question_type": "theory",
+    "difficulty": "Medium",
+    "answer": "A binary search tree is hierarchical, maintaining order; a hash table maps keys to values for fast retrieval, without maintaining order.",
+    "source": "kaggle:syedmharis/software-engineer-interview-questions"
+  },
+  {
+    "topic": "Linked List Fundamentals",
+    "category": "Data Structures",
+    "tags": [
+      "Data Structures",
+      "Pointers",
+      "Dynamic Memory",
+      "Node"
+    ],
+    "question": "What is a linked list and how does it work?",
+    "follow_up": "Explain how common operations like insertion, deletion, and traversal are performed in a singly linked list, and their respective time complexities.",
+    "question_type": "theory",
+    "difficulty": "Easy",
+    "answer": "A linked list is a series of nodes each containing data and a reference to the next node, allowing dynamic memory allocation and efficient insertions/deletions.",
+    "source": "kaggle:syedmharis/software-engineer-interview-questions"
+  },
+  {
+    "topic": "Recursion",
+    "category": "Algorithms",
+    "tags": [
+      "Algorithm Design",
+      "Base Case",
+      "Stack",
+      "Divide and Conquer"
+    ],
+    "question": "Explain the concept of recursion.",
+    "follow_up": "When would you choose a recursive solution over an iterative one, and what are the potential drawbacks of recursion?",
+    "question_type": "theory",
+    "difficulty": "Medium",
+    "answer": "Recursion is when a function calls itself to solve subproblems, with a base case to terminate recursion.",
+    "source": "kaggle:syedmharis/software-engineer-interview-questions"
+  },
+  {
+    "topic": "Big O Notation Importance",
+    "category": "Algorithms",
+    "tags": [
+      "Algorithm Analysis",
+      "Time Complexity",
+      "Efficiency",
+      "Scalability"
+    ],
+    "question": "What is Big O notation, and why is it important?",
+    "follow_up": "Provide examples of algorithms with O(1), O(log n), O(n), O(n log n), and O(n^2) complexities, and explain what each signifies.",
+    "question_type": "theory",
+    "difficulty": "Easy",
+    "answer": "Big O notation describes the upper bound of algorithm time complexity, important for comparing efficiency and growth rates.",
+    "source": "kaggle:syedmharis/software-engineer-interview-questions"
+  },
+  {
+    "topic": "Binary Search",
+    "category": "Algorithms",
+    "tags": [
+      "binary search",
+      "search algorithm",
+      "sorted array",
+      "divide and conquer"
+    ],
+    "question": "How do you perform a binary search on a sorted array?",
+    "follow_up": "What is the time complexity of binary search and how does it compare to linear search?",
+    "question_type": "implementation",
+    "difficulty": "Easy",
+    "answer": "Binary search divides the search interval in half, repeatedly comparing the middle element to the target.",
+    "source": "kaggle:syedmharis/software-engineer-interview-questions"
+  },
+  {
+    "topic": "Sorting Algorithms Comparison",
+    "category": "Algorithms",
+    "tags": [
+      "sorting algorithms",
+      "time complexity",
+      "space complexity",
+      "quick sort",
+      "merge sort"
+    ],
+    "question": "Discuss the advantages and disadvantages of different sorting algorithms.",
+    "follow_up": "When would you choose an O(N log N) algorithm over an O(N^2) algorithm, and vice-versa?",
+    "question_type": "theory",
+    "difficulty": "Medium",
+    "answer": "Sorting algorithms vary in time/space complexity and stability. Quick Sort and Merge Sort are fast but more complex; Insertion and Bubble Sort are simple but slower.",
+    "source": "kaggle:syedmharis/software-engineer-interview-questions"
+  },
+  {
+    "topic": "Hash Table Internals",
+    "category": "Data Structures",
+    "tags": [
+      "hash table",
+      "hash function",
+      "collision resolution",
+      "time complexity"
+    ],
+    "question": "Explain how a hash table works.",
+    "follow_up": "How do hash tables handle collisions, and what are common collision resolution strategies?",
+    "question_type": "theory",
+    "difficulty": "Medium",
+    "answer": "A hash table uses a hash function to map keys to values in an array, allowing fast O(1) access.",
+    "source": "kaggle:syedmharis/software-engineer-interview-questions"
+  },
+  {
+    "topic": "Dynamic Programming",
+    "category": "Algorithms",
+    "tags": [
+      "dynamic programming",
+      "optimization",
+      "subproblems",
+      "overlapping subproblems",
+      "optimal substructure"
+    ],
+    "question": "What is dynamic programming?",
+    "follow_up": "Can you provide an example of a problem that can be solved using dynamic programming and explain the approach?",
+    "question_type": "theory",
+    "difficulty": "Medium",
+    "answer": "Dynamic programming solves complex problems by dividing them into smaller subproblems, avoiding redundant calculations.",
+    "source": "kaggle:syedmharis/software-engineer-interview-questions"
+  },
+  {
+    "topic": "Java vs. JavaScript",
+    "category": "Programming Languages",
+    "tags": [
+      "Java",
+      "JavaScript",
+      "compiled language",
+      "interpreted language",
+      "statically typed",
+      "dynamically typed"
+    ],
+    "question": "What is the difference between Java and JavaScript?",
+    "follow_up": "In which scenarios would you choose Java over JavaScript, and vice-versa?",
+    "question_type": "theory",
+    "difficulty": "Easy",
+    "answer": "Java is a compiled, statically-typed language used for server-side, mobile, and desktop apps. JavaScript is an interpreted, dynamically-typed language for web development.",
+    "source": "kaggle:syedmharis/software-engineer-interview-questions"
+  },
+  {
+    "topic": "MVC Architectural Pattern",
+    "category": "Software Architecture",
+    "tags": [
+      "MVC",
+      "architectural pattern",
+      "model view controller",
+      "separation of concerns",
+      "design patterns"
+    ],
+    "question": "Describe the MVC architectural pattern.",
+    "follow_up": "What are the advantages and disadvantages of using MVC in a large-scale application?",
+    "question_type": "theory",
+    "difficulty": "Medium",
+    "answer": "MVC divides an application into Model (data), View (UI), and Controller (input handling), promoting separation of concerns.",
+    "source": "kaggle:syedmharis/software-engineer-interview-questions"
+  },
+  {
+    "topic": "RESTful API Principles",
+    "category": "System Design",
+    "tags": [
+      "REST",
+      "API",
+      "HTTP methods",
+      "stateless",
+      "client-server",
+      "CRUD"
+    ],
+    "question": "What is a RESTful API?",
+    "follow_up": "What are the key constraints of REST and why are they important for building scalable web services?",
+    "question_type": "theory",
+    "difficulty": "Medium",
+    "answer": "RESTful API is a web service implementation using HTTP methods to perform CRUD operations on resources, adhering to stateless, client-server architecture.",
+    "source": "kaggle:syedmharis/software-engineer-interview-questions"
+  },
+  {
+    "topic": "JavaScript 'this' Keyword",
+    "category": "JavaScript",
+    "tags": [
+      "JavaScript",
+      "this keyword",
+      "execution context",
+      "scope",
+      "call apply bind"
+    ],
+    "question": "Explain the use of \"this\" keyword in JavaScript.",
+    "follow_up": "How does the value of 'this' change when a function is called using call(), apply(), or bind()?",
+    "question_type": "theory",
+    "difficulty": "Medium",
+    "answer": "\"this\" in JavaScript refers to the execution context, varying based on function calling, global scope, or event handlers.",
+    "source": "kaggle:syedmharis/software-engineer-interview-questions"
+  },
+  {
+    "topic": "Closures",
+    "category": "Programming",
+    "tags": [
+      "closure",
+      "scope",
+      "functions",
+      "lexical environment",
+      "callback"
+    ],
+    "question": "What is a closure in programming?",
+    "follow_up": "Can you provide a practical example of when closures are particularly useful, and describe the problem they solve?",
+    "question_type": "theory",
+    "difficulty": "Medium",
+    "answer": "A closure is a function with access to its outer scope variables even after the outer function has executed.",
+    "source": "kaggle:syedmharis/software-engineer-interview-questions"
+  },
+  {
+    "topic": "Python 2 vs. Python 3",
+    "category": "Python",
+    "tags": [
+      "python2",
+      "python3",
+      "language features",
+      "unicode",
+      "division"
+    ],
+    "question": "What are the key differences between Python 2 and Python 3?",
+    "follow_up": "What challenges might arise when migrating a large codebase from Python 2 to Python 3, and how would you approach them?",
+    "question_type": "theory",
+    "difficulty": "Medium",
+    "answer": "Python 3 has print as a function, true division, Unicode support by default, and different syntax for exceptions, unlike Python 2.",
+    "source": "kaggle:syedmharis/software-engineer-interview-questions"
+  },
+  {
+    "topic": "Package Managers",
+    "category": "Programming",
+    "tags": [
+      "package management",
+      "npm",
+      "pip",
+      "dependencies",
+      "libraries"
+    ],
+    "question": "Discuss the role and importance of a package manager like npm or pip.",
+    "follow_up": "How do package managers handle dependency conflicts, and what strategies can be used to mitigate them in a project?",
+    "question_type": "theory",
+    "difficulty": "Medium",
+    "answer": "Package managers manage installation, update, and dependency resolution of libraries, simplifying library management in development.",
+    "source": "kaggle:syedmharis/software-engineer-interview-questions"
+  },
+  {
+    "topic": "Multi-threading in Java",
+    "category": "Programming",
+    "tags": [
+      "java",
+      "multi-threading",
+      "concurrency",
+      "threads",
+      "JVM"
+    ],
+    "question": "Explain the concept of multi-threading in Java, and why it is used.",
+    "follow_up": "What are the common challenges and pitfalls when implementing multi-threaded applications in Java, such as deadlocks or race conditions, and how can they be prevented?",
+    "question_type": "theory",
+    "difficulty": "Medium",
+    "answer": "Multi-threading in Java allows concurrent execution of multiple threads, improving application responsiveness and performance.",
+    "source": "kaggle:syedmharis/software-engineer-interview-questions"
+  },
+  {
+    "topic": "Singleton Design Pattern",
+    "category": "Software Design",
+    "tags": [
+      "design patterns",
+      "singleton",
+      "object-oriented design",
+      "global access",
+      "instance control"
+    ],
+    "question": "What is the Singleton design pattern?",
+    "follow_up": "In which scenarios is the Singleton pattern most appropriate, and what are its potential drawbacks or alternatives?",
+    "question_type": "theory",
+    "difficulty": "Medium",
+    "answer": "Singleton ensures a class has only one instance and provides a global access point to it, useful for shared resources.",
+    "source": "kaggle:syedmharis/software-engineer-interview-questions"
+  },
+  {
+    "topic": "Virtual Functions in C++",
+    "category": "Programming",
+    "tags": [
+      "c++",
+      "virtual functions",
+      "polymorphism",
+      "inheritance",
+      "dynamic dispatch"
+    ],
+    "question": "What is a virtual function in C++?",
+    "follow_up": "How do virtual functions enable runtime polymorphism in C++, and what are the implications on performance and memory compared to non-virtual functions?",
+    "question_type": "theory",
+    "difficulty": "Medium",
+    "answer": "Virtual functions in C++ allow derived classes to override them, enabling runtime polymorphism and dynamic method dispatch.",
+    "source": "kaggle:syedmharis/software-engineer-interview-questions"
+  },
+  {
+    "topic": "Database Indexing",
+    "category": "SQL",
+    "tags": [
+      "database",
+      "indexing",
+      "query optimization",
+      "performance",
+      "data retrieval"
+    ],
+    "question": "What is a database index, and why is it important?",
+    "follow_up": "Describe different types of database indexes (e.g., B-tree, hash) and discuss the trade-offs of using indexes, including their impact on write operations.",
+    "question_type": "theory",
+    "difficulty": "Medium",
+    "answer": "A database index speeds up data retrieval, similar to a book's index, improving query performance.",
+    "source": "kaggle:syedmharis/software-engineer-interview-questions"
+  },
+  {
+    "topic": "SQL vs. NoSQL Databases",
+    "category": "Database",
+    "tags": [
+      "sql",
+      "nosql",
+      "relational database",
+      "non-relational database",
+      "schema"
+    ],
+    "question": "Explain the differences between SQL and NoSQL databases.",
+    "follow_up": "Given a specific use case (e.g., e-commerce product catalog vs. user session data), how would you decide whether to use a SQL or NoSQL database, and what factors would influence your choice?",
+    "question_type": "theory",
+    "difficulty": "Medium",
+    "answer": "SQL databases use structured query language with a predefined schema; NoSQL databases store schema-less data with flexible models.",
+    "source": "kaggle:syedmharis/software-engineer-interview-questions"
+  },
+  {
+    "topic": "SQL Foreign Key",
+    "category": "SQL",
+    "tags": [
+      "foreign key",
+      "primary key",
+      "relational database",
+      "referential integrity"
+    ],
+    "question": "What is a foreign key in a database?",
+    "follow_up": "How does a foreign key enforce referential integrity, and what happens if you try to violate it?",
+    "question_type": "theory",
+    "difficulty": "Easy",
+    "answer": "A foreign key links two tables by referring to the primary key in another table, ensuring referential integrity.",
+    "source": "kaggle:syedmharis/software-engineer-interview-questions"
+  },
+  {
+    "topic": "Database ACID Properties",
+    "category": "SQL",
+    "tags": [
+      "ACID",
+      "transactions",
+      "atomicity",
+      "consistency",
+      "isolation",
+      "durability"
+    ],
+    "question": "Describe the ACID properties in database transactions.",
+    "follow_up": "Can you give a real-world example where violating one of the ACID properties would lead to data corruption or an inconsistent state?",
+    "question_type": "theory",
+    "difficulty": "Medium",
+    "answer": "ACID: Atomicity (indivisible transactions), Consistency (consistent state transitions), Isolation (independent transactions), Durability (persisted changes).",
+    "source": "kaggle:syedmharis/software-engineer-interview-questions"
+  },
+  {
+    "topic": "SQL Query Optimization",
+    "category": "SQL",
+    "tags": [
+      "query optimization",
+      "indexing",
+      "EXPLAIN plan",
+      "denormalization",
+      "SQL performance"
+    ],
+    "question": "How do you optimize a SQL query for better performance?",
+    "follow_up": "Beyond indexing, what are some less common but effective strategies for optimizing complex SQL queries that involve multiple joins and subqueries?",
+    "question_type": "optimization",
+    "difficulty": "Medium",
+    "answer": "Optimize using indexes, efficient SQL, limiting data retrieval, analyzing query performance, and considering denormalization.",
+    "source": "kaggle:syedmharis/software-engineer-interview-questions"
+  },
+  {
+    "topic": "Database Normalization",
+    "category": "SQL",
+    "tags": [
+      "normalization",
+      "database design",
+      "data redundancy",
+      "data integrity",
+      "normal forms"
+    ],
+    "question": "What is normalization in database design?",
+    "follow_up": "Explain the differences between 1NF, 2NF, and 3NF, providing an example of how to move a table from 2NF to 3NF.",
+    "question_type": "theory",
+    "difficulty": "Medium",
+    "answer": "Normalization organizes data into separate tables to reduce redundancy and improve integrity, following normalization forms.",
+    "source": "kaggle:syedmharis/software-engineer-interview-questions"
+  },
+  {
+    "topic": "SQL Stored Procedures",
+    "category": "SQL",
+    "tags": [
+      "stored procedure",
+      "SQL programming",
+      "performance optimization",
+      "data manipulation",
+      "database security"
+    ],
+    "question": "What is a stored procedure, and when would you use one?",
+    "follow_up": "Discuss the advantages and disadvantages of using stored procedures compared to embedding SQL queries directly in application code.",
+    "question_type": "theory",
+    "difficulty": "Medium",
+    "answer": "Stored procedures are precompiled SQL statements for data manipulation and logic, used for repetitive tasks and improving performance.",
+    "source": "kaggle:syedmharis/software-engineer-interview-questions"
+  },
+  {
+    "topic": "Database Denormalization",
+    "category": "SQL",
+    "tags": [
+      "denormalization",
+      "database design",
+      "performance optimization",
+      "data redundancy",
+      "read-heavy systems"
+    ],
+    "question": "What is database denormalization, and when is it appropriate?",
+    "follow_up": "Describe a scenario where denormalization would be clearly beneficial, and discuss the trade-offs involved in implementing it.",
+    "question_type": "theory",
+    "difficulty": "Medium",
+    "answer": "Denormalization introduces redundancy for performance, useful in read-heavy scenarios at the expense of storage and complexity.",
+    "source": "kaggle:syedmharis/software-engineer-interview-questions"
+  },
+  {
+    "topic": "ORM Tools",
+    "category": "SQL",
+    "tags": [
+      "ORM",
+      "Object-Relational Mapping",
+      "database interaction",
+      "developer productivity",
+      "performance overhead"
+    ],
+    "question": "Discuss the advantages and disadvantages of using an ORM tool.",
+    "follow_up": "In what specific situations might you choose to bypass an ORM and write raw SQL queries, even when an ORM is available in your project?",
+    "question_type": "theory",
+    "difficulty": "Medium",
+    "answer": "ORM simplifies database interactions and is language-agnostic. It can introduce performance overhead and may limit database features.",
+    "source": "kaggle:syedmharis/software-engineer-interview-questions"
+  },
+  {
+    "topic": "Document Object Model (DOM)",
+    "category": "WebDevelopment",
+    "tags": [
+      "DOM",
+      "HTML",
+      "JavaScript",
+      "Web API"
+    ],
+    "question": "What is the Document Object Model (DOM)?",
+    "follow_up": "How do browser rendering engines interact with the DOM, and what is the difference between the DOM and the Visual DOM (render tree)?",
+    "question_type": "theory",
+    "difficulty": "Medium",
+    "answer": "The DOM is a tree-like representation of a web page's structure, allowing manipulation of content, structure, and style via programming languages.",
+    "source": "kaggle:syedmharis/software-engineer-interview-questions"
+  },
+  {
+    "topic": "HTTP vs HTTPS",
+    "category": "WebDevelopment",
+    "tags": [
+      "HTTP",
+      "HTTPS",
+      "SSL/TLS",
+      "Security",
+      "Networking"
+    ],
+    "question": "Explain the difference between HTTP and HTTPS.",
+    "follow_up": "Describe the handshake process involved in establishing an HTTPS connection.",
+    "question_type": "theory",
+    "difficulty": "Easy",
+    "answer": "HTTP is an unsecured data transmission protocol; HTTPS is secure, encrypting data in transit using SSL/TLS.",
+    "source": "kaggle:syedmharis/software-engineer-interview-questions"
+  },
+  {
+    "topic": "Cross-Origin Resource Sharing (CORS)",
+    "category": "WebDevelopment",
+    "tags": [
+      "CORS",
+      "Security",
+      "HTTP Headers",
+      "Web Security",
+      "Browser"
+    ],
+    "question": "What is CORS (Cross-Origin Resource Sharing)?",
+    "follow_up": "How do you configure CORS on a server-side application to allow specific origins and methods?",
+    "question_type": "theory",
+    "difficulty": "Medium",
+    "answer": "CORS is a security measure allowing or restricting resources requested from another domain, managed via HTTP headers.",
+    "source": "kaggle:syedmharis/software-engineer-interview-questions"
+  },
+  {
+    "topic": "Web Server Purpose",
+    "category": "WebDevelopment",
+    "tags": [
+      "Web Server",
+      "Apache",
+      "Nginx",
+      "HTTP",
+      "Reverse Proxy"
+    ],
+    "question": "Describe the purpose of a web server like Apache or Nginx.",
+    "follow_up": "Beyond serving static content, what advanced functionalities do modern web servers like Nginx provide, especially in a microservices architecture?",
+    "question_type": "theory",
+    "difficulty": "Medium",
+    "answer": "Web servers handle HTTP requests, serve content, manage security, routing, and can act as reverse proxies for application servers.",
+    "source": "kaggle:syedmharis/software-engineer-interview-questions"
+  },
+  {
+    "topic": "HTTP Cookies",
+    "category": "WebDevelopment",
+    "tags": [
+      "Cookies",
+      "HTTP",
+      "Session Management",
+      "State Management",
+      "Web Security"
+    ],
+    "question": "What is a cookie, and how does it work?",
+    "follow_up": "Discuss the security implications of using cookies and methods to mitigate common cookie-related vulnerabilities like XSS and CSRF.",
+    "question_type": "theory",
+    "difficulty": "Medium",
+    "answer": "Cookies are data stored on the user's computer by the web server, sent with HTTP requests for session management, tracking, and storing preferences.",
+    "source": "kaggle:syedmharis/software-engineer-interview-questions"
+  },
+  {
+    "topic": "Web Session Management",
+    "category": "WebDevelopment",
+    "tags": [
+      "Session",
+      "HTTP",
+      "State Management",
+      "Authentication",
+      "Web Development"
+    ],
+    "question": "What is a session in web development?",
+    "follow_up": "Compare server-side sessions with client-side token-based authentication (like JWTs) in terms of scalability, security, and statefulness.",
+    "question_type": "theory",
+    "difficulty": "Medium",
+    "answer": "A session maintains stateful information across multiple HTTP requests, typically for user authentication and data storage.",
+    "source": "kaggle:syedmharis/software-engineer-interview-questions"
+  },
+  {
+    "topic": "Responsive Web Design",
+    "category": "WebDevelopment",
+    "tags": [
+      "Responsive Design",
+      "CSS",
+      "Media Queries",
+      "Mobile First",
+      "Front-end"
+    ],
+    "question": "Explain the concept of responsive web design.",
+    "follow_up": "What are some common challenges in implementing responsive design for complex layouts, and how do modern CSS frameworks address them?",
+    "question_type": "theory",
+    "difficulty": "Easy",
+    "answer": "Responsive design ensures web content functions across different devices and screen sizes, using CSS media queries and flexible layouts.",
+    "source": "kaggle:syedmharis/software-engineer-interview-questions"
+  },
+  {
+    "topic": "HTTP GET vs POST",
+    "category": "WebDevelopment",
+    "tags": [
+      "HTTP Methods",
+      "GET",
+      "POST",
+      "REST API",
+      "Web Protocols"
+    ],
+    "question": "Describe the differences between GET and POST requests.",
+    "follow_up": "When would you choose PUT or PATCH over POST for updating resources in a RESTful API?",
+    "question_type": "theory",
+    "difficulty": "Easy",
+    "answer": "GET requests retrieve data and include parameters in the URL; POST requests send data to the server, encapsulating data in the request body.",
+    "source": "kaggle:syedmharis/software-engineer-interview-questions"
+  },
+  {
+    "topic": "SEO in Web Development",
+    "category": "Web Development",
+    "tags": [
+      "SEO",
+      "search engine optimization",
+      "web visibility",
+      "organic traffic",
+      "content optimization"
+    ],
+    "question": "What is the importance of SEO in web development?",
+    "follow_up": "Can you describe some key on-page and off-page SEO techniques?",
+    "question_type": "theory",
+    "difficulty": "Easy",
+    "answer": "SEO enhances a website's visibility in search engine results, improving organic traffic and user reach through optimized content and structure.",
+    "source": "kaggle:syedmharis/software-engineer-interview-questions"
+  },
+  {
+    "topic": "Web Page Rendering",
+    "category": "Web Development",
+    "tags": [
+      "DOM",
+      "rendering engine",
+      "CSSOM",
+      "layout",
+      "painting"
+    ],
+    "question": "How does a web browser render a web page?",
+    "follow_up": "What are the common bottlenecks during the rendering process, and how can they be optimized?",
+    "question_type": "theory",
+    "difficulty": "Medium",
+    "answer": "Browsers parse HTML to create a DOM, fetch resources, build a rendering tree, apply CSS, calculate layout, and paint the page on the screen.",
+    "source": "kaggle:syedmharis/software-engineer-interview-questions"
+  },
+  {
+    "topic": "Unit Testing",
+    "category": "Software Engineering",
+    "tags": [
+      "unit testing",
+      "test-driven development",
+      "code quality",
+      "defect detection",
+      "software testing"
+    ],
+    "question": "What is unit testing, and why is it important?",
+    "follow_up": "How do you typically decide what constitutes a 'unit' in unit testing, and what tools do you use for it?",
+    "question_type": "theory",
+    "difficulty": "Easy",
+    "answer": "Unit testing evaluates individual code components, ensuring correctness and facilitating early defect detection.",
+    "source": "kaggle:syedmharis/software-engineer-interview-questions"
+  },
+  {
+    "topic": "Black-box vs. White-box Testing",
+    "category": "Software Engineering",
+    "tags": [
+      "black-box testing",
+      "white-box testing",
+      "software testing",
+      "test methodologies",
+      "quality assurance"
+    ],
+    "question": "Explain the difference between black-box and white-box testing.",
+    "follow_up": "In which scenarios would you primarily use black-box testing versus white-box testing?",
+    "question_type": "theory",
+    "difficulty": "Medium",
+    "answer": "Black-box tests functionality without internal code knowledge; white-box tests internal code logic and structure.",
+    "source": "kaggle:syedmharis/software-engineer-interview-questions"
+  },
+  {
+    "topic": "Regression Testing",
+    "category": "Software Engineering",
+    "tags": [
+      "regression testing",
+      "software quality",
+      "test maintenance",
+      "software updates",
+      "feature stability"
+    ],
+    "question": "What is regression testing?",
+    "follow_up": "How can you automate regression testing, and what are the benefits and challenges of doing so?",
+    "question_type": "theory",
+    "difficulty": "Medium",
+    "answer": "Regression testing ensures new code changes don't break existing features, maintaining functionality over updates.",
+    "source": "kaggle:syedmharis/software-engineer-interview-questions"
+  },
+  {
+    "topic": "Code Reviews",
+    "category": "Software Engineering",
+    "tags": [
+      "code review",
+      "code quality",
+      "peer programming",
+      "knowledge sharing",
+      "software development lifecycle"
+    ],
+    "question": "Describe the purpose of code reviews.",
+    "follow_up": "What is your preferred approach to conducting code reviews, and what makes a code review effective?",
+    "question_type": "theory",
+    "difficulty": "Easy",
+    "answer": "Code reviews identify defects, improve quality, enforce standards, and facilitate knowledge sharing.",
+    "source": "kaggle:syedmharis/software-engineer-interview-questions"
+  },
+  {
+    "topic": "CI/CD",
+    "category": "DevOps",
+    "tags": [
+      "continuous integration",
+      "continuous delivery",
+      "DevOps",
+      "automation",
+      "software deployment"
+    ],
+    "question": "What is continuous integration (CI) and continuous delivery (CD)?",
+    "follow_up": "What are the essential tools and practices for implementing an effective CI/CD pipeline?",
+    "question_type": "theory",
+    "difficulty": "Medium",
+    "answer": "CI involves frequent code integration and testing; CD extends CI by deploying changes to production automatically after testing.",
+    "source": "kaggle:syedmharis/software-engineer-interview-questions"
+  },
+  {
+    "topic": "Code Coverage",
+    "category": "Software Engineering",
+    "tags": [
+      "code coverage",
+      "software testing",
+      "test thoroughness",
+      "quality metrics",
+      "testing gaps"
+    ],
+    "question": "Explain the concept of code coverage in testing.",
+    "follow_up": "What are the different types of code coverage metrics, and what are their limitations?",
+    "question_type": "theory",
+    "difficulty": "Medium",
+    "answer": "Code coverage measures the extent of code tested, assessing test thoroughness and identifying untested areas.",
+    "source": "kaggle:syedmharis/software-engineer-interview-questions"
+  },
+  {
+    "topic": "Test Case Writing",
+    "category": "Software Testing",
+    "tags": [
+      "test case",
+      "test plan",
+      "expected result",
+      "test documentation",
+      "quality assurance"
+    ],
+    "question": "What is a test case and how do you write one?",
+    "follow_up": "Can you outline the essential components of a robust test case and explain how they contribute to effective testing?",
+    "question_type": "implementation",
+    "difficulty": "Easy",
+    "answer": "A test case outlines test conditions, inputs, and expected results, structured with objective, steps, and documentation.",
+    "source": "kaggle:syedmharis/software-engineer-interview-questions"
+  },
+  {
+    "topic": "Load Testing",
+    "category": "Software Testing",
+    "tags": [
+      "load testing",
+      "performance testing",
+      "scalability",
+      "bottlenecks",
+      "system performance"
+    ],
+    "question": "What is load testing, and why is it necessary?",
+    "follow_up": "What metrics are typically monitored during load testing, and how do you interpret them to identify performance issues?",
+    "question_type": "theory",
+    "difficulty": "Medium",
+    "answer": "Load testing evaluates system performance under expected load conditions, identifying bottlenecks and scalability issues.",
+    "source": "kaggle:syedmharis/software-engineer-interview-questions"
+  },
+  {
+    "topic": "Manual vs. Automated Testing",
+    "category": "Software Testing",
+    "tags": [
+      "manual testing",
+      "automated testing",
+      "regression testing",
+      "UX testing",
+      "testing strategy"
+    ],
+    "question": "Describe the differences between manual and automated testing.",
+    "follow_up": "In what scenarios would you prioritize manual testing over automated testing, and vice versa?",
+    "question_type": "theory",
+    "difficulty": "Medium",
+    "answer": "Manual testing is human-driven; suitable for exploratory and UX testing. Automated testing uses tools for repetitive tasks; suitable for regression and performance testing.",
+    "source": "kaggle:syedmharis/software-engineer-interview-questions"
+  },
+  {
+    "topic": "Bug Tracking Systems",
+    "category": "Software Testing",
+    "tags": [
+      "bug tracking",
+      "issue management",
+      "defect resolution",
+      "software development lifecycle",
+      "QA workflow"
+    ],
+    "question": "What is a bug tracking system?",
+    "follow_up": "What are the key features you would look for in a bug tracking system, and how does it integrate into a typical development process?",
+    "question_type": "theory",
+    "difficulty": "Easy",
+    "answer": "A bug tracking system logs, manages, and resolves issues in software development, ensuring systematic problem handling.",
+    "source": "kaggle:syedmharis/software-engineer-interview-questions"
+  },
+  {
+    "topic": "Git Version Control System",
+    "category": "General",
+    "tags": [
+      "Git",
+      "version control",
+      "distributed VCS",
+      "source code management",
+      "collaboration"
+    ],
+    "question": "What is Git, and how does it work?",
+    "follow_up": "Explain the core concepts of Git's distributed architecture and how it differs from centralized version control systems.",
+    "question_type": "theory",
+    "difficulty": "Medium",
+    "answer": "Git is a distributed version control system for tracking changes in source code, allowing collaborative work and branch management.",
+    "source": "kaggle:syedmharis/software-engineer-interview-questions"
+  },
+  {
+    "topic": "Git vs. SVN",
+    "category": "General",
+    "tags": [
+      "Git",
+      "SVN",
+      "distributed VCS",
+      "centralized VCS",
+      "version control comparison"
+    ],
+    "question": "Explain the difference between Git and SVN (Subversion).",
+    "follow_up": "What are the practical implications of Git's distributed nature compared to SVN's centralized model for development teams?",
+    "question_type": "theory",
+    "difficulty": "Medium",
+    "answer": "Git is distributed, with local repository copies; SVN is centralized, requiring network connectivity for repository access.",
+    "source": "kaggle:syedmharis/software-engineer-interview-questions"
+  },
+  {
+    "topic": "Git Merge Conflicts",
+    "category": "General",
+    "tags": [
+      "Git",
+      "merge conflict",
+      "version control",
+      "conflict resolution",
+      "branching"
+    ],
+    "question": "What is a merge conflict, and how do you resolve it in Git?",
+    "follow_up": "Describe a common scenario that leads to a merge conflict and walk through the steps you would take to resolve it using Git commands.",
+    "question_type": "implementation",
+    "difficulty": "Medium",
+    "answer": "Merge conflicts occur when changes in different branches clash. Resolve by manually editing files and committing the result.",
+    "source": "kaggle:syedmharis/software-engineer-interview-questions"
+  },
+  {
+    "topic": "Branching in Version Control",
+    "category": "General",
+    "tags": [
+      "Git branching",
+      "version control",
+      "feature development",
+      "isolation",
+      "workflow"
+    ],
+    "question": "Describe the purpose of branching in version control.",
+    "follow_up": "How do different branching strategies (e.g., Git Flow, GitHub Flow) utilize branching to manage complex software development projects?",
+    "question_type": "theory",
+    "difficulty": "Easy",
+    "answer": "Branching isolates development work without affecting other parts of the repository, aiding in feature development and experimentation.",
+    "source": "kaggle:syedmharis/software-engineer-interview-questions"
+  },
+  {
+    "topic": "Pull Requests",
+    "category": "General",
+    "tags": [
+      "Git",
+      "Version Control",
+      "Code Review",
+      "Collaboration",
+      "Development Workflow"
+    ],
+    "question": "What is a pull request (PR), and how does it work?",
+    "follow_up": "How does a pull request facilitate code quality and collaboration in a team environment?",
+    "question_type": "theory",
+    "difficulty": "Easy",
+    "answer": "A PR is a request to merge code from one branch to another, facilitating code review and discussion before integration.",
+    "source": "kaggle:syedmharis/software-engineer-interview-questions"
+  },
+  {
+    "topic": "Code Conflict Resolution",
+    "category": "General",
+    "tags": [
+      "Git",
+      "Version Control",
+      "Merge Conflicts",
+      "Collaboration",
+      "Troubleshooting"
+    ],
+    "question": "How do you handle code conflicts in a team project?",
+    "follow_up": "Can you describe a specific instance where you encountered a complex merge conflict and how you resolved it?",
+    "question_type": "behavioral",
+    "difficulty": "Medium",
+    "answer": "Resolve code conflicts through communication, careful review, manual merging, testing, and documenting resolutions.",
+    "source": "kaggle:syedmharis/software-engineer-interview-questions"
+  },
+  {
+    "topic": "Code Refactoring",
+    "category": "General",
+    "tags": [
+      "Code Quality",
+      "Software Maintenance",
+      "Readability",
+      "Technical Debt",
+      "Best Practices"
+    ],
+    "question": "What is code refactoring, and why is it important?",
+    "follow_up": "What are some common indicators that a piece of code needs refactoring, and what refactoring techniques do you commonly apply?",
+    "question_type": "theory",
+    "difficulty": "Medium",
+    "answer": "Refactoring improves code structure and readability without altering functionality, enhancing maintainability and quality.",
+    "source": "kaggle:syedmharis/software-engineer-interview-questions"
+  },
+  {
+    "topic": "Git Branching Strategies",
+    "category": "General",
+    "tags": [
+      "Git",
+      "GitFlow",
+      "Branching Models",
+      "Version Control",
+      "Release Management"
+    ],
+    "question": "Explain the role of Git branching strategies like GitFlow.",
+    "follow_up": "What are the advantages and disadvantages of using GitFlow compared to a simpler branching strategy like GitHub Flow or GitLab Flow?",
+    "question_type": "theory",
+    "difficulty": "Medium",
+    "answer": "GitFlow organizes branches and releases, defining naming conventions and branch purposes for structured and organized development.",
+    "source": "kaggle:syedmharis/software-engineer-interview-questions"
+  },
+  {
+    "topic": "Git Rebase",
+    "category": "General",
+    "tags": [
+      "Git",
+      "Version Control",
+      "Commit History",
+      "Branch Management",
+      "Interactive Rebase"
+    ],
+    "question": "What is Git rebase, and when would you use it?",
+    "follow_up": "Under what circumstances should you avoid rebasing, especially in a collaborative environment, and why?",
+    "question_type": "theory",
+    "difficulty": "Medium",
+    "answer": "Git rebase re-applies commits onto another base for a cleaner history. Use with caution to maintain a linear project history.",
+    "source": "kaggle:syedmharis/software-engineer-interview-questions"
+  },
+  {
+    "topic": "Distributed Version Control Systems",
+    "category": "General",
+    "tags": [
+      "DVCS",
+      "Git",
+      "Version Control",
+      "Collaboration",
+      "Fault Tolerance"
+    ],
+    "question": "Discuss the advantages of distributed version control systems.",
+    "follow_up": "How do distributed version control systems handle issues like data redundancy and synchronization across multiple repositories?",
+    "question_type": "theory",
+    "difficulty": "Medium",
+    "answer": "Distributed systems allow offline work, flexible branching/merging, faster operations, redundancy, and collaborative workflows.",
+    "source": "kaggle:syedmharis/software-engineer-interview-questions"
+  },
+  {
+    "topic": "Microservices Architecture",
+    "category": "SystemDesign",
+    "tags": [
+      "Architecture",
+      "Distributed Systems",
+      "Scalability",
+      "APIs",
+      "Modularity"
+    ],
+    "question": "Describe the concept of microservices architecture.",
+    "follow_up": "What are the common challenges associated with implementing and managing a microservices architecture, and how can they be mitigated?",
+    "question_type": "theory",
+    "difficulty": "Medium",
+    "answer": "Microservices architecture consists of small, independent services communicating via APIs, each responsible for specific functionality, promoting scalability and maintenance.",
+    "source": "kaggle:syedmharis/software-engineer-interview-questions"
+  },
+  {
+    "topic": "Load Balancers in Web Applications",
+    "category": "SystemDesign",
+    "tags": [
+      "Networking",
+      "High Availability",
+      "Scalability",
+      "Fault Tolerance",
+      "Web Architecture"
+    ],
+    "question": "What is a load balancer, and why is it used in web applications?",
+    "follow_up": "Can you explain different load balancing algorithms and their use cases, and how a load balancer contributes to disaster recovery strategies?",
+    "question_type": "theory",
+    "difficulty": "Medium",
+    "answer": "A load balancer distributes incoming traffic across servers, ensuring resource efficiency, fault tolerance, and high availability.",
+    "source": "kaggle:syedmharis/software-engineer-interview-questions"
+  },
+  {
+    "topic": "Web Caching",
+    "category": "SystemDesign",
+    "tags": [
+      "caching",
+      "web applications",
+      "performance",
+      "system design",
+      "scalability"
+    ],
+    "question": "Explain the importance of caching in web applications.",
+    "follow_up": "What are the different types of caching strategies and when would you use each?",
+    "question_type": "theory",
+    "difficulty": "Medium",
+    "answer": "Caching stores frequently accessed data for faster retrieval, reducing backend load, improving performance, and enhancing user experience.",
+    "source": "kaggle:syedmharis/software-engineer-interview-questions"
+  },
+  {
+    "topic": "Content Delivery Network (CDN)",
+    "category": "SystemDesign",
+    "tags": [
+      "CDN",
+      "network",
+      "latency",
+      "content delivery",
+      "system architecture"
+    ],
+    "question": "What is a CDN (Content Delivery Network)?",
+    "follow_up": "How does a CDN improve performance and what factors should be considered when choosing a CDN provider?",
+    "question_type": "theory",
+    "difficulty": "Medium",
+    "answer": "A CDN is a network of servers for delivering content efficiently to users based on geographic proximity, reducing latency and load times.",
+    "source": "kaggle:syedmharis/software-engineer-interview-questions"
+  },
+  {
+    "topic": "Stateless vs. Stateful Services",
+    "category": "SystemDesign",
+    "tags": [
+      "stateless",
+      "stateful",
+      "services",
+      "distributed systems",
+      "session management"
+    ],
+    "question": "What is a stateless vs. stateful service?",
+    "follow_up": "Provide examples of scenarios where a stateful service is preferable, and how you would manage state in a distributed stateless system.",
+    "question_type": "theory",
+    "difficulty": "Medium",
+    "answer": "Stateless services don't retain client data between requests; stateful services maintain client state, useful for sessions and transactions.",
+    "source": "kaggle:syedmharis/software-engineer-interview-questions"
+  },
+  {
+    "topic": "CAP Theorem",
+    "category": "SystemDesign",
+    "tags": [
+      "CAP theorem",
+      "distributed systems",
+      "consistency",
+      "availability",
+      "partition tolerance"
+    ],
+    "question": "Explain the concept of CAP theorem in distributed systems.",
+    "follow_up": "How do different distributed databases (e.g., NoSQL databases) choose to prioritize C, A, or P, and what are the implications?",
+    "question_type": "theory",
+    "difficulty": "Hard",
+    "answer": "The CAP theorem states that in a distributed system, you cannot simultaneously guarantee Consistency, Availability, and Partition Tolerance at all times.",
+    "source": "kaggle:syedmharis/software-engineer-interview-questions"
+  },
+  {
+    "topic": "Distributed Data Consistency",
+    "category": "SystemDesign",
+    "tags": [
+      "data consistency",
+      "distributed databases",
+      "concurrency control",
+      "two-phase commit",
+      "conflict resolution"
+    ],
+    "question": "How do you ensure data consistency in a distributed database?",
+    "follow_up": "Compare and contrast strong consistency models with eventual consistency models, and discuss use cases for each.",
+    "question_type": "design",
+    "difficulty": "Hard",
+    "answer": "Ensure consistency using strong consistency models, two-phase commits, optimistic concurrency control, and conflict resolution strategies.",
+    "source": "kaggle:syedmharis/software-engineer-interview-questions"
+  },
+  {
+    "topic": "Reverse Proxy",
+    "category": "SystemDesign",
+    "tags": [
+      "reverse proxy",
+      "load balancing",
+      "SSL termination",
+      "security",
+      "web architecture"
+    ],
+    "question": "Describe the role of a reverse proxy in a web application.",
+    "follow_up": "How does a reverse proxy differ from a forward proxy, and in what scenarios would you use each?",
+    "question_type": "theory",
+    "difficulty": "Medium",
+    "answer": "A reverse proxy routes client requests to appropriate servers, providing load balancing, SSL termination, caching, and security.",
+    "source": "kaggle:syedmharis/software-engineer-interview-questions"
+  },
+  {
+    "topic": "Message Broker",
+    "category": "SystemDesign",
+    "tags": [
+      "message broker",
+      "asynchronous messaging",
+      "distributed systems",
+      "event-driven architecture",
+      "queueing"
+    ],
+    "question": "What is a message broker, and when would you use one?",
+    "follow_up": "Compare different message broker implementations (e.g., RabbitMQ, Kafka) and their ideal use cases.",
+    "question_type": "theory",
+    "difficulty": "Medium",
+    "answer": "A message broker facilitates communication in distributed systems through asynchronous messaging, used in event-driven architectures and high-volume scenarios.",
+    "source": "kaggle:syedmharis/software-engineer-interview-questions"
+  },
+  {
+    "topic": "SQL Injection",
+    "category": "Cybersecurity",
+    "tags": [
+      "SQL injection",
+      "web security",
+      "input validation",
+      "parameterized queries",
+      "least privilege"
+    ],
+    "question": "What is SQL injection, and how can it be prevented?",
+    "follow_up": "Can you give an example of a vulnerable SQL query and how to rewrite it using parameterized queries to prevent injection?",
+    "question_type": "theory",
+    "difficulty": "Medium",
+    "answer": "SQL injection exploits vulnerabilities to execute malicious SQL. Prevent with parameterized queries, input validation, and least privilege access.",
+    "source": "kaggle:syedmharis/software-engineer-interview-questions"
+  },
+  {
+    "topic": "Cross-Site Scripting (XSS)",
+    "category": "Cybersecurity",
+    "tags": [
+      "XSS",
+      "web security",
+      "input validation",
+      "output encoding",
+      "CSP"
+    ],
+    "question": "Explain the concept of Cross-Site Scripting (XSS).",
+    "follow_up": "Describe the difference between Reflected XSS, Stored XSS, and DOM-based XSS attacks.",
+    "question_type": "theory",
+    "difficulty": "Medium",
+    "answer": "XSS injects malicious scripts into web apps, executed by users' browsers. Prevent with input validation, output encoding, and CSP.",
+    "source": "kaggle:syedmharis/software-engineer-interview-questions"
+  },
+  {
+    "topic": "Two-Factor Authentication (2FA)",
+    "category": "Cybersecurity",
+    "tags": [
+      "2FA",
+      "authentication",
+      "security",
+      "multi-factor authentication",
+      "user identity"
+    ],
+    "question": "What is two-factor authentication (2FA)?",
+    "follow_up": "Discuss the pros and cons of different 2FA methods, such as SMS, authenticator apps, and hardware tokens.",
+    "question_type": "theory",
+    "difficulty": "Easy",
+    "answer": "2FA adds extra security by requiring two verification forms: something known (password) and something possessed (device).",
+    "source": "kaggle:syedmharis/software-engineer-interview-questions"
+  },
+  {
+    "topic": "Password Hashing and Salting",
+    "category": "Cybersecurity",
+    "tags": [
+      "password security",
+      "hashing",
+      "salting",
+      "cryptography",
+      "rainbow table"
+    ],
+    "question": "Describe the process of password hashing and salting.",
+    "follow_up": "Why is salting crucial for password security, and what types of attacks does it specifically mitigate?",
+    "question_type": "theory",
+    "difficulty": "Medium",
+    "answer": "Hashing transforms passwords into hashes using algorithms; salting adds randomness, enhancing security against attacks.",
+    "source": "kaggle:syedmharis/software-engineer-interview-questions"
+  },
+  {
+    "topic": "OAuth",
+    "category": "Cybersecurity",
+    "tags": [
+      "OAuth",
+      "authorization",
+      "authentication",
+      "access tokens",
+      "API security"
+    ],
+    "question": "What is OAuth, and how does it work?",
+    "follow_up": "Explain the different OAuth grant types (e.g., Authorization Code, Client Credentials) and when to use each.",
+    "question_type": "theory",
+    "difficulty": "Medium",
+    "answer": "OAuth allows third-party app access to user data without exposing credentials, using access tokens for authorization.",
+    "source": "kaggle:syedmharis/software-engineer-interview-questions"
+  },
+  {
+    "topic": "Session Fixation",
+    "category": "Cybersecurity",
+    "tags": [
+      "session management",
+      "session fixation",
+      "web security",
+      "session IDs",
+      "post-authentication"
+    ],
+    "question": "How do you protect against session fixation attacks?",
+    "follow_up": "What are the potential consequences if a session fixation attack is successful?",
+    "question_type": "implementation",
+    "difficulty": "Medium",
+    "answer": "Protect by regenerating session IDs post-authentication, using unpredictable IDs, and tying IDs to user authentication.",
+    "source": "kaggle:syedmharis/software-engineer-interview-questions"
+  },
+  {
+    "topic": "Security Principles",
+    "category": "Cybersecurity",
+    "tags": [
+      "least privilege",
+      "defense in depth",
+      "security principles",
+      "access control",
+      "attack surface"
+    ],
+    "question": "Explain the principles of least privilege and defense in depth.",
+    "follow_up": "How do these two principles complement each other in a comprehensive security strategy?",
+    "question_type": "theory",
+    "difficulty": "Medium",
+    "answer": "Least privilege limits access rights; defense in depth layers security. Both minimize attack surfaces and provide redundancy.",
+    "source": "kaggle:syedmharis/software-engineer-interview-questions"
+  },
+  {
+    "topic": "DDoS Attack",
+    "category": "Cybersecurity",
+    "tags": [
+      "DDoS",
+      "denial of service",
+      "network security",
+      "traffic management",
+      "mitigation"
+    ],
+    "question": "What is a DDoS (Distributed Denial of Service) attack?",
+    "follow_up": "Describe various strategies and tools used to mitigate a large-scale DDoS attack.",
+    "question_type": "theory",
+    "difficulty": "Medium",
+    "answer": "A DDoS attack overwhelms a target with traffic, causing unavailability. Mitigate with DDoS protection, rate limiting, and traffic analysis.",
+    "source": "kaggle:syedmharis/software-engineer-interview-questions"
+  },
+  {
+    "topic": "Mobile App Security",
+    "category": "Security",
+    "tags": [
+      "encryption",
+      "data protection",
+      "authentication",
+      "mobile development"
+    ],
+    "question": "How can you secure sensitive data in a mobile app?",
+    "follow_up": "What specific encryption algorithms and key management strategies would you recommend for securing data at rest and in transit in a mobile application?",
+    "question_type": "implementation",
+    "difficulty": "Medium",
+    "answer": "Secure data by encrypting at rest and in transit, using secure authentication, and following best practices.",
+    "source": "kaggle:syedmharis/software-engineer-interview-questions"
+  },
+  {
+    "topic": "API Security Design",
+    "category": "Security",
+    "tags": [
+      "API design",
+      "authentication",
+      "authorization",
+      "rate limiting",
+      "encryption"
+    ],
+    "question": "Discuss the importance of security in API design.",
+    "follow_up": "Can you elaborate on common API vulnerabilities and how specific design choices can mitigate them, beyond just authentication and encryption?",
+    "question_type": "design",
+    "difficulty": "Medium",
+    "answer": "API security is vital to protect data and prevent unauthorized access, using authentication, validation, rate limiting, and encryption.",
+    "source": "kaggle:syedmharis/software-engineer-interview-questions"
+  },
+  {
+    "topic": "Docker Basics",
+    "category": "DevOps",
+    "tags": [
+      "containerization",
+      "Docker Engine",
+      "images",
+      "containers"
+    ],
+    "question": "What is Docker, and how does it work?",
+    "follow_up": "Explain the key differences between a Docker image and a Docker container, and how Docker achieves isolation and consistency.",
+    "question_type": "theory",
+    "difficulty": "Easy",
+    "answer": "Docker is a containerization platform packaging applications with dependencies, ensuring consistent environments across systems.",
+    "source": "kaggle:syedmharis/software-engineer-interview-questions"
+  },
+  {
+    "topic": "Container Orchestration",
+    "category": "DevOps",
+    "tags": [
+      "containers",
+      "automation",
+      "scaling",
+      "resource management",
+      "high availability"
+    ],
+    "question": "Explain the concept of container orchestration.",
+    "follow_up": "What are the primary challenges that container orchestration aims to solve in a microservices architecture, and what metrics are crucial for effective orchestration?",
+    "question_type": "theory",
+    "difficulty": "Medium",
+    "answer": "Container orchestration automates deployment, scaling, and management of containers, optimizing resource use and handling failures.",
+    "source": "kaggle:syedmharis/software-engineer-interview-questions"
+  },
+  {
+    "topic": "Kubernetes Overview",
+    "category": "DevOps",
+    "tags": [
+      "Kubernetes",
+      "container orchestration",
+      "scalability",
+      "microservices",
+      "open-source"
+    ],
+    "question": "What is Kubernetes, and why is it popular in container management?",
+    "follow_up": "Beyond scalability and community support, what are some of the core architectural components of Kubernetes that contribute to its robust container management capabilities?",
+    "question_type": "theory",
+    "difficulty": "Medium",
+    "answer": "Kubernetes is an open-source container orchestration platform automating deployment and management, known for its scalability and community support.",
+    "source": "kaggle:syedmharis/software-engineer-interview-questions"
+  },
+  {
+    "topic": "Infrastructure as Code (IaC)",
+    "category": "DevOps",
+    "tags": [
+      "IaC",
+      "automation",
+      "version control",
+      "cloud infrastructure",
+      "configuration management"
+    ],
+    "question": "What is infrastructure as code (IaC)?",
+    "follow_up": "What are the advantages of using IaC compared to manual infrastructure management, and what are some popular tools used for implementing IaC?",
+    "question_type": "theory",
+    "difficulty": "Medium",
+    "answer": "IaC manages infrastructure using code, ensuring consistency, automation, and version control in deployments.",
+    "source": "kaggle:syedmharis/software-engineer-interview-questions"
+  },
+  {
+    "topic": "Web Application Monitoring",
+    "category": "DevOps",
+    "tags": [
+      "monitoring",
+      "performance",
+      "response time",
+      "error rates",
+      "user experience"
+    ],
+    "question": "How do you monitor the performance of a web application?",
+    "follow_up": "What specific metrics are most crucial for identifying performance bottlenecks in a web application, and how would you set up alerts for these metrics?",
+    "question_type": "implementation",
+    "difficulty": "Medium",
+    "answer": "Monitor using tools to collect and analyze data on response times, resource utilization, error rates, and user experience.",
+    "source": "kaggle:syedmharis/software-engineer-interview-questions"
+  },
+  {
+    "topic": "Automated Testing in CI/CD",
+    "category": "DevOps",
+    "tags": [
+      "CI/CD",
+      "Automated Testing",
+      "Software Quality",
+      "Deployment"
+    ],
+    "question": "Discuss the importance of automated testing in CI/CD pipelines.",
+    "follow_up": "What types of tests are typically automated in a CI/CD pipeline, and at what stage?",
+    "question_type": "theory",
+    "difficulty": "Medium",
+    "answer": "Automated testing in CI/CD ensures code changes are defect-free, enhancing reliability and speeding up delivery.",
+    "source": "kaggle:syedmharis/software-engineer-interview-questions"
+  },
+  {
+    "topic": "Blue-Green Deployment",
+    "category": "DevOps",
+    "tags": [
+      "Deployment Strategies",
+      "Blue-Green",
+      "Downtime",
+      "Rollback"
+    ],
+    "question": "What is Blue-Green deployment, and when would you use it?",
+    "follow_up": "What are the potential drawbacks or challenges of implementing a Blue-Green deployment strategy?",
+    "question_type": "theory",
+    "difficulty": "Medium",
+    "answer": "Blue-Green deployment alternates between two production environments for easy rollbacks and minimal downtime during updates.",
+    "source": "kaggle:syedmharis/software-engineer-interview-questions"
+  },
+  {
+    "topic": "Configuration Management (Ansible)",
+    "category": "DevOps",
+    "tags": [
+      "Configuration Management",
+      "Automation",
+      "Ansible",
+      "Infrastructure as Code"
+    ],
+    "question": "Explain the role of a configuration management tool like Ansible.",
+    "follow_up": "How does Ansible differ from other configuration management tools like Chef or Puppet?",
+    "question_type": "theory",
+    "difficulty": "Medium",
+    "answer": "Configuration management tools automate provisioning and management of software and infrastructure, ensuring consistency and efficiency.",
+    "source": "kaggle:syedmharis/software-engineer-interview-questions"
+  },
+  {
+    "topic": "Cloud Platform Benefits",
+    "category": "Cloud",
+    "tags": [
+      "Cloud Computing",
+      "AWS",
+      "Azure",
+      "Scalability",
+      "Cost Efficiency"
+    ],
+    "question": "Describe the benefits of using a cloud platform like AWS, Azure, or Google Cloud.",
+    "follow_up": "What are the potential challenges or considerations when migrating an existing on-premise application to the cloud?",
+    "question_type": "theory",
+    "difficulty": "Medium",
+    "answer": "Cloud platforms offer scalability, cost-efficiency, global reach, and managed services, reducing operational burdens with security and compliance features.",
+    "source": "kaggle:syedmharis/software-engineer-interview-questions"
+  },
+  {
+    "topic": "JavaScript Closures",
+    "category": "JavaScript",
+    "tags": [
+      "JavaScript",
+      "Closures",
+      "Scope",
+      "Functions"
+    ],
+    "question": "Explain the concept of 'closure' in JavaScript.",
+    "follow_up": "Provide a practical example of how closures can be used in JavaScript to solve a common problem.",
+    "question_type": "theory",
+    "difficulty": "Medium",
+    "answer": "A closure is a function that remembers its outer variables and can access them.",
+    "source": "kaggle:syedmharis/software-engineer-interview-questions"
+  },
+  {
+    "topic": "Docker in DevOps",
+    "category": "DevOps",
+    "tags": [
+      "Docker",
+      "Containers",
+      "DevOps",
+      "Portability",
+      "Deployment"
+    ],
+    "question": "Describe the use of Docker in a DevOps environment.",
+    "follow_up": "How does Docker facilitate consistent environments across development, testing, and production?",
+    "question_type": "theory",
+    "difficulty": "Medium",
+    "answer": "Docker allows for packaging applications in containers, facilitating consistent deployment across different environments.",
+    "source": "kaggle:syedmharis/software-engineer-interview-questions"
+  },
+  {
+    "topic": "Race Condition",
+    "category": "General",
+    "tags": [
+      "Concurrency",
+      "Race Condition",
+      "Multithreading",
+      "Synchronization"
+    ],
+    "question": "What is a 'race condition' in software development?",
+    "follow_up": "How can you prevent or mitigate race conditions in a concurrent application?",
+    "question_type": "theory",
+    "difficulty": "Medium",
+    "answer": "A race condition occurs when the system's behavior depends on the sequence or timing of other uncontrollable events.",
+    "source": "kaggle:syedmharis/software-engineer-interview-questions"
+  },
+  {
+    "topic": "Website Load Time Optimization",
+    "category": "Web Development",
+    "tags": [
+      "Website Optimization",
+      "Load Time",
+      "Performance",
+      "Caching",
+      "CDN"
+    ],
+    "question": "How would you optimize a website's load time?",
+    "follow_up": "Beyond the techniques mentioned, what tools or metrics would you use to identify performance bottlenecks on a website?",
+    "question_type": "optimization",
+    "difficulty": "Hard",
+    "answer": "Optimizations can include minimizing HTTP requests, using CDNs, compressing files, caching, etc.",
+    "source": "kaggle:syedmharis/software-engineer-interview-questions"
+  },
+  {
+    "topic": "SQL vs NoSQL Databases",
+    "category": "Data Engineering",
+    "tags": [
+      "SQL",
+      "NoSQL",
+      "Relational Databases",
+      "Document Databases",
+      "Database Design"
+    ],
+    "question": "What is the difference between SQL and NoSQL databases?",
+    "follow_up": "In which scenarios would you prefer a NoSQL database over a SQL database, and vice versa?",
+    "question_type": "theory",
+    "difficulty": "Medium",
+    "answer": "SQL databases are structured, use SQL, and are better for complex queries. NoSQL databases are flexible, scale well, and are good for hierarchical data storage.",
+    "source": "kaggle:syedmharis/software-engineer-interview-questions"
+  },
+  {
+    "topic": "React State Management",
+    "category": "Frontend",
+    "tags": [
+      "React",
+      "State Management",
+      "Component Lifecycle",
+      "Frontend Development",
+      "JavaScript"
+    ],
+    "question": "Can you explain the concept of 'state' in React?",
+    "follow_up": "How does React handle state updates, and what are the implications of direct state mutation?",
+    "question_type": "theory",
+    "difficulty": "Medium",
+    "answer": "State in React is an object that holds some information that may change over the lifecycle of the component.",
+    "source": "kaggle:syedmharis/software-engineer-interview-questions"
+  },
+  {
+    "topic": "Continuous Integration (CI)",
+    "category": "DevOps",
+    "tags": [
+      "DevOps",
+      "Continuous Integration",
+      "CI/CD",
+      "Automation",
+      "Software Development"
+    ],
+    "question": "What is continuous integration in DevOps?",
+    "follow_up": "What are the key benefits of implementing Continuous Integration, and what tools are commonly used?",
+    "question_type": "theory",
+    "difficulty": "Medium",
+    "answer": "Continuous integration is the practice of automating the integration of code changes into a software project.",
+    "source": "kaggle:syedmharis/software-engineer-interview-questions"
+  },
+  {
+    "topic": "Binary Search Algorithm",
+    "category": "Algorithms",
+    "tags": [
+      "Algorithms",
+      "Binary Search",
+      "Searching Algorithms",
+      "Data Structures",
+      "Time Complexity"
+    ],
+    "question": "How do you implement a binary search algorithm?",
+    "follow_up": "What are the time and space complexities of binary search, and what are its prerequisites?",
+    "question_type": "implementation",
+    "difficulty": "Medium",
+    "answer": "Binary search involves repeatedly dividing in half the portion of the list that could contain the item, until you've narrowed the possibilities to just one.",
+    "source": "kaggle:syedmharis/software-engineer-interview-questions"
+  },
+  {
+    "topic": "Microservices vs Monoliths",
+    "category": "System Design",
+    "tags": [
+      "Microservices",
+      "Monolithic Architecture",
+      "System Design",
+      "Distributed Systems",
+      "Software Architecture"
+    ],
+    "question": "What are microservices and how do they differ from monolithic architectures?",
+    "follow_up": "What are the operational challenges associated with microservices compared to monolithic applications?",
+    "question_type": "theory",
+    "difficulty": "Medium",
+    "answer": "Microservices are a software development technique\n—a variant of the service-oriented architecture architectural style that structures an application as a collection of loosely coupled services. In a monolithic architecture, all components are interconnected and interdependent.",
+    "source": "kaggle:syedmharis/software-engineer-interview-questions"
+  },
+  {
+    "topic": "JavaScript Equality Operators",
+    "category": "Programming Language",
+    "tags": [
+      "JavaScript",
+      "Equality Operators",
+      "Type Coercion",
+      "Strict Equality",
+      "Loose Equality"
+    ],
+    "question": "Explain the difference between '==' and '===' in JavaScript.",
+    "follow_up": "Can you provide a practical example where using '==' might lead to unexpected behavior?",
+    "question_type": "theory",
+    "difficulty": "Easy",
+    "answer": "'==' compares values after type conversion, while '===' compares both value and type.",
+    "source": "kaggle:syedmharis/software-engineer-interview-questions"
+  },
+  {
+    "topic": "RESTful API Implementation",
+    "category": "SystemDesign",
+    "tags": [
+      "REST",
+      "API",
+      "HTTP Methods",
+      "Stateless",
+      "JSON"
+    ],
+    "question": "Describe how you would implement a RESTful API in a back-end application.",
+    "follow_up": "What considerations would you take into account for API versioning and error handling in your RESTful implementation?",
+    "question_type": "implementation",
+    "difficulty": "Medium",
+    "answer": "A RESTful API is implemented by setting up HTTP routes (GET, POST, PUT, DELETE) and handling requests and responses in a stateless manner, often using JSON.",
+    "source": "kaggle:syedmharis/software-engineer-interview-questions"
+  },
+  {
+    "topic": "Server-side vs. Client-side Rendering",
+    "category": "WebDevelopment",
+    "tags": [
+      "SSR",
+      "CSR",
+      "SEO",
+      "Performance",
+      "Web Architecture"
+    ],
+    "question": "What are the benefits of server-side rendering versus client-side rendering?",
+    "follow_up": "Under what specific scenarios would you prioritize one rendering approach over the other, and why?",
+    "question_type": "theory",
+    "difficulty": "Medium",
+    "answer": "Server-side rendering improves initial page load time and SEO, while client-side rendering is good for dynamic websites with less initial loading content.",
+    "source": "kaggle:syedmharis/software-engineer-interview-questions"
+  },
+  {
+    "topic": "NoSQL vs. SQL Scaling",
+    "category": "SQL",
+    "tags": [
+      "NoSQL",
+      "SQL",
+      "Database Scaling",
+      "Data Models",
+      "Distributed Systems"
+    ],
+    "question": "How do NoSQL databases handle data scaling compared to traditional SQL databases?",
+    "follow_up": "Discuss the trade-offs between horizontal scaling in NoSQL and vertical scaling in SQL for maintaining data consistency and availability.",
+    "question_type": "theory",
+    "difficulty": "Medium",
+    "answer": "NoSQL databases are generally more scalable and provide superior performance for large-scale applications due to their flexibility in handling unstructured data.",
+    "source": "kaggle:syedmharis/software-engineer-interview-questions"
+  },
+  {
+    "topic": "React Hooks",
+    "category": "WebDevelopment",
+    "tags": [
+      "React",
+      "Hooks",
+      "State Management",
+      "Functional Components",
+      "Lifecycle Methods"
+    ],
+    "question": "Explain the use of hooks in React.",
+    "follow_up": "How do custom hooks enhance code reusability and separation of concerns in React applications?",
+    "question_type": "theory",
+    "difficulty": "Easy",
+    "answer": "Hooks are functions that let you 'hook into' React state and lifecycle features from function components.",
+    "source": "kaggle:syedmharis/software-engineer-interview-questions"
+  },
+  {
+    "topic": "Memoization",
+    "category": "Algorithms",
+    "tags": [
+      "Memoization",
+      "Optimization",
+      "Dynamic Programming",
+      "Performance",
+      "Caching"
+    ],
+    "question": "Describe the process of memoization in programming.",
+    "follow_up": "When would memoization be an appropriate optimization technique, and what are its potential drawbacks?",
+    "question_type": "theory",
+    "difficulty": "Medium",
+    "answer": "Memoization is an optimization technique used to speed up programs by storing the results of expensive function calls.",
+    "source": "kaggle:syedmharis/software-engineer-interview-questions"
+  },
+  {
+    "topic": "Microservices Architecture",
+    "category": "SystemDesign",
+    "tags": [
+      "Microservices",
+      "Distributed Systems",
+      "Scalability",
+      "Fault Tolerance",
+      "Loose Coupling"
+    ],
+    "question": "What are the advantages of using a microservices architecture?",
+    "follow_up": "Beyond the advantages, what are the significant challenges and complexities introduced by adopting a microservices architecture?",
+    "question_type": "theory",
+    "difficulty": "Medium",
+    "answer": "Advantages include easier scalability, flexibility in choosing technology, better fault isolation, and improved continuous deployment.",
+    "source": "kaggle:syedmharis/software-engineer-interview-questions"
+  },
+  {
+    "topic": "SOLID Principles",
+    "category": "SoftwareEngineering",
+    "tags": [
+      "SOLID",
+      "Design Principles",
+      "Object-Oriented Design",
+      "Maintainability",
+      "Extensibility"
+    ],
+    "question": "Explain the SOLID principles in software engineering.",
+    "follow_up": "Provide a concrete example for each SOLID principle, illustrating how adhering to it improves code quality.",
+    "question_type": "theory",
+    "difficulty": "Hard",
+    "answer": "SOLID stands for Single Responsibility, Open-Closed, Liskov Substitution, Interface Segregation, and Dependency Inversion principles, guiding towards more maintainable, understandable, and flexible software.",
+    "source": "kaggle:syedmharis/software-engineer-interview-questions"
+  },
+  {
+    "topic": "Lazy Loading",
+    "category": "Web Development",
+    "tags": [
+      "performance",
+      "web optimization",
+      "resource management",
+      "frontend"
+    ],
+    "question": "What is lazy loading in web development?",
+    "follow_up": "Can you give examples of resources where lazy loading is particularly beneficial, and discuss potential downsides?",
+    "question_type": "theory",
+    "difficulty": "Medium",
+    "answer": "Lazy loading is a design pattern that delays loading of non-critical resources at page load time, reducing initial load time and page weight.",
+    "source": "kaggle:syedmharis/software-engineer-interview-questions"
+  },
+  {
+    "topic": "Load Balancer",
+    "category": "SystemDesign",
+    "tags": [
+      "distributed systems",
+      "scalability",
+      "high availability",
+      "networking"
+    ],
+    "question": "Discuss the role of a load balancer in a distributed system.",
+    "follow_up": "Describe different load balancing algorithms and their use cases.",
+    "question_type": "theory",
+    "difficulty": "Medium",
+    "answer": "A load balancer distributes network or application traffic across multiple servers to enhance responsiveness and availability of applications.",
+    "source": "kaggle:syedmharis/software-engineer-interview-questions"
+  },
+  {
+    "topic": "Database Indexing",
+    "category": "SQL",
+    "tags": [
+      "database performance",
+      "data retrieval",
+      "query optimization",
+      "data structures"
+    ],
+    "question": "How does indexing improve database query performance?",
+    "follow_up": "What are the trade-offs of using too many indexes or indexing inappropriate columns?",
+    "question_type": "theory",
+    "difficulty": "Medium",
+    "answer": "Indexing speeds up data retrieval operations by effectively creating a smaller, faster version of the database table.",
+    "source": "kaggle:syedmharis/software-engineer-interview-questions"
+  },
+  {
+    "topic": "Event Delegation",
+    "category": "JavaScript",
+    "tags": [
+      "DOM",
+      "event handling",
+      "performance optimization",
+      "frontend"
+    ],
+    "question": "Explain event delegation in JavaScript.",
+    "follow_up": "Provide a scenario where event delegation is crucial for performance or dynamic content management.",
+    "question_type": "theory",
+    "difficulty": "Medium",
+    "answer": "Event delegation refers to the practice of using a single event listener to manage all events of a specific type for child elements.",
+    "source": "kaggle:syedmharis/software-engineer-interview-questions"
+  },
+  {
+    "topic": "Race Condition",
+    "category": "Software Engineering",
+    "tags": [
+      "concurrency",
+      "multithreading",
+      "synchronization",
+      "bugs"
+    ],
+    "question": "What is a 'race condition' in software development?",
+    "follow_up": "How can race conditions be prevented or mitigated in a multi-threaded application?",
+    "question_type": "theory",
+    "difficulty": "Medium",
+    "answer": "A race condition occurs when the system's behavior depends on the sequence or timing of other uncontrollable events.",
+    "source": "kaggle:syedmharis/software-engineer-interview-questions"
+  },
+  {
+    "topic": "SQL vs NoSQL Databases",
+    "category": "SQL",
+    "tags": [
+      "Relational Databases",
+      "Non-Relational Databases",
+      "Database Schema",
+      "Scalability",
+      "ACID"
+    ],
+    "question": "What is the difference between SQL and NoSQL databases?",
+    "follow_up": "In which scenarios would you choose a NoSQL database over a SQL database, and why?",
+    "question_type": "theory",
+    "difficulty": "Medium",
+    "answer": "SQL databases are structured, use SQL, and are better for complex queries. NoSQL databases are flexible, scale well, and are good for hierarchical data storage.",
+    "source": "kaggle:syedmharis/software-engineer-interview-questions"
+  },
+  {
+    "topic": "React State Management",
+    "category": "Web Development",
+    "tags": [
+      "React.js",
+      "Component Lifecycle",
+      "User Interface",
+      "Functional Components",
+      "State Hooks"
+    ],
+    "question": "Can you explain the concept of 'state' in React?",
+    "follow_up": "How does state differ from props, and when would you use each?",
+    "question_type": "theory",
+    "difficulty": "Medium",
+    "answer": "State in React is an object that holds some information that may change over the lifecycle of the component.",
+    "source": "kaggle:syedmharis/software-engineer-interview-questions"
+  },
+  {
+    "topic": "JavaScript Equality Operators",
+    "category": "JavaScript",
+    "tags": [
+      "Type Coercion",
+      "Strict Equality",
+      "Loose Equality",
+      "Comparison Operators",
+      "Data Types"
+    ],
+    "question": "Explain the difference between '==' and '===' in JavaScript.",
+    "follow_up": "Provide an example where '==' and '===' would produce different results, and explain why.",
+    "question_type": "theory",
+    "difficulty": "Easy",
+    "answer": "'==' compares values after type conversion, while '===' compares both value and type.",
+    "source": "kaggle:syedmharis/software-engineer-interview-questions"
+  },
+  {
+    "topic": "Kubernetes and Containerization",
+    "category": "Cloud",
+    "tags": [
+      "Container Orchestration",
+      "Docker",
+      "Containerization",
+      "Deployment Automation",
+      "Cloud Native"
+    ],
+    "question": "What is Kubernetes and how does it relate to containerization?",
+    "follow_up": "How does Kubernetes help in managing the lifecycle and scaling of containerized applications?",
+    "question_type": "theory",
+    "difficulty": "Medium",
+    "answer": "Kubernetes is an open-source platform for automating deployment, scaling, and operations of application containers across clusters of hosts.",
+    "source": "kaggle:syedmharis/software-engineer-interview-questions"
+  },
+  {
+    "topic": "Server-side vs. Client-side Rendering",
+    "category": "SystemDesign",
+    "tags": [
+      "SSR",
+      "CSR",
+      "SEO",
+      "Performance",
+      "Web Development"
+    ],
+    "question": "What are the benefits of server-side rendering versus client-side rendering?",
+    "follow_up": "In which scenarios would you prioritize SSR over CSR, and what are the associated trade-offs in development complexity?",
+    "question_type": "theory",
+    "difficulty": "Medium",
+    "answer": "Server-side rendering improves initial page load time and SEO, while client-side rendering is good for dynamic websites with less initial loading content.",
+    "source": "kaggle:syedmharis/software-engineer-interview-questions"
+  },
+  {
+    "topic": "React Hooks",
+    "category": "Python",
+    "tags": [
+      "React",
+      "Hooks",
+      "State Management",
+      "Lifecycle Methods",
+      "Functional Components"
+    ],
+    "question": "Explain the use of hooks in React.",
+    "follow_up": "Compare the use of `useState` and `useReducer` for managing component state, and when would you choose one over the other?",
+    "question_type": "theory",
+    "difficulty": "Easy",
+    "answer": "Hooks are functions that let you 'hook into' React state and lifecycle features from function components.",
+    "source": "kaggle:syedmharis/software-engineer-interview-questions"
+  },
+  {
+    "topic": "Infrastructure as Code (IaC)",
+    "category": "Cloud",
+    "tags": [
+      "IaC",
+      "DevOps",
+      "Automation",
+      "Configuration Management",
+      "Cloud Computing"
+    ],
+    "question": "What is Infrastructure as Code (IaC) and its significance in DevOps?",
+    "follow_up": "Discuss the primary benefits and potential challenges of adopting an IaC strategy in a large-scale enterprise environment.",
+    "question_type": "theory",
+    "difficulty": "Medium",
+    "answer": "IaC is the management of infrastructure (networks, virtual machines, load balancers, etc.) in a descriptive model, using code, which increases development and deployment speed.",
+    "source": "kaggle:syedmharis/software-engineer-interview-questions"
+  },
+  {
+    "topic": "Memoization",
+    "category": "Python",
+    "tags": [
+      "Optimization",
+      "Dynamic Programming",
+      "Caching",
+      "Performance",
+      "Function Calls"
+    ],
+    "question": "Describe the process of memoization in programming.",
+    "follow_up": "Provide an example of a scenario where memoization would be highly beneficial, and how would you implement it in a chosen programming language?",
+    "question_type": "theory",
+    "difficulty": "Medium",
+    "answer": "Memoization is an optimization technique used to speed up programs by storing the results of expensive function calls.",
+    "source": "kaggle:syedmharis/software-engineer-interview-questions"
+  },
+  {
+    "topic": "SOLID Principles",
+    "category": "General",
+    "tags": [
+      "OOP",
+      "Software Design",
+      "Maintainability",
+      "Code Quality",
+      "Design Principles"
+    ],
+    "question": "Explain the SOLID principles in software engineering.",
+    "follow_up": "Choose one SOLID principle and provide a real-world code example where violating this principle would lead to issues, and how adhering to it resolves them.",
+    "question_type": "theory",
+    "difficulty": "Hard",
+    "answer": "SOLID stands for Single Responsibility, Open-Closed, Liskov Substitution, Interface Segregation, and Dependency Inversion principles, guiding towards more maintainable, understandable, and flexible software.",
+    "source": "kaggle:syedmharis/software-engineer-interview-questions"
+  },
+  {
+    "topic": "JavaScript Event Delegation",
+    "category": "Web Development",
+    "tags": [
+      "JavaScript",
+      "event handling",
+      "DOM",
+      "performance",
+      "event bubbling"
+    ],
+    "question": "Explain event delegation in JavaScript.",
+    "follow_up": "When is event delegation particularly beneficial, and what are its potential drawbacks?",
+    "question_type": "theory",
+    "difficulty": "Medium",
+    "answer": "Event delegation refers to the practice of using a single event listener to manage all events of a specific type for child elements.",
+    "source": "kaggle:syedmharis/software-engineer-interview-questions"
+  },
+  {
+    "topic": "JavaScript Closures",
+    "category": "Web Development",
+    "tags": [
+      "JavaScript",
+      "closures",
+      "scope",
+      "functions",
+      "memory management"
+    ],
+    "question": "Explain the concept of 'closure' in JavaScript.",
+    "follow_up": "Provide a practical example where closures are commonly used in JavaScript development.",
+    "question_type": "theory",
+    "difficulty": "Medium",
+    "answer": "A closure is a function that remembers its outer variables and can access them.",
+    "source": "kaggle:syedmharis/software-engineer-interview-questions"
+  },
+  {
+    "topic": "Distributed Key-Value Store Design",
+    "category": "SystemDesign",
+    "tags": [
+      "distributed systems",
+      "key-value store",
+      "scalability",
+      "consistency",
+      "fault tolerance",
+      "replication"
+    ],
+    "question": "Design a distributed key-value store.",
+    "follow_up": "How would you handle data consistency and resolve conflicts in your distributed key-value store design?",
+    "question_type": "design",
+    "difficulty": "Hard",
+    "answer": "Focus on data partitioning, replication for fault tolerance, consistency models, and handling node failures.",
+    "source": "kaggle:syedmharis/software-engineer-interview-questions"
+  },
+  {
+    "topic": "Balanced Binary Tree Implementation",
+    "category": "Algorithms",
+    "tags": [
+      "binary tree",
+      "data structures",
+      "recursion",
+      "algorithms",
+      "tree traversal"
+    ],
+    "question": "Implement a function to check if a binary tree is balanced.",
+    "follow_up": "What is the time and space complexity of your implementation, and can it be optimized?",
+    "question_type": "implementation",
+    "difficulty": "Hard",
+    "answer": "Use a recursive function to check the height of each subtree; return false if the difference is more than one.",
+    "source": "kaggle:syedmharis/software-engineer-interview-questions"
+  },
+  {
+    "topic": "URL Shortening Service",
+    "category": "SystemDesign",
+    "tags": [
+      "Hashing",
+      "Collision Resolution",
+      "Database Schema",
+      "Scalability",
+      "API Rate Limiting"
+    ],
+    "question": "Design a URL shortening service like bit.ly.",
+    "follow_up": "How would you handle custom short URLs and ensure their uniqueness?",
+    "question_type": "design",
+    "difficulty": "Medium",
+    "answer": "Consider efficient hashing, collision resolution, database schema, scalability, and API rate limiting.",
+    "source": "kaggle:syedmharis/software-engineer-interview-questions"
+  },
+  {
+    "topic": "E-commerce Recommendation System",
+    "category": "SystemDesign",
+    "tags": [
+      "Collaborative Filtering",
+      "Content-Based Filtering",
+      "Hybrid Methods",
+      "Scalability",
+      "Real-time Processing"
+    ],
+    "question": "Design a recommendation system for a large e-commerce platform.",
+    "follow_up": "What metrics would you use to evaluate the effectiveness of your recommendation system?",
+    "question_type": "design",
+    "difficulty": "Hard",
+    "answer": "Use collaborative filtering, content-based filtering, or hybrid methods; consider scalability and real-time processing.",
+    "source": "kaggle:syedmharis/software-engineer-interview-questions"
+  },
+  {
+    "topic": "Median of a Stream",
+    "category": "Algorithms",
+    "tags": [
+      "Data Stream",
+      "Heaps",
+      "Priority Queue",
+      "Median",
+      "Algorithm Design"
+    ],
+    "question": "Write an algorithm to find the median of a stream of numbers.",
+    "follow_up": "Analyze the time and space complexity of your algorithm.",
+    "question_type": "implementation",
+    "difficulty": "Medium",
+    "answer": "Use two heaps (max heap for lower half, min heap for upper half) to maintain the median.",
+    "source": "kaggle:syedmharis/software-engineer-interview-questions"
+  },
+  {
+    "topic": "Raft Consensus Algorithm",
+    "category": "Distributed Systems",
+    "tags": [
+      "Consensus",
+      "Distributed Systems",
+      "Leader Election",
+      "Log Replication",
+      "Fault Tolerance"
+    ],
+    "question": "Explain the Raft consensus algorithm.",
+    "follow_up": "How does Raft handle network partitions and ensure data consistency?",
+    "question_type": "theory",
+    "difficulty": "Hard",
+    "answer": "Discuss leader election, log replication, safety, and how Raft achieves consensus in a distributed system.",
+    "source": "kaggle:syedmharis/software-engineer-interview-questions"
+  },
+  {
+    "topic": "CDN Optimization",
+    "category": "SystemDesign",
+    "tags": [
+      "CDN",
+      "Caching",
+      "Edge Computing",
+      "Load Balancing",
+      "Data Compression"
+    ],
+    "question": "Optimize a global, high-traffic content delivery network.",
+    "follow_up": "How would you measure the effectiveness of your optimization strategies?",
+    "question_type": "optimization",
+    "difficulty": "Hard",
+    "answer": "Use strategies like caching, edge locations, load balancing, and optimizing routing and data compression.",
+    "source": "kaggle:syedmharis/software-engineer-interview-questions"
+  },
+  {
+    "topic": "Scalable Chat Application",
+    "category": "SystemDesign",
+    "tags": [
+      "WebSockets",
+      "Real-time Communication",
+      "Message Queues",
+      "Scalable Backend",
+      "Distributed Systems"
+    ],
+    "question": "Design a chat application that can scale to millions of users.",
+    "follow_up": "How would you handle message persistence and ensure message delivery guarantees?",
+    "question_type": "design",
+    "difficulty": "Hard",
+    "answer": "Consider websocket protocol for real-time communication, efficient message broadcasting, and scalable backend architecture.",
+    "source": "kaggle:syedmharis/software-engineer-interview-questions"
+  },
+  {
+    "topic": "Garbage Collector Implementation",
+    "category": "Programming Languages",
+    "tags": [
+      "Memory Management",
+      "Garbage Collection",
+      "Mark-and-Sweep",
+      "Reference Counting",
+      "Generational GC"
+    ],
+    "question": "Implement a garbage collector for a programming language.",
+    "follow_up": "Discuss the trade-offs between different garbage collection algorithms.",
+    "question_type": "implementation",
+    "difficulty": "Hard",
+    "answer": "Understand memory management concepts like mark-and-sweep, reference counting, and generational collection.",
+    "source": "kaggle:syedmharis/software-engineer-interview-questions"
+  },
+  {
+    "topic": "Scalable Notification System",
+    "category": "SystemDesign",
+    "tags": [
+      "Notifications",
+      "System Architecture",
+      "Push Notifications",
+      "Message Queuing",
+      "Database Optimization"
+    ],
+    "question": "Design a scalable notification system for a social network.",
+    "follow_up": "How would you handle notifications for offline users and ensure eventual delivery?",
+    "question_type": "design",
+    "difficulty": "Hard",
+    "answer": "Focus on system architecture, push vs. pull models, handling peak loads, database optimization, and message queuing.",
+    "source": "kaggle:syedmharis/software-engineer-interview-questions"
+  },
+  {
+    "topic": "TCP Protocol Optimization",
+    "category": "SystemDesign",
+    "tags": [
+      "TCP",
+      "Networking",
+      "Low Latency",
+      "Congestion Control",
+      "Network Protocols"
+    ],
+    "question": "Explain the workings of the TCP protocol, specifically focusing on its behavior and optimization strategies for a low-latency network.",
+    "follow_up": "How do specific TCP congestion control algorithms like TCP Fast Open or CUBIC contribute to or detract from latency in different network conditions?",
+    "question_type": "theory",
+    "difficulty": "Hard",
+    "answer": "Focus on the three-way handshake, congestion control (like TCP Fast Open, and CUBIC), and optimizing for reduced latency.",
+    "source": "kaggle:syedmharis/software-engineer-interview-questions"
+  },
+  {
+    "topic": "Concurrent Hash Map Implementation",
+    "category": "SystemDesign",
+    "tags": [
+      "Concurrency",
+      "Data Structures",
+      "Hash Map",
+      "Thread Safety",
+      "Lock-Free"
+    ],
+    "question": "Design and implement a concurrent hash map.",
+    "follow_up": "Discuss the trade-offs between fine-grained locking and lock-free techniques in terms of performance, complexity, and memory overhead for a concurrent hash map.",
+    "question_type": "implementation",
+    "difficulty": "Hard",
+    "answer": "Implement with fine-grained locking or lock-free techniques to ensure thread safety and high concurrency.",
+    "source": "kaggle:syedmharis/software-engineer-interview-questions"
+  },
+  {
+    "topic": "Kth Largest Element in a Stream",
+    "category": "Algorithm",
+    "tags": [
+      "Data Stream",
+      "Heap",
+      "Priority Queue",
+      "Algorithms",
+      "Stream Processing"
+    ],
+    "question": "Find the Kth largest element in a stream of numbers.",
+    "follow_up": "How would the approach change if you needed to find the Kth smallest element, and what are the time and space complexities for both scenarios?",
+    "question_type": "implementation",
+    "difficulty": "Medium",
+    "answer": "Utilize a min-heap to keep track of the K largest elements, ensuring efficient insertion and extraction.",
+    "source": "kaggle:syedmharis/software-engineer-interview-questions"
+  },
+  {
+    "topic": "Google PageRank Algorithm",
+    "category": "Algorithm",
+    "tags": [
+      "Graph Algorithms",
+      "PageRank",
+      "Eigenvector",
+      "Iterative Algorithms",
+      "Web Search"
+    ],
+    "question": "Implement Google's PageRank algorithm.",
+    "follow_up": "Explain the convergence criteria for PageRank and how dangling nodes are typically handled in its calculation.",
+    "question_type": "implementation",
+    "difficulty": "Hard",
+    "answer": "Use graph-based algorithms focusing on eigenvector calculation and iterative approaches.",
+    "source": "kaggle:syedmharis/software-engineer-interview-questions"
+  },
+  {
+    "topic": "API Rate Limiter Design",
+    "category": "SystemDesign",
+    "tags": [
+      "API",
+      "Rate Limiting",
+      "Distributed Systems",
+      "Token Bucket",
+      "Leaky Bucket"
+    ],
+    "question": "Design an API rate limiter for a web service.",
+    "follow_up": "How would you handle rate limiting in a distributed microservices environment, considering eventual consistency and fault tolerance?",
+    "question_type": "design",
+    "difficulty": "Medium",
+    "answer": "Use token bucket or leaky bucket algorithms, consider distributed storage for scalability.",
+    "source": "kaggle:syedmharis/software-engineer-interview-questions"
+  },
+  {
+    "topic": "Database Query Optimization",
+    "category": "SQL",
+    "tags": [
+      "Database",
+      "SQL",
+      "Query Optimization",
+      "Indexing",
+      "Caching",
+      "Sharding"
+    ],
+    "question": "Optimize database queries for a high-traffic website.",
+    "follow_up": "Beyond indexing and sharding, how would you identify and address performance bottlenecks caused by N+1 queries or inefficient JOIN operations?",
+    "question_type": "optimization",
+    "difficulty": "Medium",
+    "answer": "Focus on indexing, query optimization, using caching, database sharding, and efficient schema design.",
+    "source": "kaggle:syedmharis/software-engineer-interview-questions"
+  },
+  {
+    "topic": "Scalable Authentication System Design",
+    "category": "SystemDesign",
+    "tags": [
+      "Authentication",
+      "Security",
+      "OAuth",
+      "JWT",
+      "Web Security",
+      "Scalability"
+    ],
+    "question": "Create a secure and scalable authentication system for a web application.",
+    "follow_up": "Discuss the security implications and best practices for managing refresh tokens and preventing replay attacks when using JWT for authentication.",
+    "question_type": "design",
+    "difficulty": "Hard",
+    "answer": "Implement OAuth for third-party integrations, use JWT for stateless authentication, and ensure protection against common security vulnerabilities.",
+    "source": "kaggle:syedmharis/software-engineer-interview-questions"
+  },
+  {
+    "topic": "Time-Series Data Storage and Retrieval",
+    "category": "SystemDesign",
+    "tags": [
+      "Time-Series Data",
+      "Database Design",
+      "Data Storage",
+      "Scalability",
+      "Indexing",
+      "Compression"
+    ],
+    "question": "Design a system for efficient storage and retrieval of large-scale time-series data.",
+    "follow_up": "How would your design adapt to handle varying data ingestion rates and real-time query requirements, specifically concerning data retention policies and aggregate queries?",
+    "question_type": "design",
+    "difficulty": "Hard",
+    "answer": "Optimize for write-heavy loads, use time-based partitioning, efficient indexing, and consider data compression techniques.",
+    "source": "kaggle:syedmharis/software-engineer-interview-questions"
+  },
+  {
+    "topic": "Blockchain Fundamentals",
+    "category": "Blockchain",
+    "tags": [
+      "cryptographic hashing",
+      "decentralized consensus",
+      "Proof of Work",
+      "distributed ledger",
+      "blockchain implementation"
+    ],
+    "question": "Explain how a blockchain works and how to implement one.",
+    "follow_up": "What are the security implications and potential vulnerabilities in a typical blockchain implementation?",
+    "question_type": "theory",
+    "difficulty": "Medium",
+    "answer": "Focus on cryptographic hashing, decentralized consensus algorithms (like Proof of Work), and the maintenance of a distributed ledger.",
+    "source": "kaggle:syedmharis/software-engineer-interview-questions"
+  },
+  {
+    "topic": "Parking Lot Management System Design",
+    "category": "SystemDesign",
+    "tags": [
+      "object-oriented design",
+      "system architecture",
+      "space optimization",
+      "vehicle management",
+      "concurrency"
+    ],
+    "question": "Design an efficient parking lot management system.",
+    "follow_up": "How would you handle real-time updates for parking space availability and integrate payment systems?",
+    "question_type": "design",
+    "difficulty": "Medium",
+    "answer": "Use object-oriented design principles, focus on efficiently handling different vehicle sizes, and optimizing space usage.",
+    "source": "kaggle:syedmharis/software-engineer-interview-questions"
+  },
+  {
+    "topic": "Stock Price Prediction Model",
+    "category": "ML",
+    "tags": [
+      "time series analysis",
+      "regression models",
+      "reinforcement learning",
+      "feature engineering",
+      "data preprocessing"
+    ],
+    "question": "Develop a machine learning model to predict stock prices.",
+    "follow_up": "What are the inherent challenges and limitations when trying to predict stock prices using ML, and how would you mitigate them?",
+    "question_type": "implementation",
+    "difficulty": "Hard",
+    "answer": "Consider time series analysis, regression models, and reinforcement learning; pay attention to features and data preprocessing.",
+    "source": "kaggle:syedmharis/software-engineer-interview-questions"
+  },
+  {
+    "topic": "Custom C++ Memory Allocator",
+    "category": "C++",
+    "tags": [
+      "memory management",
+      "memory pool",
+      "fragmentation",
+      "allocation speed",
+      "deallocation speed"
+    ],
+    "question": "Write a custom memory allocator for a C++ application.",
+    "follow_up": "How would you design your allocator to be thread-safe and what specific challenges would you anticipate?",
+    "question_type": "implementation",
+    "difficulty": "Hard",
+    "answer": "Discuss memory pool allocation, handling fragmentation, and optimizing for allocation/deallocation speed.",
+    "source": "kaggle:syedmharis/software-engineer-interview-questions"
+  },
+  {
+    "topic": "Real-time Multiplayer Game Architecture",
+    "category": "SystemDesign",
+    "tags": [
+      "network traffic",
+      "state synchronization",
+      "latency reduction",
+      "scalability",
+      "game server architecture"
+    ],
+    "question": "Design a real-time multiplayer online game architecture.",
+    "follow_up": "How would you address cheating and ensure fairness in a high-latency, distributed environment?",
+    "question_type": "design",
+    "difficulty": "Hard",
+    "answer": "Focus on handling high network traffic, efficient state synchronization, latency reduction, and scalability.",
+    "source": "kaggle:syedmharis/software-engineer-interview-questions"
+  },
+  {
+    "topic": "Distributed File System Implementation",
+    "category": "SystemDesign",
+    "tags": [
+      "data distribution",
+      "replication",
+      "fault tolerance",
+      "consistency models",
+      "distributed storage"
+    ],
+    "question": "Implement a distributed file system.",
+    "follow_up": "How would you ensure data consistency and atomicity across multiple nodes in the presence of network partitions?",
+    "question_type": "implementation",
+    "difficulty": "Hard",
+    "answer": "Address challenges in data distribution, replication, fault tolerance, consistency, and performance.",
+    "source": "kaggle:syedmharis/software-engineer-interview-questions"
+  },
+  {
+    "topic": "Distributed Search Algorithm Optimization",
+    "category": "SystemDesign",
+    "tags": [
+      "search algorithms",
+      "distributed computing",
+      "MapReduce",
+      "scalability",
+      "large datasets"
+    ],
+    "question": "Optimize a search algorithm for a large dataset in a distributed environment.",
+    "follow_up": "What are the trade-offs between latency and throughput when designing a distributed search system for petabyte-scale data?",
+    "question_type": "optimization",
+    "difficulty": "Hard",
+    "answer": "Implement distributed searching algorithms like MapReduce for scalability and efficiency.",
+    "source": "kaggle:syedmharis/software-engineer-interview-questions"
+  },
+  {
+    "topic": "Real-time Big Data Pipeline Design",
+    "category": "SystemDesign",
+    "tags": [
+      "stream processing",
+      "Apache Kafka",
+      "Spark Streaming",
+      "fault tolerance",
+      "backpressure management"
+    ],
+    "question": "Design a data pipeline for processing big data in real-time.",
+    "follow_up": "How would you monitor the health and performance of this real-time pipeline, and what strategies would you employ for error handling and recovery?",
+    "question_type": "design",
+    "difficulty": "Hard",
+    "answer": "Utilize stream processing frameworks (like Apache Kafka, Spark Streaming), ensure fault tolerance, and manage backpressure.",
+    "source": "kaggle:syedmharis/software-engineer-interview-questions"
+  },
+  {
+    "topic": "High-Frequency Trading System",
+    "category": "SystemDesign",
+    "tags": [
+      "low latency",
+      "high throughput",
+      "order execution",
+      "concurrent algorithms",
+      "data feeds"
+    ],
+    "question": "Build a high-frequency trading system and discuss its components.",
+    "follow_up": "What are the critical trade-offs between latency and throughput in HFT systems, and how do you manage them?",
+    "question_type": "design",
+    "difficulty": "Hard",
+    "answer": "Focus on low latency, high throughput, reliable data feeds, order execution systems, and concurrent algorithms.",
+    "source": "kaggle:syedmharis/software-engineer-interview-questions"
+  },
+  {
+    "topic": "Medical Image Analysis with Deep Learning",
+    "category": "ML",
+    "tags": [
+      "CNN",
+      "medical imaging",
+      "dataset preprocessing",
+      "class imbalance",
+      "deep learning"
+    ],
+    "question": "Develop a deep learning model to analyze and interpret medical images.",
+    "follow_up": "How would you address the challenges of data scarcity and privacy in medical imaging datasets?",
+    "question_type": "implementation",
+    "difficulty": "Hard",
+    "answer": "Use convolutional neural networks, pay attention to dataset quality and preprocessing, and handle class imbalances.",
+    "source": "kaggle:syedmharis/software-engineer-interview-questions"
+  },
+  {
+    "topic": "AI for Complex Board Games",
+    "category": "AI/Gaming",
+    "tags": [
+      "Monte Carlo Tree Search",
+      "deep learning",
+      "reinforcement learning",
+      "game AI",
+      "strategy games"
+    ],
+    "question": "Create an AI that can play a complex board game at a competitive level.",
+    "follow_up": "How would you adapt your AI approach for a game with imperfect information?",
+    "question_type": "implementation",
+    "difficulty": "Hard",
+    "answer": "Implement advanced AI techniques like Monte Carlo Tree Search, deep learning, and reinforcement learning.",
+    "source": "kaggle:syedmharis/software-engineer-interview-questions"
+  },
+  {
+    "topic": "Online Transaction Fraud Detection",
+    "category": "ML",
+    "tags": [
+      "anomaly detection",
+      "real-time processing",
+      "rule-based systems",
+      "machine learning",
+      "fraud prevention"
+    ],
+    "question": "Design a fraud detection system for online transactions.",
+    "follow_up": "How would you handle concept drift in fraud patterns and continuously update your models?",
+    "question_type": "design",
+    "difficulty": "Medium",
+    "answer": "Use machine learning for anomaly detection, implement rule-based systems for known fraud patterns, ensure real-time processing.",
+    "source": "kaggle:syedmharis/software-engineer-interview-questions"
+  },
+  {
+    "topic": "Distributed Graph Processing Framework",
+    "category": "SystemDesign",
+    "tags": [
+      "distributed systems",
+      "graph algorithms",
+      "vertex-centric",
+      "message passing",
+      "scalability"
+    ],
+    "question": "Implement a distributed graph processing framework.",
+    "follow_up": "What consistency models are typically used in distributed graph processing, and why?",
+    "question_type": "implementation",
+    "difficulty": "Hard",
+    "answer": "Discuss vertex-centric computation, message passing between nodes, and optimizations for large-scale processing.",
+    "source": "kaggle:syedmharis/software-engineer-interview-questions"
+  },
+  {
+    "topic": "Global Video Streaming Service",
+    "category": "SystemDesign",
+    "tags": [
+      "CDN",
+      "adaptive bitrate",
+      "content caching",
+      "load balancing",
+      "streaming protocols"
+    ],
+    "question": "Design a global video streaming service like Netflix.",
+    "follow_up": "How do you ensure low latency and high availability for users across different geographical regions?",
+    "question_type": "design",
+    "difficulty": "Hard",
+    "answer": "Focus on CDN usage, adaptive bitrate streaming, content caching strategies, and handling peak traffic loads.",
+    "source": "kaggle:syedmharis/software-engineer-interview-questions"
+  },
+  {
+    "topic": "Job Matching System",
+    "category": "ML",
+    "tags": [
+      "NLP",
+      "ranking algorithms",
+      "information retrieval",
+      "recommendation systems",
+      "search optimization"
+    ],
+    "question": "Create a system to efficiently match job seekers with job postings.",
+    "follow_up": "How would you evaluate the effectiveness of your job matching algorithm and iterate on improvements?",
+    "question_type": "design",
+    "difficulty": "Medium",
+    "answer": "Use NLP for parsing resumes, implement ranking algorithms, and optimize for search and matching efficiency.",
+    "source": "kaggle:syedmharis/software-engineer-interview-questions"
+  },
+  {
+    "topic": "Distributed Cache System",
+    "category": "SystemDesign",
+    "tags": [
+      "distributed caching",
+      "consistency models",
+      "data partitioning",
+      "eviction policies",
+      "fault tolerance"
+    ],
+    "question": "Design and implement a large-scale distributed cache system.",
+    "follow_up": "Explain the trade-offs between strong, eventual, and causal consistency in a distributed cache.",
+    "question_type": "design",
+    "difficulty": "Hard",
+    "answer": "Consider consistency, data partitioning, eviction policies, and fault tolerance in distributed caching.",
+    "source": "kaggle:syedmharis/software-engineer-interview-questions"
+  },
+  {
+    "topic": "Satellite Network Protocol Optimization",
+    "category": "Networking",
+    "tags": [
+      "satellite communication",
+      "network protocols",
+      "latency",
+      "data loss",
+      "bandwidth optimization"
+    ],
+    "question": "How would you optimize network protocols for a satellite communication system?",
+    "follow_up": "What specific transport layer protocols or modifications would you consider to mitigate the effects of high latency and packet loss inherent in satellite links?",
+    "question_type": "optimization",
+    "difficulty": "Hard",
+    "answer": "Address latency, data loss, and bandwidth issues; optimize for long-distance and high-latency networks.",
+    "source": "kaggle:syedmharis/software-engineer-interview-questions"
+  },
+  {
+    "topic": "Autonomous Vehicle Path Planning",
+    "category": "Robotics",
+    "tags": [
+      "autonomous vehicles",
+      "path planning",
+      "obstacle avoidance",
+      "real-time systems",
+      "robotics algorithms"
+    ],
+    "question": "How would you develop a path planning algorithm for an autonomous vehicle?",
+    "follow_up": "What are the trade-offs between global and local path planning algorithms in dynamic urban environments, and how would you integrate them?",
+    "question_type": "implementation",
+    "difficulty": "Hard",
+    "answer": "Implement algorithms considering real-time obstacle avoidance, dynamic path adjustments, and efficient routing.",
+    "source": "kaggle:syedmharis/software-engineer-interview-questions"
+  },
+  {
+    "topic": "Scalable Messaging System Design",
+    "category": "SystemDesign",
+    "tags": [
+      "messaging system",
+      "scalability",
+      "reliability",
+      "message queues",
+      "fault tolerance"
+    ],
+    "question": "Design a scalable and reliable messaging system for a large corporation.",
+    "follow_up": "How would you ensure exactly-once message delivery semantics in a distributed messaging system, and what are the challenges involved?",
+    "question_type": "design",
+    "difficulty": "Hard",
+    "answer": "Utilize message queues (like Kafka, RabbitMQ), ensure fault tolerance, and implement load balancing.",
+    "source": "kaggle:syedmharis/software-engineer-interview-questions"
+  },
+  {
+    "topic": "NLP for User Query Answering",
+    "category": "LLM",
+    "tags": [
+      "natural language processing",
+      "user queries",
+      "tokenization",
+      "parsing",
+      "deep learning"
+    ],
+    "question": "How would you implement a natural language processing algorithm to understand and answer user queries?",
+    "follow_up": "What are the challenges of handling ambiguous queries or queries with implied context, and how can they be addressed in an NLP system?",
+    "question_type": "implementation",
+    "difficulty": "Medium",
+    "answer": "Use NLP techniques like tokenization, parsing, and deep learning models for understanding and generating responses.",
+    "source": "kaggle:syedmharis/software-engineer-interview-questions"
+  },
+  {
+    "topic": "Real-time Network Anomaly Detection",
+    "category": "Cybersecurity",
+    "tags": [
+      "anomaly detection",
+      "network traffic",
+      "real-time analysis",
+      "statistical models",
+      "machine learning"
+    ],
+    "question": "Create an efficient algorithm for real-time anomaly detection in network traffic.",
+    "follow_up": "How would you handle concept drift in network traffic patterns that might lead to false positives or negatives in your anomaly detection system?",
+    "question_type": "implementation",
+    "difficulty": "Hard",
+    "answer": "Implement statistical models or machine learning algorithms to detect unusual patterns indicative of anomalies.",
+    "source": "kaggle:syedmharis/software-engineer-interview-questions"
+  },
+  {
+    "topic": "IoT Data Management and Processing",
+    "category": "SystemDesign",
+    "tags": [
+      "IoT data",
+      "data ingestion",
+      "real-time processing",
+      "data storage",
+      "analytics"
+    ],
+    "question": "Design a system to manage and process Internet of Things (IoT) data.",
+    "follow_up": "What are the unique challenges associated with securing IoT data at scale, from edge devices to the cloud, and how would your design address them?",
+    "question_type": "design",
+    "difficulty": "Hard",
+    "answer": "Focus on handling large-scale data influx, real-time processing, data storage, and analytics.",
+    "source": "kaggle:syedmharis/software-engineer-interview-questions"
+  },
+  {
+    "topic": "Compiler Construction",
+    "category": "ComputerScience",
+    "tags": [
+      "compiler design",
+      "lexical analysis",
+      "parsing",
+      "syntax tree",
+      "code generation"
+    ],
+    "question": "How would you build a compiler for a new programming language?",
+    "follow_up": "Discuss the challenges and techniques involved in optimizing the generated machine code for performance and efficiency.",
+    "question_type": "implementation",
+    "difficulty": "Hard",
+    "answer": "Discuss lexical analysis, parsing, syntax tree generation, semantic analysis, and code generation.",
+    "source": "kaggle:syedmharis/software-engineer-interview-questions"
+  },
+  {
+    "topic": "Text Editor Implementation",
+    "category": "SoftwareEngineering",
+    "tags": [
+      "text editor",
+      "auto-complete",
+      "syntax highlighting",
+      "data structures",
+      "algorithms"
+    ],
+    "question": "How would you implement a robust text editor with features like auto-complete and syntax highlighting?",
+    "follow_up": "What data structures would you use to efficiently handle very large files (e.g., gigabytes) while maintaining responsive editing features?",
+    "question_type": "implementation",
+    "difficulty": "Medium",
+    "answer": "Consider efficient data structures for text storage (like gap buffers), and algorithms for syntax parsing.",
+    "source": "kaggle:syedmharis/software-engineer-interview-questions"
+  },
+  {
+    "topic": "Online Advertising Platform",
+    "category": "SystemDesign",
+    "tags": [
+      "high-volume traffic",
+      "data analytics",
+      "ad targeting",
+      "low-latency",
+      "scalability"
+    ],
+    "question": "Design a scalable infrastructure for an online advertising platform.",
+    "follow_up": "What specific architectural patterns would you use to ensure low-latency ad serving at petabyte scale?",
+    "question_type": "design",
+    "difficulty": "Hard",
+    "answer": "Focus on handling high-volume traffic, data analytics, ad targeting algorithms, and ensuring low-latency responses.",
+    "source": "kaggle:syedmharis/software-engineer-interview-questions"
+  },
+  {
+    "topic": "Fake News Detection",
+    "category": "ML",
+    "tags": [
+      "NLP",
+      "text classification",
+      "unstructured data",
+      "deep learning",
+      "feature engineering"
+    ],
+    "question": "Develop a machine learning algorithm to detect fake news on social media.",
+    "follow_up": "How would you address the challenge of evolving language and adversarial attacks in fake news detection models?",
+    "question_type": "implementation",
+    "difficulty": "Medium",
+    "answer": "Use NLP for text analysis, implement classification algorithms, and consider the challenge of unstructured data.",
+    "source": "kaggle:syedmharis/software-engineer-interview-questions"
+  },
+  {
+    "topic": "SQL Database Optimization",
+    "category": "SQL",
+    "tags": [
+      "transaction isolation",
+      "indexing",
+      "query optimization",
+      "database sharding",
+      "high-volume"
+    ],
+    "question": "Optimize an SQL database for a high-volume financial transaction system.",
+    "follow_up": "Beyond sharding, what strategies would you employ to ensure strong consistency and fault tolerance in a distributed financial database?",
+    "question_type": "optimization",
+    "difficulty": "Hard",
+    "answer": "Focus on transaction isolation levels, indexing strategies, query optimization, and database sharding.",
+    "source": "kaggle:syedmharis/software-engineer-interview-questions"
+  },
+  {
+    "topic": "Cloud Virtual Desktop Infrastructure",
+    "category": "Cloud",
+    "tags": [
+      "virtualization",
+      "resource allocation",
+      "security",
+      "remote access",
+      "cloud computing"
+    ],
+    "question": "Design a cloud-based virtual desktop infrastructure.",
+    "follow_up": "How would you manage user profiles and application provisioning in a large-scale, multi-tenant VDI environment to ensure isolation and performance?",
+    "question_type": "design",
+    "difficulty": "Medium",
+    "answer": "Address virtualization technologies, resource allocation, security, and remote access protocols.",
+    "source": "kaggle:syedmharis/software-engineer-interview-questions"
+  },
+  {
+    "topic": "Real-time Sports Analytics",
+    "category": "SystemDesign",
+    "tags": [
+      "streaming data",
+      "sensor data",
+      "real-time processing",
+      "machine learning",
+      "data storage"
+    ],
+    "question": "Create a real-time sports analytics system using sensor data.",
+    "follow_up": "What technologies would you choose for real-time stream processing and how would you ensure data consistency and low-latency insights from heterogeneous sensor data?",
+    "question_type": "design",
+    "difficulty": "Hard",
+    "answer": "Utilize streaming data processing, machine learning for pattern recognition, and efficient data storage solutions.",
+    "source": "kaggle:syedmharis/software-engineer-interview-questions"
+  },
+  {
+    "topic": "Quantum Algorithms",
+    "category": "General",
+    "tags": [
+      "quantum computing",
+      "qubits",
+      "Grover's algorithm",
+      "Shor's algorithm",
+      "computational problem"
+    ],
+    "question": "Implement a quantum algorithm for solving a well-known computational problem.",
+    "follow_up": "What are the practical limitations and current hardware challenges in implementing complex quantum algorithms like Shor's algorithm for cryptography?",
+    "question_type": "implementation",
+    "difficulty": "Hard",
+    "answer": "Discuss quantum computing principles, qubit manipulation, and specific algorithms like Grover's or Shor's algorithm.",
+    "source": "kaggle:syedmharis/software-engineer-interview-questions"
+  },
+  {
+    "topic": "Secure Mobile Payment System",
+    "category": "SystemDesign",
+    "tags": [
+      "security protocols",
+      "offline capabilities",
+      "user authentication",
+      "low-resource optimization",
+      "mobile payments"
+    ],
+    "question": "Design a secure mobile payment system for developing countries.",
+    "follow_up": "Given limited network connectivity and low-end devices, how would you ensure robust security and transaction integrity for offline mobile payments?",
+    "question_type": "design",
+    "difficulty": "Hard",
+    "answer": "Focus on security protocols, offline capabilities, user authentication, and low-resource optimizations.",
+    "source": "kaggle:syedmharis/software-engineer-interview-questions"
+  },
+  {
+    "topic": "Image Processing Pipeline",
+    "category": "SystemDesign",
+    "tags": [
+      "distributed processing",
+      "image storage",
+      "feature extraction",
+      "scalability",
+      "photo-sharing"
+    ],
+    "question": "Build a scalable image processing pipeline for a photo-sharing app.",
+    "follow_up": "How would you handle dynamic scaling of the image processing pipeline to accommodate spikes in upload traffic while maintaining cost efficiency?",
+    "question_type": "implementation",
+    "difficulty": "Medium",
+    "answer": "Implement distributed processing, efficient storage, and consider ML techniques for feature extraction.",
+    "source": "kaggle:syedmharis/software-engineer-interview-questions"
+  }
+]
